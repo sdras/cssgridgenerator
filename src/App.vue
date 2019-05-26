@@ -1,19 +1,26 @@
 <template>
   <div id="app">
-    <app-github-corner/>
-    <app-logo/>
+    <app-header/>
     <section class="grid"></section>
   </div>
 </template>
 
 <script>
-import AppLogo from "./components/AppLogo.vue";
-import AppGithubCorner from "./components/AppGithubCorner.vue";
+import AppHeader from "./components/AppHeader.vue";
 
 export default {
+  data() {
+    return {
+      structure: {
+        columns: 5,
+        rows: 5,
+        columngap: 0,
+        rowgap: 0
+      }
+    };
+  },
   components: {
-    AppGithubCorner,
-    AppLogo
+    AppHeader
   }
 };
 </script>
