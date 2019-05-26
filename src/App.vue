@@ -5,7 +5,7 @@
     <div v-for="(col, i) in colArr" :key="i">
       <input v-model="col.unit">
     </div>
-    <p>{{ colArr }}</p>
+    <p>{{ colTemplate }}</p>
     <section class="grid"></section>
   </div>
 </template>
@@ -26,6 +26,14 @@ export default {
       colArr: [],
       rowArr: []
     };
+  },
+  computed: {
+    colTemplate() {
+      return this.colArr.map(i => i["unit"]).join(" ");
+    },
+    rowTemplate() {
+      return this.rowArr.map(i => i["unit"]).join(" ");
+    }
   },
   methods: {
     initialArrIndex(direction, arr) {
