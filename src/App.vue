@@ -1,16 +1,21 @@
 <template>
   <div id="app">
+    <app-logo/>
     <section class="grid"></section>
   </div>
 </template>
 
 <script>
-export default {};
+import AppLogo from "./components/AppLogo.vue";
+
+export default {
+  components: {
+    AppLogo
+  }
+};
 </script>
 
 <style lang="scss">
-$teal: #08ffbd;
-
 body {
   width: 100vw;
   min-height: 100vh;
@@ -47,7 +52,7 @@ body {
 .grid {
   border: 1px solid #08ffbd;
   width: calc(70vw - 50px);
-  height: calc(90vh - 50px);
+  height: calc(70vh - 50px);
   background: #131321; /* Old browsers */
   background: -moz-linear-gradient(
     top,
