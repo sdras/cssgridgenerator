@@ -1,22 +1,16 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <section class="grid"></section>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
-export default {
-  name: "app",
-  components: {
-    HelloWorld
-  }
-};
+export default {};
 </script>
 
 <style lang="scss">
+$teal: #08ffbd;
+
 body {
   width: 100vw;
   min-height: 100vh;
@@ -47,5 +41,30 @@ body {
 }
 
 #app {
+  margin: 5vmin;
+}
+
+.grid {
+  border: 1px solid #08ffbd;
+  width: calc(70vw - 50px);
+  height: calc(90vh - 50px);
+  background: #131321; /* Old browsers */
+  background: -moz-linear-gradient(
+    top,
+    #131321 0%,
+    #1f1c2c 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    top,
+    #131321 0%,
+    #1f1c2c 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #131321 0%,
+    #1f1c2c 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#131321', endColorstr='#1f1c2c',GradientType=0 ); /* IE6-9 */
+  box-shadow: 0 2px 20px 0 #000;
 }
 </style>
