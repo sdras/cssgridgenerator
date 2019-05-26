@@ -1,6 +1,11 @@
 <template>
   <div id="app">
     <app-header/>
+    <input v-model.number="columns">
+    <div v-for="(col, i) in colArr" :key="i">
+      <input v-model="col.unit">
+    </div>
+    <p>{{ colArr }}</p>
     <section class="grid"></section>
   </div>
 </template>
@@ -9,18 +14,47 @@
 import AppHeader from "./components/AppHeader.vue";
 
 export default {
-  data() {
-    return {
-      structure: {
-        columns: 5,
-        rows: 5,
-        columngap: 0,
-        rowgap: 0
-      }
-    };
-  },
   components: {
     AppHeader
+  },
+  data() {
+    return {
+      columns: 5,
+      rows: 5,
+      columngap: 0,
+      rowgap: 0,
+      colArr: [],
+      rowArr: []
+    };
+  },
+  methods: {
+    initialArrIndex(direction, arr) {
+      for (let i = 1; i <= direction; i++) {
+        arr.push({ unit: "1fr" });
+      }
+    },
+    adjustArr(newVal, oldVal, arrDirection) {
+      if (newVal < oldVal) {
+        arrDirection.length = newVal;
+      } else {
+        let difference = newVal - oldVal;
+        for (let i = 1; i <= difference; i++) {
+          arrDirection.push({ unit: "1fr" });
+        }
+      }
+    }
+  },
+  watch: {
+    columns(newVal, oldVal) {
+      this.adjustArr(newVal, oldVal, this.colArr);
+    },
+    rows(newVal, oldVal) {
+      this.adjustArr(newVal, oldVal, this.rowArr);
+    }
+  },
+  mounted() {
+    this.initialArrIndex(this.columns, this.colArr);
+    this.initialArrIndex(this.rows, this.rowArr);
   }
 };
 </script>
