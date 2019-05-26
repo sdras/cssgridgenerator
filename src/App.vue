@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <app-github-corner/>
     <app-logo/>
     <section class="grid"></section>
   </div>
@@ -7,9 +8,11 @@
 
 <script>
 import AppLogo from "./components/AppLogo.vue";
+import AppGithubCorner from "./components/AppGithubCorner.vue";
 
 export default {
   components: {
+    AppGithubCorner,
     AppLogo
   }
 };
