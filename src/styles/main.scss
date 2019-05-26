@@ -1,1 +1,11 @@
 $teal: #08ffbd;
+
+* {
+  box-sizing: border-box;
+}
+
+input,
+label,
+button {
+  font-family: "Mukta Mahee", Helvetica, Arial, sans-serif;
+}

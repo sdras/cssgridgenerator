@@ -2,9 +2,16 @@
   <div id="app">
     <app-header/>
     <input v-model.number="columns">
-    <div v-for="(col, i) in colArr" :key="i">
-      <input v-model="col.unit">
-    </div>
+
+    <section
+      :style="{ gridTemplateColumns: colTemplate, gridTemplateRows: '50px' , gridColumnGap: columngap + 'px', gridRowGap: rowgap + 'px' }"
+      class="rowunits"
+    >
+      <div v-for="(col, i) in colArr" :key="i">
+        <input v-model="col.unit">
+      </div>
+    </section>
+
     <p>{{ colTemplate }}</p>
     <section class="grid"></section>
   </div>
@@ -123,5 +130,65 @@ body {
   ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#131321', endColorstr='#1f1c2c',GradientType=0 ); /* IE6-9 */
   box-shadow: 0 2px 20px 0 #000;
+}
+
+.grid {
+  display: grid;
+  div {
+    background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+    border: 1px dotted white;
+    transition: 0.2s all ease;
+    cursor: move;
+    position: relative;
+    z-index: 1000;
+    opacity: 0.5;
+  }
+}
+
+//todo
+aside {
+  margin: 0 60px;
+  font-size: 17px;
+  width: 450px;
+}
+
+label {
+  padding-right: 15px;
+  display: inline-block;
+  width: 150px;
+}
+
+input {
+  font-size: 17px;
+  background: #211f2f;
+  color: white;
+  width: 60px;
+  padding: 5px;
+  border: 1px solid #666;
+}
+
+fieldset {
+  margin-bottom: 20px;
+  border: none;
+  margin: 0;
+  padding: 5px 0;
+}
+
+.rowunits,
+.colunits {
+  display: grid;
+  div {
+    text-align: center;
+  }
+}
+
+.colunits {
+  margin-left: -70px;
+  float: left;
+  height: 100%;
+  div {
+    align-self: center;
+    height: 30px;
+  }
 }
 </style>
