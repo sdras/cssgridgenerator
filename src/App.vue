@@ -1,30 +1,31 @@
 <template>
   <div id="app">
     <app-header/>
-    <app-grid
-      :col-arr="colArr"
-      :row-arr="rowArr"
-      :col-template="colTemplate"
-      :row-template="rowTemplate"
-      :columngap="columngap"
-      :rowgap="rowgap"
-      :div-num="divNum"
-    />
-
-    <aside>
-      <input v-model.number="columns">
-    </aside>
+    <section class="container">
+      <app-grid
+        :col-arr="colArr"
+        :row-arr="rowArr"
+        :col-template="colTemplate"
+        :row-template="rowTemplate"
+        :columngap="columngap"
+        :rowgap="rowgap"
+        :div-num="divNum"
+      />
+      <app-form :columns.sync="columns" :rows="rows" :columngap="columngap" :rowgap="rowgap"/>
+    </section>
   </div>
 </template>
 
 <script>
 import AppHeader from "./components/AppHeader.vue";
 import AppGrid from "./components/AppGrid.vue";
+import AppForm from "./components/AppForm.vue";
 
 export default {
   components: {
     AppHeader,
-    AppGrid
+    AppGrid,
+    AppForm
   },
   data() {
     return {
@@ -113,16 +114,12 @@ body {
   margin: 5vmin;
 }
 
-//todo
-aside {
-  margin: 0 60px;
-  font-size: 17px;
-  width: 450px;
-  float: right;
+.container {
+  display: flex;
 }
 
 label {
-  padding-right: 15px;
+  padding-right: 18px;
   display: inline-block;
   width: 150px;
 }
@@ -141,5 +138,21 @@ fieldset {
   border: none;
   margin: 0;
   padding: 5px 0;
+}
+
+button {
+  background: transparent;
+  color: $teal;
+  padding: 4px 30px 5px;
+  border-radius: 1000px;
+  border: 1px solid $teal;
+  font-size: 16px;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: 0.25s all;
+  &:hover {
+    background: $teal;
+    color: black;
+  }
 }
 </style>

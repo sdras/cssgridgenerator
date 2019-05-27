@@ -1,0 +1,84 @@
+<template>
+  <aside>
+    <fieldset>
+      <label for="columns">Columns</label>
+      <input
+        id="columns"
+        type="number"
+        min="0"
+        @input="$emit('update:columns', $event.target.value)"
+        oninput="validity.valid||(value='')"
+        v-model.number="columns"
+      >
+    </fieldset>
+
+    <fieldset>
+      <label for="rows">Rows</label>
+      <input
+        id="rows"
+        type="number"
+        min="0"
+        @input="$emit('update:rows', $event.target.value)"
+        oninput="validity.valid||(value='')"
+        v-model.number="rows"
+      >
+    </fieldset>
+
+    <fieldset>
+      <label for="columngap">Column Gap</label>
+      <input
+        id="columngap"
+        type="number"
+        min="0"
+        @input="$emit('update:columngap', $event.target.value)"
+        oninput="validity.valid||(value='')"
+        v-model.number="columngap"
+      >
+    </fieldset>
+
+    <fieldset>
+      <label for="rowgap">Row Gap</label>
+      <input
+        id="rowgap"
+        type="number"
+        min="0"
+        @input="$emit('update:rowgap', $event.target.value)"
+        oninput="validity.valid||(value='')"
+        v-model.number="rowgap"
+      >
+    </fieldset>
+
+    <button>Please may I have some code</button>
+  </aside>
+</template>
+
+<script>
+export default {
+  props: {
+    columns: {
+      type: [String, Number],
+      required: true
+    },
+    rows: {
+      type: [String, Number],
+      required: true
+    },
+    columngap: {
+      type: [String, Number],
+      required: true
+    },
+    rowgap: {
+      type: [String, Number],
+      required: true
+    }
+  }
+};
+</script>
+
+<style lang="scss" scoped>
+aside {
+  margin: 60px 60px;
+  font-size: 17px;
+  width: 300px;
+}
+</style>
