@@ -179,4 +179,11 @@ main {
 .widthfull {
   width: 100%;
 }
+
+@media screen and (max-width: 700px) {
+  main {
+    width: calc(80vw - 50px);
+    height: calc(40vh - 50px);
+  }
+}
 </style>

@@ -136,4 +136,11 @@ aside {
   font-weight: normal;
   cursor: pointer;
 }
+
+@media screen and (max-width: 700px) {
+  aside {
+    width: 80vw;
+    margin: 100px 50px;
+  }
+}
 </style>
