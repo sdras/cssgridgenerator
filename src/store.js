@@ -10,7 +10,8 @@ export default new Vuex.Store({
     columngap: 0,
     rowgap: 0,
     colArr: [],
-    rowArr: []
+    rowArr: [],
+    childarea: []
   },
   getters: {
     colTemplate(state) {
@@ -40,6 +41,9 @@ export default new Vuex.Store({
           state[payload.direction].push({ unit: "1fr" });
         }
       }
+    },
+    addChildren(state, payload) {
+      state.childarea.push(payload);
     },
     updateColumns(state, payload) {
       state.columns = payload;

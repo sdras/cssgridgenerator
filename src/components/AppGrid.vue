@@ -50,7 +50,11 @@ export default {
       child[`${startend}col`] =
         item - (child[`${startend}row`] - 1) * this.columns;
 
-      this.$store.commit("addChildren", child);
+      let childstring = `${child.srow} / ${child.scol + 1} / ${
+        child.erow
+      } / ${child.ecol + 1}`;
+
+      this.$store.commit("addChildren", childstring);
     }
   }
 };
