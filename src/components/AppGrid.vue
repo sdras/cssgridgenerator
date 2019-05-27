@@ -29,6 +29,13 @@
         @mousedown="placeChild(item, 's')"
         @mouseup="placeChild(item, 'e')"
       ></div>
+
+      <div
+        v-for="(child, i) in childarea"
+        :key="i"
+        :class="'child' + i"
+        :style="{ gridArea: child }"
+      ></div>
     </section>
   </main>
 </template>
@@ -37,24 +44,38 @@
 import { mapGetters, mapState } from "vuex";
 
 export default {
+  data() {
+    return {
+      child: {}
+    };
+  },
   computed: {
-    ...mapState(["columngap", "rowgap", "colArr", "rowArr", "columns", "rows"]),
+    ...mapState([
+      "columngap",
+      "rowgap",
+      "colArr",
+      "rowArr",
+      "columns",
+      "rows",
+      "childarea"
+    ]),
     ...mapGetters(["rowTemplate", "colTemplate", "divNum"])
   },
   methods: {
     placeChild(item, startend) {
       //using an object here because I'm not sure yet how I want to use this
-      let child = {};
+      this.child[`${startend}row`] = Math.ceil(item / this.columns);
+      this.child[`${startend}col`] =
+        item - (this.child[`${startend}row`] - 1) * this.columns;
 
-      child[`${startend}row`] = Math.ceil(item / this.columns);
-      child[`${startend}col`] =
-        item - (child[`${startend}row`] - 1) * this.columns;
+      if (startend === "e") {
+        let childstring = `${this.child.srow} / ${this.child.scol} / ${this
+          .child.erow + 1} / ${this.child.ecol + 1}`;
 
-      let childstring = `${child.srow} / ${child.scol + 1} / ${
-        child.erow
-      } / ${child.ecol + 1}`;
+        console.log(childstring);
 
-      this.$store.commit("addChildren", childstring);
+        this.$store.commit("addChildren", childstring);
+      }
     }
   }
 };
@@ -65,6 +86,17 @@ main {
   width: calc(70vw - 50px);
   height: calc(70vh - 50px);
   margin: 15px 0 0 75px;
+}
+
+@mixin colors($max, $color-frequency) {
+  $color: 300 / $max;
+
+  // fruit loops!
+  @for $i from 1 through $max {
+    div[class*="child"]:nth-child(#{$i}) {
+      background: hsl(($i - 10) * ($color * 1.25), 100%, 70%);
+    }
+  }
 }
 
 .grid {
@@ -90,7 +122,10 @@ main {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#131321', endColorstr='#1f1c2c',GradientType=0 ); /* IE6-9 */
   box-shadow: 0 2px 20px 0 #000;
   display: grid;
-  div {
+  grid-auto-flow: row dense;
+  @include colors(20, 100);
+
+  div[class*="box"] {
     background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
     border: 1px dotted white;
     transition: 0.2s all ease;
