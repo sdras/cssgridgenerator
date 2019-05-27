@@ -51,6 +51,9 @@
     <button @click="showModal = true">Please may I have some code</button>
     <app-modal v-if="showModal" @close="showModal = false">
       <h3 slot="header">Your Grid Code</h3>
+      <div slot="body">
+        <app-code/>
+      </div>
     </app-modal>
 
     <p class="wat">What does this project do?</p>
@@ -59,10 +62,12 @@
 
 <script>
 import AppModal from "./AppModal.vue";
+import AppCode from "./AppCode.vue";
 
 export default {
   components: {
-    AppModal
+    AppModal,
+    AppCode
   },
   props: {
     columns: {

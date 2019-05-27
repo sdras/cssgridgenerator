@@ -74,10 +74,27 @@ export default {
 
 <style lang="scss" scoped>
 .gridcode {
-  background: #222;
+  background: #131321; /* Old browsers */
+  background: -moz-linear-gradient(
+    top,
+    #131321 0%,
+    #1f1c2c 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    top,
+    #131321 0%,
+    #1f1c2c 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #131321 0%,
+    #1f1c2c 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#131321', endColorstr='#1f1c2c',GradientType=0 ); /* IE6-9 */
+  box-shadow: 0 2px 20px 0 #000;
   padding: 15px;
   border-radius: 4px;
-  border: 1px solid #555;
+  border: 1px solid #08ffbd;
   font-size: 16px;
   font-family: "Courier New", Courier, monospace;
   p {
