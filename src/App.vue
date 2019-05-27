@@ -147,9 +147,9 @@ button {
   border-radius: 1000px;
   border: 1px solid $teal;
   font-size: 16px;
-  margin: 20px 0;
+  margin: 20px 0 0;
   cursor: pointer;
-  transition: 0.25s all;
+  transition: 0.35s all;
   &:hover {
     background: $teal;
     color: black;

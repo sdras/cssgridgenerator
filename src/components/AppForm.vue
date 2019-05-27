@@ -49,6 +49,7 @@
     </fieldset>
 
     <button>Please may I have some code</button>
+    <p class="wat">What does this project do?</p>
   </aside>
 </template>
 
@@ -80,5 +81,14 @@ aside {
   margin: 60px 60px;
   font-size: 17px;
   width: 300px;
+}
+
+.wat {
+  font-family: "Caveat", cursive;
+  font-size: 22px;
+  margin-top: 18px;
+  color: #a8c9cc;
+  opacity: 0.9;
+  font-weight: normal;
 }
 </style>
