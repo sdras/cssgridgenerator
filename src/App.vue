@@ -2,15 +2,7 @@
   <div id="app">
     <app-header/>
     <section class="container">
-      <app-grid
-        :col-arr="colArr"
-        :row-arr="rowArr"
-        :col-template="colTemplate"
-        :row-template="rowTemplate"
-        :columngap="columngap"
-        :rowgap="rowgap"
-        :div-num="divNum"
-      />
+      <app-grid/>
       <app-form
         :columns.sync="columns"
         :rows.sync="rows"
@@ -25,6 +17,8 @@
 import AppHeader from "./components/AppHeader.vue";
 import AppGrid from "./components/AppGrid.vue";
 import AppForm from "./components/AppForm.vue";
+import { mapGetters } from "vuex";
+import { mapState } from "vuex";
 
 export default {
   components: {
@@ -32,26 +26,8 @@ export default {
     AppGrid,
     AppForm
   },
-  data() {
-    return {
-      columns: 4,
-      rows: 4,
-      columngap: 0,
-      rowgap: 0,
-      colArr: [],
-      rowArr: []
-    };
-  },
   computed: {
-    colTemplate() {
-      return this.colArr.map(i => i["unit"]).join(" ");
-    },
-    rowTemplate() {
-      return this.rowArr.map(i => i["unit"]).join(" ");
-    },
-    divNum() {
-      return this.columns * this.rows;
-    }
+    ...mapState(["columns, rows, colArr, rowArr"])
   },
   methods: {
     initialArrIndex(direction, arr) {
@@ -78,7 +54,7 @@ export default {
       this.adjustArr(newVal, oldVal, this.rowArr);
     }
   },
-  mounted() {
+  created() {
     this.initialArrIndex(this.columns, this.colArr);
     this.initialArrIndex(this.rows, this.rowArr);
   }
@@ -86,37 +62,6 @@ export default {
 </script>
 
 <style lang="scss">
-body {
-  width: 100vw;
-  height: 90vh;
-  padding: 0;
-  margin: 0;
-  background: #192d38; /* Old browsers */
-  background: -moz-radial-gradient(
-    center,
-    ellipse cover,
-    #192d38 0%,
-    #211f2f 100%
-  ); /* FF3.6-15 */
-  background: -webkit-radial-gradient(
-    center,
-    ellipse cover,
-    #192d38 0%,
-    #211f2f 100%
-  ); /* Chrome10-25,Safari5.1-6 */
-  background: radial-gradient(
-    ellipse at center,
-    #192d38 0%,
-    #211f2f 100%
-  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#192d38', endColorstr='#211f2f',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-  font-family: "Mukta Mahee", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: white;
-  font-weight: 300;
-}
-
 #app {
   margin: 5vmin 5vmin 0;
 }

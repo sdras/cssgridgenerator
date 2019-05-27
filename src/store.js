@@ -1,16 +1,28 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from "vue";
+import Vuex from "vuex";
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-
+    columns: 4,
+    rows: 4,
+    columngap: 0,
+    rowgap: 0,
+    colArr: [],
+    rowArr: []
   },
-  mutations: {
-
+  getters: {
+    colTemplate(state) {
+      return state.colArr.map(i => i["unit"]).join(" ");
+    },
+    rowTemplate(state) {
+      return state.rowArr.map(i => i["unit"]).join(" ");
+    },
+    divNum(state) {
+      return state.columns * state.rows;
+    }
   },
-  actions: {
-
-  }
-})
+  mutations: {},
+  actions: {}
+});

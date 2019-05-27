@@ -28,36 +28,13 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+import { mapState } from "vuex";
+
 export default {
-  props: {
-    colTemplate: {
-      type: String,
-      required: true
-    },
-    rowTemplate: {
-      type: String,
-      required: true
-    },
-    columngap: {
-      type: [String, Number],
-      required: true
-    },
-    divNum: {
-      type: [String, Number],
-      required: true
-    },
-    rowgap: {
-      type: [String, Number],
-      required: true
-    },
-    colArr: {
-      type: [Array, Object],
-      required: true
-    },
-    rowArr: {
-      type: [Array, Object],
-      required: true
-    }
+  computed: {
+    ...mapState(["columngap, rowgap, colArr, rowArr"]),
+    ...mapGetters(["rowTemplate, colTemplate, divNum"])
   }
 };
 </script>
