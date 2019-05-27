@@ -27,6 +27,9 @@ export default new Vuex.Store({
     updateColumns(state, payload) {
       state.columns = payload;
     },
+    updateRows(state, payload) {
+      state.rows = payload;
+    },
     initialArrIndex(state) {
       createArr(state.columns, state.colArr);
       createArr(state.rows, state.rowArr);

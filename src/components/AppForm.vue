@@ -91,7 +91,7 @@ export default {
   },
   watch: {
     columns(newVal, oldVal) {
-      const payload = {
+      let payload = {
         newVal,
         oldVal,
         direction: "colArr"
@@ -99,7 +99,12 @@ export default {
       this.$store.commit("adjustArr", payload);
     },
     rows(newVal, oldVal) {
-      this.$store.commit("adjustArr", newVal, oldVal, "rowArr");
+      let payload = {
+        newVal,
+        oldVal,
+        direction: "rowArr"
+      };
+      this.$store.commit("adjustArr", payload);
     }
   }
 };
