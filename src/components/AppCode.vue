@@ -29,12 +29,9 @@
         <div v-for="(child, i) in childarea" :key="child">
           <p>
             <span class="cname">.section{{ i + 1 }}</span> {
-          </p>
-          <p class="sp">
             <span class="ckey">grid-area</span>:
-            <span class="cprop">{{ child }}</span>;
+            <span class="cprop">{{ child }}</span>; }
           </p>
-          <p>}</p>
         </div>
       </div>
       <p>}</p>
@@ -78,6 +75,8 @@ export default {
   border: 1px solid #08ffbd;
   font-size: 15px;
   font-family: "Roboto Mono", Courier, monospace;
+  max-height: 70vh;
+  overflow-y: scroll;
   p {
     margin: 5px;
   }
