@@ -6,6 +6,7 @@
         id="columns"
         type="number"
         min="0"
+        max="12"
         @input="$store.commit(`updateColumns`, $event.target.value)"
         :value="columns"
       >
@@ -17,6 +18,7 @@
         id="rows"
         type="number"
         min="0"
+        max="12"
         @input="$store.commit(`updateRows`, $event.target.value)"
         :value="rows"
       >
@@ -28,6 +30,7 @@
         id="columngap"
         type="number"
         min="0"
+        max="50"
         @input="$store.commit(`updateColumnGap`, $event.target.value)"
         :value="columngap"
       >
@@ -39,6 +42,7 @@
         id="rowgap"
         type="number"
         min="0"
+        max="50"
         @input="$store.commit(`updateRowGap`, $event.target.value)"
         :value="rowgap"
       >

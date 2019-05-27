@@ -2,39 +2,44 @@
   <div class="group codegroup">
     <h3>Copy the code below:</h3>
     <div class="gridcode">
-      <p>
-        <span class="cname">.parent</span> {
-      </p>
-      <p class="sp">
-        <span class="ckey">display</span>:
-        <span class="cprop">grid</span>;
-      </p>
-      <p class="sp">
-        <span class="ckey">grid-template-columns</span>:
-        <span class="cprop">{{ colTemplate }}</span>;
-      </p>
-      <p class="sp">
-        <span class="ckey">grid-template-rows</span>:
-        <span class="cprop">{{ rowTemplate }}</span>;
-      </p>
-      <p class="sp">
-        <span class="ckey">grid-column-gap</span>:
-        <span class="cprop">{{ columngap }}px;</span>
-      </p>
-      <p class="sp">
-        <span class="ckey">grid-row-gap</span>:
-        <span class="cprop">{{ rowgap }}px</span>;
-      </p>
-      <div v-if="childarea.length > 0" class="child">
-        <div v-for="(child, i) in childarea" :key="child">
-          <p>
-            <span class="cname">.section{{ i + 1 }}</span> {
-            <span class="ckey">grid-area</span>:
-            <span class="cprop">{{ child }}</span>; }
-          </p>
+      <div class="copycode" @click.stop.prevent="copy">Copy to clipboard!</div>
+
+      <div id="code" ref="code">
+        <p>
+          <span class="cname">.parent</span> {
+        </p>
+        <p class="sp">
+          <span class="ckey">display</span>:
+          <span class="cprop">grid</span>;
+        </p>
+        <p class="sp">
+          <span class="ckey">grid-template-columns</span>:
+          <span class="cprop">{{ colTemplate }}</span>;
+        </p>
+        <p class="sp">
+          <span class="ckey">grid-template-rows</span>:
+          <span class="cprop">{{ rowTemplate }}</span>;
+        </p>
+        <p class="sp">
+          <span class="ckey">grid-column-gap</span>:
+          <span class="cprop">{{ columngap }}px;</span>
+        </p>
+        <p class="sp">
+          <span class="ckey">grid-row-gap</span>:
+          <span class="cprop">{{ rowgap }}px</span>;
+        </p>
+        <div v-if="childarea.length > 0" class="child">
+          <div v-for="(child, i) in childarea" :key="child">
+            <p>
+              <span class="cname">.section{{ i + 1 }}</span> {
+              <span class="ckey">grid-area</span>:
+              <span class="cprop">{{ child }}</span>; }
+            </p>
+          </div>
         </div>
+        <p>}</p>
       </div>
-      <p>}</p>
+      <!--code-->
     </div>
   </div>
 </template>
@@ -46,12 +51,32 @@ export default {
   computed: {
     ...mapState(["columngap", "rowgap", "childarea"]),
     ...mapGetters(["rowTemplate", "colTemplate"])
+  },
+  methods: {
+    copy() {
+      var text = this.$refs.code,
+        range,
+        selection;
+
+      if (document.body.createTextRange) {
+        range = document.body.createTextRange();
+        range.moveToElementText(text);
+        range.select();
+      } else if (window.getSelection) {
+        selection = window.getSelection();
+        range = document.createRange();
+        range.selectNodeContents(text);
+        selection.removeAllRanges();
+        selection.addRange(range);
+      }
+    }
   }
 };
 </script>
 
 <style lang="scss" scoped>
 .gridcode {
+  position: relative;
   background: #131321; /* Old browsers */
   background: -moz-linear-gradient(
     top,
@@ -80,6 +105,15 @@ export default {
   p {
     margin: 5px;
   }
+}
+
+.copycode {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #0f8a8ab3;
+  padding: 8px 12px;
+  border-radius: 0 4px 0 4px;
 }
 
 .child {

@@ -5,7 +5,7 @@
       class="colunits"
     >
       <div v-for="(col, i) in colArr" :key="i">
-        <input v-model="col.unit">
+        <input v-model="col.unit" :class="[columns > 8 ? widthfull : '']">
       </div>
     </section>
 
@@ -56,7 +56,8 @@ import { mapGetters, mapState } from "vuex";
 export default {
   data() {
     return {
-      child: {}
+      child: {},
+      widthfull: "widthfull"
     };
   },
   computed: {
@@ -105,6 +106,7 @@ main {
   @for $i from 1 through $max {
     div[class*="child"]:nth-child(#{$i}) {
       background: hsla(($i - 15) * ($color * 1.5), 80%, 30%, 0.7);
+      border: 1px solid #ddd;
     }
   }
 }
@@ -172,5 +174,9 @@ main {
     align-self: center;
     height: 30px;
   }
+}
+
+.widthfull {
+  width: 100%;
 }
 </style>
