@@ -31,8 +31,8 @@ export default new Vuex.Store({
   }
 });
 
-function createArr(direction, arr) {
+const createArr = (direction, arr) => {
   for (let i = 1; i <= direction; i++) {
     arr.push({ unit: "1fr" });
   }
-}
+};

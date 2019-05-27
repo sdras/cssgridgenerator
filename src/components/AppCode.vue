@@ -50,8 +50,8 @@ import { mapGetters, mapState } from "vuex";
 
 export default {
   computed: {
-    ...mapState(["columngap, rowgap"]),
-    ...mapGetters(["rowTemplate, colTemplate"])
+    ...mapState(["columngap", "rowgap"]),
+    ...mapGetters(["rowTemplate", "colTemplate"])
   }
 };
 </script>

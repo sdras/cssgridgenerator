@@ -21,7 +21,7 @@ export default {
     AppForm
   },
   computed: {
-    ...mapState(["columns, rows, colArr, rowArr"])
+    ...mapState(["columns", "rows", "colArr", "rowArr"])
   },
   created() {
     this.$store.commit("initialArrIndex");

@@ -32,8 +32,8 @@ import { mapGetters, mapState } from "vuex";
 
 export default {
   computed: {
-    ...mapState(["columngap, rowgap, colArr, rowArr"]),
-    ...mapGetters(["rowTemplate, colTemplate, divNum"])
+    ...mapState(["columngap", "rowgap", "colArr", "rowArr"]),
+    ...mapGetters(["rowTemplate", "colTemplate", "divNum"])
   }
 };
 </script>

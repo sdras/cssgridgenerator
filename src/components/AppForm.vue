@@ -88,7 +88,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(["columngap, rowgap, columns, rows"])
+    ...mapState(["columngap", "rowgap", "columns", "rows"])
   },
   watch: {
     columns(newVal, oldVal) {
@@ -97,6 +97,14 @@ export default {
     rows(newVal, oldVal) {
       this.adjustArr(newVal, oldVal, this.rowArr);
     }
+  },
+  mounted() {
+    this.$store.watch(
+      state => getters.columns,
+      (newValue, oldValue) => {
+        console.log(`Updating from ${oldValue} to ${newValue}`);
+      }
+    );
   }
 };
 </script>
