@@ -18,25 +18,35 @@
       </div>
     </section>
 
-    <section
-      class="grid"
-      :style="{ gridTemplateColumns: colTemplate, gridTemplateRows: rowTemplate , gridColumnGap: columngap + 'px', gridRowGap: rowgap + 'px' }"
-    >
-      <div
-        v-for="(item, i) in divNum"
-        :key="i"
-        :class="'box' + i"
-        @mousedown="placeChild(item, 's')"
-        @mouseup="placeChild(item, 'e')"
-      ></div>
+    <div id="gridcontainer">
+      <section
+        class="grid"
+        :style="{ gridTemplateColumns: colTemplate, gridTemplateRows: rowTemplate , gridColumnGap: columngap + 'px', gridRowGap: rowgap + 'px' }"
+      >
+        <div
+          v-for="(item, i) in divNum"
+          :key="i"
+          :class="'box' + i"
+          @mousedown="placeChild(item, 's')"
+          @mouseup="placeChild(item, 'e')"
+        ></div>
+      </section>
 
-      <div
-        v-for="(child, i) in childarea"
-        :key="child"
-        :class="'child' + i"
-        :style="{ gridArea: child }"
-      ></div>
-    </section>
+      <section
+        class="grid"
+        :style="{ gridTemplateColumns: colTemplate, gridTemplateRows: rowTemplate , gridColumnGap: columngap + 'px', gridRowGap: rowgap + 'px' }"
+      >
+        <div
+          v-for="(child, i) in childarea"
+          :key="child"
+          :class="'child' + i"
+          :style="{ gridArea: child }"
+        >
+          <p>.section{{ i + 1 }}</p>
+        </div>
+      </section>
+    </div>
+    <!--gridcontainer-->
   </main>
 </template>
 
@@ -99,10 +109,11 @@ main {
   }
 }
 
-.grid {
+#gridcontainer {
   border: 1px solid #08ffbd;
   width: 100%;
   height: 100%;
+  position: relative;
   background: #131321; /* Old browsers */
   background: -moz-linear-gradient(
     top,
@@ -121,6 +132,12 @@ main {
   ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#131321', endColorstr='#1f1c2c',GradientType=0 ); /* IE6-9 */
   box-shadow: 0 2px 20px 0 #000;
+}
+
+.grid {
+  width: 100%;
+  height: 100%;
+  position: absolute;
   display: grid;
   grid-auto-flow: row dense;
   @include colors(20, 100);
