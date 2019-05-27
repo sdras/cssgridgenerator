@@ -50,7 +50,7 @@
 
     <button @click="showModal = true">Please may I have some code</button>
     <app-modal v-if="showModal" @close="showModal = false">
-      <h3 slot="header">custom header</h3>
+      <h3 slot="header">Your Grid Code</h3>
     </app-modal>
 
     <p class="wat">What does this project do?</p>

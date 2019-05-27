@@ -2,22 +2,17 @@
   <transition name="modal">
     <div class="modal-mask">
       <div class="modal-wrapper">
-        <div class="modal-container">
-          <div class="modal-header">
+        <section class="modal-container">
+          <h2 class="modal-header">
             <slot name="header">default header</slot>
-          </div>
+          </h2>
 
           <div class="modal-body">
             <slot name="body">default body</slot>
           </div>
 
-          <div class="modal-footer">
-            <slot name="footer">
-              default footer
-              <button class="modal-default-button" @click="$emit('close')">Done</button>
-            </slot>
-          </div>
-        </div>
+          <button class="modal-button" @click="$emit('close')">Done</button>
+        </section>
       </div>
     </div>
   </transition>
@@ -35,7 +30,7 @@ export default {};
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   display: table;
   transition: opacity 0.25s ease;
 }
@@ -46,12 +41,13 @@ export default {};
 }
 
 .modal-container {
+  position: relative;
   width: 80vw;
   max-width: 700px;
   max-height: 600px;
   height: 70vh;
   margin: 0px auto;
-  padding: 50px;
+  padding: 20px 50px 60px;
   background-color: #192d38;
   border-radius: 5px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
@@ -59,17 +55,19 @@ export default {};
   font-family: Helvetica, Arial, sans-serif;
 }
 
-.modal-header h3 {
+.modal-header {
   margin-top: 0;
-  color: #42b983;
+  text-align: center;
 }
 
 .modal-body {
   margin: 20px 0;
 }
 
-.modal-default-button {
-  text-align: center;
+.modal-button {
+  position: absolute;
+  bottom: 50px;
+  left: calc(50% - 50px);
 }
 
 .modal-enter,
