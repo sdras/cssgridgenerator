@@ -25,21 +25,18 @@
         <span class="ckey">grid-row-gap</span>:
         <span class="cprop">{{ rowgap }}px</span>;
       </p>
-      <!-- <div v-if="children.length > 0" class="child">
-        <div v-for="(child, i) in children" :key="i">
+      <div v-if="childarea.length > 0" class="child">
+        <div v-for="(child, i) in childarea" :key="child">
           <p>
             <span class="cname">.section{{ i + 1 }}</span> {
           </p>
           <p class="sp">
-            <span class="ckey">grid-area</span>
-            :
-            <span
-              class="cprop"
-            >{{ child.srow }} / {{ child.scol }} / {{ child.erow }} / {{ child.ecol }}</span>;
+            <span class="ckey">grid-area</span>:
+            <span class="cprop">{{ child }}</span>;
           </p>
           <p>}</p>
         </div>
-      </div>-->
+      </div>
       <p>}</p>
     </div>
   </div>
@@ -50,7 +47,7 @@ import { mapGetters, mapState } from "vuex";
 
 export default {
   computed: {
-    ...mapState(["columngap", "rowgap"]),
+    ...mapState(["columngap", "rowgap", "childarea"]),
     ...mapGetters(["rowTemplate", "colTemplate"])
   }
 };

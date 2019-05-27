@@ -44,8 +44,7 @@ export default {};
   position: relative;
   width: 80vw;
   max-width: 700px;
-  max-height: 600px;
-  height: 70vh;
+  //min-height: 70vh;
   margin: 0px auto;
   padding: 20px 50px 60px;
   background-color: #192d38;
@@ -65,9 +64,8 @@ export default {};
 }
 
 .modal-button {
-  position: absolute;
-  bottom: 50px;
-  left: calc(50% - 50px);
+  margin: 40px auto 0;
+  display: table;
 }
 
 .modal-enter,

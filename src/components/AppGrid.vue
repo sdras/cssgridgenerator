@@ -32,7 +32,7 @@
 
       <div
         v-for="(child, i) in childarea"
-        :key="i"
+        :key="child"
         :class="'child' + i"
         :style="{ gridArea: child }"
       ></div>
