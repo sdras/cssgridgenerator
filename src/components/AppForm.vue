@@ -48,13 +48,22 @@
       >
     </fieldset>
 
-    <button>Please may I have some code</button>
+    <button @click="showModal = true">Please may I have some code</button>
+    <app-modal v-if="showModal" @close="showModal = false">
+      <h3 slot="header">custom header</h3>
+    </app-modal>
+
     <p class="wat">What does this project do?</p>
   </aside>
 </template>
 
 <script>
+import AppModal from "./AppModal.vue";
+
 export default {
+  components: {
+    AppModal
+  },
   props: {
     columns: {
       type: [String, Number],
@@ -72,6 +81,11 @@ export default {
       type: [String, Number],
       required: true
     }
+  },
+  data() {
+    return {
+      showModal: false
+    };
   }
 };
 </script>

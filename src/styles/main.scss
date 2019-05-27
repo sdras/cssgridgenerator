@@ -4,6 +4,37 @@ $teal: #08ffbd;
   box-sizing: border-box;
 }
 
+body {
+  width: 100vw;
+  height: 90vh;
+  padding: 0;
+  margin: 0;
+  background: #192d38; /* Old browsers */
+  background: -moz-radial-gradient(
+    center,
+    ellipse cover,
+    #192d38 0%,
+    #211f2f 100%
+  ); /* FF3.6-15 */
+  background: -webkit-radial-gradient(
+    center,
+    ellipse cover,
+    #192d38 0%,
+    #211f2f 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(
+    ellipse at center,
+    #192d38 0%,
+    #211f2f 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#192d38', endColorstr='#211f2f',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  font-family: "Mukta Mahee", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: white;
+  font-weight: 300;
+}
+
 input,
 label,
 button {

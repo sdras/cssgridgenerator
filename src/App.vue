@@ -11,7 +11,12 @@
         :rowgap="rowgap"
         :div-num="divNum"
       />
-      <app-form :columns.sync="columns" :rows="rows" :columngap="columngap" :rowgap="rowgap"/>
+      <app-form
+        :columns.sync="columns"
+        :rows.sync="rows"
+        :columngap.sync="columngap"
+        :rowgap.sync="rowgap"
+      />
     </section>
   </div>
 </template>
@@ -29,8 +34,8 @@ export default {
   },
   data() {
     return {
-      columns: 5,
-      rows: 5,
+      columns: 4,
+      rows: 4,
       columngap: 0,
       rowgap: 0,
       colArr: [],
@@ -118,43 +123,5 @@ body {
 
 .container {
   display: flex;
-}
-
-label {
-  padding-right: 18px;
-  display: inline-block;
-  width: 150px;
-}
-
-input {
-  font-size: 17px;
-  background: #211f2f;
-  color: white;
-  width: 60px;
-  padding: 5px;
-  border: 1px solid #666;
-}
-
-fieldset {
-  margin-bottom: 20px;
-  border: none;
-  margin: 0;
-  padding: 5px 0;
-}
-
-button {
-  background: transparent;
-  color: $teal;
-  padding: 4px 30px 5px;
-  border-radius: 1000px;
-  border: 1px solid $teal;
-  font-size: 16px;
-  margin: 20px 0 0;
-  cursor: pointer;
-  transition: 0.35s all;
-  &:hover {
-    background: $teal;
-    color: black;
-  }
 }
 </style>
