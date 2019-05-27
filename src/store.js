@@ -5,8 +5,8 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    columns: 4,
-    rows: 4,
+    columns: 5,
+    rows: 5,
     columngap: 0,
     rowgap: 0,
     colArr: [],

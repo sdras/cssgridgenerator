@@ -22,7 +22,13 @@
       class="grid"
       :style="{ gridTemplateColumns: colTemplate, gridTemplateRows: rowTemplate , gridColumnGap: columngap + 'px', gridRowGap: rowgap + 'px' }"
     >
-      <div v-for="(item, i) in divNum" :key="i" :class="'box' + i"></div>
+      <div
+        v-for="(item, i) in divNum"
+        :key="i"
+        :class="'box' + i"
+        @mousedown="placeChild(item, 's')"
+        @mouseup="placeChild(item, 'e')"
+      ></div>
     </section>
   </main>
 </template>
@@ -32,8 +38,20 @@ import { mapGetters, mapState } from "vuex";
 
 export default {
   computed: {
-    ...mapState(["columngap", "rowgap", "colArr", "rowArr"]),
+    ...mapState(["columngap", "rowgap", "colArr", "rowArr", "columns", "rows"]),
     ...mapGetters(["rowTemplate", "colTemplate", "divNum"])
+  },
+  methods: {
+    placeChild(item, startend) {
+      //using an object here because I'm not sure yet how I want to use this
+      let child = {};
+
+      child[`${startend}row`] = Math.ceil(item / this.columns);
+      child[`${startend}col`] =
+        item - (child[`${startend}row`] - 1) * this.columns;
+
+      this.$store.commit("addChildren", child);
+    }
   }
 };
 </script>

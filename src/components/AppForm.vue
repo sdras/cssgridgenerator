@@ -130,5 +130,6 @@ aside {
   color: #a8c9cc;
   opacity: 0.9;
   font-weight: normal;
+  cursor: pointer;
 }
 </style>
