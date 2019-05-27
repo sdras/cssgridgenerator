@@ -69,6 +69,9 @@ export default {
         selection.removeAllRanges();
         selection.addRange(range);
       }
+
+      document.execCommand("copy");
+      alert("copied!");
     }
   }
 };
