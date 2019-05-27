@@ -17,9 +17,8 @@
         id="rows"
         type="number"
         min="0"
-        @input="$emit('update:rows', $event.target.value)"
-        oninput="validity.valid||(value='')"
-        v-model.number="rows"
+        @input="$store.commit(`updateRows`, $event.target.value)"
+        :value="rows"
       >
     </fieldset>
 
@@ -29,9 +28,8 @@
         id="columngap"
         type="number"
         min="0"
-        @input="$emit('update:columngap', $event.target.value)"
-        oninput="validity.valid||(value='')"
-        v-model.number="columngap"
+        @input="$store.commit(`updateColumnGap`, $event.target.value)"
+        :value="columngap"
       >
     </fieldset>
 
@@ -41,9 +39,8 @@
         id="rowgap"
         type="number"
         min="0"
-        @input="$emit('update:rowgap', $event.target.value)"
-        oninput="validity.valid||(value='')"
-        v-model.number="rowgap"
+        @input="$store.commit(`updateRowGap`, $event.target.value)"
+        :value="rowgap"
       >
     </fieldset>
 

@@ -24,12 +24,6 @@ export default new Vuex.Store({
     }
   },
   mutations: {
-    updateColumns(state, payload) {
-      state.columns = payload;
-    },
-    updateRows(state, payload) {
-      state.rows = payload;
-    },
     initialArrIndex(state) {
       createArr(state.columns, state.colArr);
       createArr(state.rows, state.rowArr);
@@ -46,6 +40,18 @@ export default new Vuex.Store({
           state[payload.direction].push({ unit: "1fr" });
         }
       }
+    },
+    updateColumns(state, payload) {
+      state.columns = payload;
+    },
+    updateRows(state, payload) {
+      state.rows = payload;
+    },
+    updateColumnGap(state, payload) {
+      state.columngap = payload;
+    },
+    updateRowGap(state, payload) {
+      state.rowgap = payload;
     }
   }
 });
