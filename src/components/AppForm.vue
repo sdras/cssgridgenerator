@@ -44,31 +44,40 @@
       >
     </fieldset>
 
-    <button @click="showModal = true">Please may I have some code</button>
-    <app-modal v-if="showModal" @close="showModal = false">
+    <button @click="showCodeModal = true">Please may I have some code</button>
+    <app-modal v-if="showCodeModal" @close="showCodeModal = false">
       <h3 slot="header">Your Grid Code</h3>
       <div slot="body">
-        <app-code :columns="columns" :rows="rows" :columngap="columngap" :rowgap="rowgap"/>
+        <app-code/>
       </div>
     </app-modal>
 
-    <p class="wat">What does this project do?</p>
+    <p class="wat" @click="showExplainModal = true">What does this project do?</p>
+    <app-modal v-if="showExplainModal" @close="showExplainModal = false">
+      <h3 slot="header">Wat is this?</h3>
+      <div slot="body">
+        <app-explain/>
+      </div>
+    </app-modal>
   </aside>
 </template>
 
 <script>
+import AppExplain from "./AppExplain.vue";
 import AppModal from "./AppModal.vue";
 import AppCode from "./AppCode.vue";
 import { mapState } from "vuex";
 
 export default {
   components: {
+    AppExplain,
     AppModal,
     AppCode
   },
   data() {
     return {
-      showModal: false
+      showCodeModal: false,
+      showExplainModal: false
     };
   },
   methods: {
