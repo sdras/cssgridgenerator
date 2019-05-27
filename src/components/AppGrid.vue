@@ -9,7 +9,12 @@
       </div>
     </section>
 
-    <section class="grid"></section>
+    <section
+      class="grid"
+      :style="{ gridTemplateColumns: colTemplate, gridTemplateRows: rowTemplate , gridColumnGap: columngap + 'px', gridRowGap: rowgap + 'px' }"
+    >
+      <div v-for="(item, i) in divNum" :key="i" :class="'box' + i"></div>
+    </section>
   </main>
 </template>
 
@@ -25,6 +30,10 @@ export default {
       required: true
     },
     columngap: {
+      type: [String, Number],
+      required: true
+    },
+    divNum: {
       type: [String, Number],
       required: true
     },

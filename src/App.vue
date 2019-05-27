@@ -6,8 +6,9 @@
       :row-arr="rowArr"
       :col-template="colTemplate"
       :row-template="rowTemplate"
-      :columnngap="columngap"
+      :columngap="columngap"
       :rowgap="rowgap"
+      :div-num="divNum"
     />
 
     <aside>
@@ -41,6 +42,9 @@ export default {
     },
     rowTemplate() {
       return this.rowArr.map(i => i["unit"]).join(" ");
+    },
+    divNum() {
+      return this.columns * this.rows;
     }
   },
   methods: {
