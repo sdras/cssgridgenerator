@@ -83,7 +83,9 @@ export default {
 <style lang="scss">
 body {
   width: 100vw;
-  min-height: 100vh;
+  height: 90vh;
+  padding: 0;
+  margin: 0;
   background: #192d38; /* Old browsers */
   background: -moz-radial-gradient(
     center,
@@ -111,7 +113,7 @@ body {
 }
 
 #app {
-  margin: 5vmin;
+  margin: 5vmin 5vmin 0;
 }
 
 .container {

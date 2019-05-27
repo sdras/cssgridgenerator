@@ -66,7 +66,7 @@ export default {
 main {
   width: calc(70vw - 50px);
   height: calc(70vh - 50px);
-  margin-left: 75px;
+  margin: 15px 0 0 75px;
 }
 
 .grid {
