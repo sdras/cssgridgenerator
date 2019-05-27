@@ -46,24 +46,13 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+import { mapState } from "vuex";
+
 export default {
-  props: {
-    colTemplate: {
-      type: String,
-      required: true
-    },
-    rowTemplate: {
-      type: String,
-      required: true
-    },
-    columngap: {
-      type: [String, Number],
-      required: true
-    },
-    rowgap: {
-      type: [String, Number],
-      required: true
-    }
+  computed: {
+    ...mapState(["columngap, rowgap"]),
+    ...mapGetters(["rowTemplate, colTemplate"])
   }
 };
 </script>

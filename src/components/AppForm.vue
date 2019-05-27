@@ -63,34 +63,20 @@
 <script>
 import AppModal from "./AppModal.vue";
 import AppCode from "./AppCode.vue";
+import { mapState } from "vuex";
 
 export default {
   components: {
     AppModal,
     AppCode
   },
-  props: {
-    columns: {
-      type: [String, Number],
-      required: true
-    },
-    rows: {
-      type: [String, Number],
-      required: true
-    },
-    columngap: {
-      type: [String, Number],
-      required: true
-    },
-    rowgap: {
-      type: [String, Number],
-      required: true
-    }
-  },
   data() {
     return {
       showModal: false
     };
+  },
+  computed: {
+    ...mapState(["columngap, rowgap, columns, rows"])
   }
 };
 </script>
