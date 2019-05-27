@@ -34,7 +34,11 @@ export default new Vuex.Store({
         oldVal = Number(payload.oldVal);
 
       if (newVal < oldVal) {
-        state[payload.direction].length = newVal;
+        //state[payload.direction].length = newVal;
+        let difference = oldVal - newVal;
+        for (let i = 1; i <= difference; i++) {
+          state[payload.direction].pop();
+        }
       } else {
         let difference = newVal - oldVal;
         for (let i = 1; i <= difference; i++) {

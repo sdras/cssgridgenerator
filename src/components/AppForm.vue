@@ -84,18 +84,6 @@ export default {
       showExplainModal: false
     };
   },
-  methods: {
-    adjustArr(newVal, oldVal, arrDirection) {
-      if (newVal < oldVal) {
-        arrDirection.length = newVal;
-      } else {
-        let difference = newVal - oldVal;
-        for (let i = 1; i <= difference; i++) {
-          arrDirection.push({ unit: "1fr" });
-        }
-      }
-    }
-  },
   computed: {
     ...mapState(["columngap", "rowgap", "columns", "rows"])
   },
