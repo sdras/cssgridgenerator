@@ -1,7 +1,7 @@
 <template>
   <main>
     <section
-      :style="{ gridTemplateColumns: colTemplate, gridTemplateRows: '50px' , gridColumnGap: columngap + 'px', gridRowGap: rowgap + 'px' }"
+      :style="{ gridTemplateColumns: colTemplate, gridTemplateRows: '50px', gridColumnGap: columngap + 'px', gridRowGap: rowgap + 'px' }"
       class="rowunits"
     >
       <div v-for="(col, i) in colArr" :key="i">
@@ -9,13 +9,35 @@
       </div>
     </section>
 
-    <p>{{ colTemplate }}</p>
     <section class="grid"></section>
   </main>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    colTemplate: {
+      type: String,
+      required: true
+    },
+    rowTemplate: {
+      type: String,
+      required: true
+    },
+    columngap: {
+      type: [String, Number],
+      required: true
+    },
+    rowgap: {
+      type: [String, Number],
+      required: true
+    },
+    colArr: {
+      type: [Array, Object],
+      required: true
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>

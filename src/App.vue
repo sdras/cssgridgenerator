@@ -1,30 +1,29 @@
 <template>
   <div id="app">
     <app-header/>
-    <input v-model.number="columns">
+    <app-grid
+      :col-arr="colArr"
+      :row-arr="rowArr"
+      :col-template="colTemplate"
+      :row-template="rowTemplate"
+      :columnngap="columngap"
+      :rowgap="rowgap"
+    />
 
-    <main>
-      <section
-        :style="{ gridTemplateColumns: colTemplate, gridTemplateRows: '50px' , gridColumnGap: columngap + 'px', gridRowGap: rowgap + 'px' }"
-        class="rowunits"
-      >
-        <div v-for="(col, i) in colArr" :key="i">
-          <input v-model="col.unit">
-        </div>
-      </section>
-
-      <p>{{ colTemplate }}</p>
-      <section class="grid"></section>
-    </main>
+    <aside>
+      <input v-model.number="columns">
+    </aside>
   </div>
 </template>
 
 <script>
 import AppHeader from "./components/AppHeader.vue";
+import AppGrid from "./components/AppGrid.vue";
 
 export default {
   components: {
-    AppHeader
+    AppHeader,
+    AppGrid
   },
   data() {
     return {
@@ -110,45 +109,6 @@ body {
   margin: 5vmin;
 }
 
-main {
-  width: calc(70vw - 50px);
-  height: calc(70vh - 50px);
-}
-
-.grid {
-  border: 1px solid #08ffbd;
-  width: 100%;
-  height: 100%;
-  background: #131321; /* Old browsers */
-  background: -moz-linear-gradient(
-    top,
-    #131321 0%,
-    #1f1c2c 100%
-  ); /* FF3.6-15 */
-  background: -webkit-linear-gradient(
-    top,
-    #131321 0%,
-    #1f1c2c 100%
-  ); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(
-    to bottom,
-    #131321 0%,
-    #1f1c2c 100%
-  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#131321', endColorstr='#1f1c2c',GradientType=0 ); /* IE6-9 */
-  box-shadow: 0 2px 20px 0 #000;
-  display: grid;
-  div {
-    background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
-    border: 1px dotted white;
-    transition: 0.2s all ease;
-    cursor: move;
-    position: relative;
-    z-index: 1000;
-    opacity: 0.5;
-  }
-}
-
 //todo
 aside {
   margin: 0 60px;
@@ -176,23 +136,5 @@ fieldset {
   border: none;
   margin: 0;
   padding: 5px 0;
-}
-
-.rowunits,
-.colunits {
-  display: grid;
-  div {
-    text-align: center;
-  }
-}
-
-.colunits {
-  margin-left: -70px;
-  float: left;
-  height: 100%;
-  div {
-    align-self: center;
-    height: 30px;
-  }
 }
 </style>
