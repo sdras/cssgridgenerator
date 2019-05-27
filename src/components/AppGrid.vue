@@ -2,10 +2,19 @@
   <main>
     <section
       :style="{ gridTemplateColumns: colTemplate, gridTemplateRows: '50px', gridColumnGap: columngap + 'px', gridRowGap: rowgap + 'px' }"
-      class="rowunits"
+      class="colunits"
     >
       <div v-for="(col, i) in colArr" :key="i">
         <input v-model="col.unit">
+      </div>
+    </section>
+
+    <section
+      :style="{ gridTemplateColumns: '50px', gridTemplateRows: rowTemplate, gridColumnGap: columngap + 'px', gridRowGap: rowgap + 'px' }"
+      class="rowunits"
+    >
+      <div v-for="(row, i) in rowArr" :key="i">
+        <input v-model="row.unit">
       </div>
     </section>
 
@@ -44,6 +53,10 @@ export default {
     colArr: {
       type: [Array, Object],
       required: true
+    },
+    rowArr: {
+      type: [Array, Object],
+      required: true
     }
   }
 };
@@ -53,6 +66,7 @@ export default {
 main {
   width: calc(70vw - 50px);
   height: calc(70vh - 50px);
+  margin-left: 75px;
 }
 
 .grid {
@@ -97,7 +111,7 @@ main {
   }
 }
 
-.colunits {
+.rowunits {
   margin-left: -70px;
   float: left;
   height: 100%;

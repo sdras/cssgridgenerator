@@ -118,6 +118,7 @@ aside {
   margin: 0 60px;
   font-size: 17px;
   width: 450px;
+  float: right;
 }
 
 label {
