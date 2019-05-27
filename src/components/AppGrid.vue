@@ -104,7 +104,7 @@ main {
   // fruit loops!
   @for $i from 1 through $max {
     div[class*="child"]:nth-child(#{$i}) {
-      background: hsl(($i - 10) * ($color * 1.25), 100%, 70%);
+      background: hsla(($i - 15) * ($color * 1.5), 80%, 30%, 0.7);
     }
   }
 }
@@ -141,6 +141,9 @@ main {
   display: grid;
   grid-auto-flow: row dense;
   @include colors(20, 100);
+  p {
+    padding: 0 10px;
+  }
 
   div[class*="box"] {
     background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
