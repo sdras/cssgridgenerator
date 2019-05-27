@@ -52,7 +52,7 @@
     <app-modal v-if="showModal" @close="showModal = false">
       <h3 slot="header">Your Grid Code</h3>
       <div slot="body">
-        <app-code/>
+        <app-code :columns="columns" :rows="rows" :columngap="columngap" :rowgap="rowgap"/>
       </div>
     </app-modal>
 

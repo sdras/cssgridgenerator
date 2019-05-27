@@ -10,23 +10,19 @@
         <span class="cprop">grid</span>;
       </p>
       <p class="sp">
-        <span class="ckey">grid-template-columns</span>
-        :
+        <span class="ckey">grid-template-columns</span>:
         <span class="cprop">{{ colTemplate }}</span>;
       </p>
       <p class="sp">
-        <span class="ckey">grid-template-rows</span>
-        :
+        <span class="ckey">grid-template-rows</span>:
         <span class="cprop">{{ rowTemplate }}</span>;
       </p>
       <p class="sp">
-        <span class="ckey">grid-column-gap</span>
-        :
+        <span class="ckey">grid-column-gap</span>:
         <span class="cprop">{{ columngap }}px;</span>
       </p>
       <p class="sp">
-        <span class="ckey">grid-row-gap</span>
-        :
+        <span class="ckey">grid-row-gap</span>:
         <span class="cprop">{{ rowgap }}px</span>;
       </p>
       <!-- <div v-if="children.length > 0" class="child">
@@ -95,8 +91,8 @@ export default {
   padding: 15px;
   border-radius: 4px;
   border: 1px solid #08ffbd;
-  font-size: 16px;
-  font-family: "Courier New", Courier, monospace;
+  font-size: 15px;
+  font-family: "Roboto Mono", Courier, monospace;
   p {
     margin: 5px;
   }
