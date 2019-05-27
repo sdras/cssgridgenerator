@@ -75,8 +75,28 @@ export default {
       showModal: false
     };
   },
+  methods: {
+    adjustArr(newVal, oldVal, arrDirection) {
+      if (newVal < oldVal) {
+        arrDirection.length = newVal;
+      } else {
+        let difference = newVal - oldVal;
+        for (let i = 1; i <= difference; i++) {
+          arrDirection.push({ unit: "1fr" });
+        }
+      }
+    }
+  },
   computed: {
     ...mapState(["columngap, rowgap, columns, rows"])
+  },
+  watch: {
+    columns(newVal, oldVal) {
+      this.adjustArr(newVal, oldVal, this.colArr);
+    },
+    rows(newVal, oldVal) {
+      this.adjustArr(newVal, oldVal, this.rowArr);
+    }
   }
 };
 </script>

@@ -23,6 +23,16 @@ export default new Vuex.Store({
       return state.columns * state.rows;
     }
   },
-  mutations: {},
-  actions: {}
+  mutations: {
+    initialArrIndex(state) {
+      createArr(state.columns, state.colArr);
+      createArr(state.rows, state.rowArr);
+    }
+  }
 });
+
+function createArr(direction, arr) {
+  for (let i = 1; i <= direction; i++) {
+    arr.push({ unit: "1fr" });
+  }
+}
