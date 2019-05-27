@@ -3,17 +3,19 @@
     <app-header/>
     <input v-model.number="columns">
 
-    <section
-      :style="{ gridTemplateColumns: colTemplate, gridTemplateRows: '50px' , gridColumnGap: columngap + 'px', gridRowGap: rowgap + 'px' }"
-      class="rowunits"
-    >
-      <div v-for="(col, i) in colArr" :key="i">
-        <input v-model="col.unit">
-      </div>
-    </section>
+    <main>
+      <section
+        :style="{ gridTemplateColumns: colTemplate, gridTemplateRows: '50px' , gridColumnGap: columngap + 'px', gridRowGap: rowgap + 'px' }"
+        class="rowunits"
+      >
+        <div v-for="(col, i) in colArr" :key="i">
+          <input v-model="col.unit">
+        </div>
+      </section>
 
-    <p>{{ colTemplate }}</p>
-    <section class="grid"></section>
+      <p>{{ colTemplate }}</p>
+      <section class="grid"></section>
+    </main>
   </div>
 </template>
 
@@ -108,10 +110,15 @@ body {
   margin: 5vmin;
 }
 
-.grid {
-  border: 1px solid #08ffbd;
+main {
   width: calc(70vw - 50px);
   height: calc(70vh - 50px);
+}
+
+.grid {
+  border: 1px solid #08ffbd;
+  width: 100%;
+  height: 100%;
   background: #131321; /* Old browsers */
   background: -moz-linear-gradient(
     top,
@@ -130,9 +137,6 @@ body {
   ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#131321', endColorstr='#1f1c2c',GradientType=0 ); /* IE6-9 */
   box-shadow: 0 2px 20px 0 #000;
-}
-
-.grid {
   display: grid;
   div {
     background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
