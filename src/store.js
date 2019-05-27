@@ -24,9 +24,25 @@ export default new Vuex.Store({
     }
   },
   mutations: {
+    updateColumns(state, payload) {
+      state.columns = payload;
+    },
     initialArrIndex(state) {
       createArr(state.columns, state.colArr);
       createArr(state.rows, state.rowArr);
+    },
+    adjustArr(state, payload) {
+      let newVal = Number(payload.newVal),
+        oldVal = Number(payload.oldVal);
+
+      if (newVal < oldVal) {
+        state[payload.direction].length = newVal;
+      } else {
+        let difference = newVal - oldVal;
+        for (let i = 1; i <= difference; i++) {
+          state[payload.direction].push({ unit: "1fr" });
+        }
+      }
     }
   }
 });

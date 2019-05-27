@@ -6,9 +6,8 @@
         id="columns"
         type="number"
         min="0"
-        @input="$emit('update:columns', $event.target.value)"
-        oninput="validity.valid||(value='')"
-        v-model.number="columns"
+        @input="$store.commit(`updateColumns`, $event.target.value)"
+        :value="columns"
       >
     </fieldset>
 
@@ -92,19 +91,16 @@ export default {
   },
   watch: {
     columns(newVal, oldVal) {
-      this.adjustArr(newVal, oldVal, this.colArr);
+      const payload = {
+        newVal,
+        oldVal,
+        direction: "colArr"
+      };
+      this.$store.commit("adjustArr", payload);
     },
     rows(newVal, oldVal) {
-      this.adjustArr(newVal, oldVal, this.rowArr);
+      this.$store.commit("adjustArr", newVal, oldVal, "rowArr");
     }
-  },
-  mounted() {
-    this.$store.watch(
-      state => getters.columns,
-      (newValue, oldValue) => {
-        console.log(`Updating from ${oldValue} to ${newValue}`);
-      }
-    );
   }
 };
 </script>
