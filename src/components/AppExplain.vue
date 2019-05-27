@@ -18,7 +18,10 @@
     </p>
     <p class="cursive">
       This project is open to contributions!
-      <a href target="_blank">Fork it here.</a>
+      <a
+        href="https://github.com/sdras/cssgridgenerator"
+        target="_blank"
+      >Fork it here.</a>
     </p>
   </section>
 </template>
