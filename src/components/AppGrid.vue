@@ -216,7 +216,6 @@ main {
   height: 100%;
   div {
     align-self: center;
-    height: 30px;
   }
 }
 
