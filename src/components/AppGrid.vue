@@ -100,16 +100,15 @@ export default {
       }
     },
     placeChild(item, startend) {
-      //using an object here because I'm not sure yet how I want to use this
+      //built an object first because I might use this for something else
       this.child[`${startend}row`] = Math.ceil(item / this.columns);
       this.child[`${startend}col`] =
         item - (this.child[`${startend}row`] - 1) * this.columns;
 
+      //create the children css units as a string
       if (startend === "e") {
         let childstring = `${this.child.srow} / ${this.child.scol} / ${this
           .child.erow + 1} / ${this.child.ecol + 1}`;
-
-        console.log(childstring);
 
         this.$store.commit("addChildren", childstring);
       }

@@ -12,16 +12,12 @@
 import AppHeader from "./components/AppHeader.vue";
 import AppGrid from "./components/AppGrid.vue";
 import AppForm from "./components/AppForm.vue";
-import { mapState } from "vuex";
 
 export default {
   components: {
     AppHeader,
     AppGrid,
     AppForm
-  },
-  computed: {
-    ...mapState(["columns", "rows", "colArr", "rowArr"])
   },
   created() {
     this.$store.commit("initialArrIndex");

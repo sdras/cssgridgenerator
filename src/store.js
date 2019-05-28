@@ -64,6 +64,7 @@ export default new Vuex.Store({
   }
 });
 
+//we start off with just a few rows and columns filled with 1fr units
 const createArr = (direction, arr) => {
   for (let i = 1; i <= direction; i++) {
     arr.push({ unit: "1fr" });
