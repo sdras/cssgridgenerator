@@ -47,6 +47,7 @@
         :value="rowgap"
       >
     </fieldset>
+    <button @click="$store.commit(`deleteLastChild`)">Undo last div</button>
     <button @click="$store.commit(`clearChildren`)">Clear all divs</button>
     <button @click="showCodeModal = true">Please may I have some code</button>
     <app-modal v-if="showCodeModal" @close="showCodeModal = false">
