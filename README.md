@@ -2,6 +2,8 @@
 
 ### Site deployed on Netlify: [https://cssgrid-generator.netlify.com/](https://cssgrid-generator.netlify.com/)
 
+![CSS Grid Generator](https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/og-cssgrid.jpg)
+
 This project is a way for people to use CSS Grid features quickly to create dynamic layouts.
 
 You can set the numbers, and units of your columns and rows, and I'll generate a CSS grid for you! Drag within the boxes to create divs placed within the grid.
