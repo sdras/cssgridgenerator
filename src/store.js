@@ -49,6 +49,9 @@ export default new Vuex.Store({
     addChildren(state, payload) {
       state.childarea.push(payload);
     },
+    clearChildren(state) {
+      state.childarea = [];
+    },
     updateColumns(state, payload) {
       state.columns = payload;
     },
