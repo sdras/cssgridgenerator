@@ -35,6 +35,7 @@
           v-for="(item, i) in divNum"
           :key="i"
           :class="'box' + i"
+          :data-id="item"
           @mousedown="placeChild(item, 's')"
           @mouseup="placeChild(item, 'e')"
         ></div>
@@ -105,10 +106,8 @@ export default {
     delegatedTouchPlaceChild(ev) {
       const target = document.elementFromPoint(ev.changedTouches[0].clientX, ev.changedTouches[0].clientY);
       const startend = ev.type === 'touchstart' ? 's' : 'e';
-      const id = Number(target.className.replace('box', '')) + 1;
-      this.placeChild(id, startend)
+      this.placeChild(target.dataset.id, startend)
     },
-
     placeChild(item, startend) {
       //built an object first because I might use this for something else
       this.child[`${startend}row`] = Math.ceil(item / this.columns);
