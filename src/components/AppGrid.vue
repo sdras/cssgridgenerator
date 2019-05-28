@@ -28,6 +28,8 @@
       <section
         class="grid"
         :style="{ gridTemplateColumns: colTemplate, gridTemplateRows: rowTemplate , gridColumnGap: columngap + 'px', gridRowGap: rowgap + 'px' }"
+        @touchstart.prevent="delegatedTouchPlaceChild"
+        @touchend.prevent="delegatedTouchPlaceChild"
       >
         <div
           v-for="(item, i) in divNum"
@@ -99,6 +101,14 @@ export default {
         this.errors[direction].splice(this.errors[direction].indexOf(i), 1);
       }
     },
+
+    delegatedTouchPlaceChild(ev) {
+      const target = document.elementFromPoint(ev.changedTouches[0].clientX, ev.changedTouches[0].clientY);
+      const startend = ev.type === 'touchstart' ? 's' : 'e';
+      const id = Number(target.className.replace('box', '')) + 1;
+      this.placeChild(id, startend)
+    },
+
     placeChild(item, startend) {
       //built an object first because I might use this for something else
       this.child[`${startend}row`] = Math.ceil(item / this.columns);
