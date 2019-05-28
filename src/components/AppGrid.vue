@@ -1,7 +1,7 @@
 <template>
   <main>
     <section
-      :style="{ gridTemplateColumns: colTemplate, gridTemplateRows: '50px', gridColumnGap: columngap + 'px', gridRowGap: rowgap + 'px' }"
+      :style="{ gridTemplateColumns: colTemplate, gridTemplateRows: '3.125rem', gridColumnGap: columngap + 'px', gridRowGap: rowgap + 'px' }"
       class="colunits"
     >
       <div v-for="(col, i) in colArr" :key="i">
@@ -15,7 +15,7 @@
     </section>
 
     <section
-      :style="{ gridTemplateColumns: '50px', gridTemplateRows: rowTemplate, gridColumnGap: columngap + 'px', gridRowGap: rowgap + 'px' }"
+      :style="{ gridTemplateColumns: '3.125rem', gridTemplateRows: rowTemplate, gridColumnGap: columngap + 'px', gridRowGap: rowgap + 'px' }"
       class="rowunits"
     >
       <div v-for="(row, i) in rowArr" :key="i">
@@ -121,9 +121,9 @@ export default {
 
 <style lang="scss" scoped>
 main {
-  width: calc(70vw - 50px);
-  height: calc(70vh - 50px);
-  margin: 15px 0 0 75px;
+  margin: 0.9375rem 0 0 4.6875rem;
+  width: calc(70vw - 3.125rem);
+  height: calc(70vh - 3.125rem);
 }
 
 @mixin colors($max, $color-frequency) {
@@ -133,7 +133,7 @@ main {
   @for $i from 1 through $max {
     div[class*="child"]:nth-child(#{$i}) {
       background: hsla(($i - 15) * ($color * 1.5), 80%, 30%, 0.7);
-      border: 1px solid #ddd;
+      border: 0.0625rem solid var(--color-silver-light);
     }
   }
 }
@@ -141,42 +141,42 @@ main {
 .gridchild {
   counter-reset: step;
   div {
-    counter-increment: step;
     position: relative;
+    counter-increment: step;
     &:before {
-      position: absolute;
-      content: ".div" counter(step);
       display: block;
-      padding: 0 5px;
+      padding: 0 0.3125rem;
       text-align: center;
-      color: white;
+      position: absolute;
+      color: var(--color-white);
+      content: ".div" counter(step);
     }
   }
 }
 
 #gridcontainer {
-  border: 1px solid #08ffbd;
+  border: 0.0625rem solid var(--color-teal);
   width: 100%;
   height: 100%;
   position: relative;
-  background: #131321; /* Old browsers */
+  background: var(--color-grey-darkest);
   background: -moz-linear-gradient(
     top,
-    #131321 0%,
-    #1f1c2c 100%
-  ); /* FF3.6-15 */
+    var(--color-grey-darkest) 0%,
+    var(--color-grey-light) 100%
+  );
   background: -webkit-linear-gradient(
     top,
-    #131321 0%,
-    #1f1c2c 100%
-  ); /* Chrome10-25,Safari5.1-6 */
+    var(--color-grey-darkest) 0%,
+    var(--color-grey-light) 100%
+  );
   background: linear-gradient(
     to bottom,
-    #131321 0%,
-    #1f1c2c 100%
-  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#131321', endColorstr='#1f1c2c',GradientType=0 ); /* IE6-9 */
-  box-shadow: 0 2px 20px 0 #000;
+    var(--color-grey-darkest) 0%,
+    var(--color-grey-light) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=var(--color-grey-darkest), endColorstr=var(--color-grey-light),GradientType=0 ); /* IE6-9 */
+  box-shadow: 0 0.125rem 1.25rem 0 #000;
 }
 
 .grid {
@@ -187,17 +187,17 @@ main {
   grid-auto-flow: row dense;
   @include colors(20, 100);
   p {
-    padding: 0 10px;
+    padding: 0 0.625rem;
   }
 
   div[class*="box"] {
-    background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
-    border: 1px dotted white;
-    transition: 0.2s all ease;
-    cursor: move;
     position: relative;
     z-index: 1000;
     opacity: 0.5;
+    cursor: move;
+    transition: 0.2s all ease;
+    border: 0.0625rem dotted var(--color-white);
+    background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
   }
 }
 
@@ -211,12 +211,12 @@ main {
 }
 
 .rowunits {
-  margin-left: -70px;
+  margin-left: -4.375rem;
   float: left;
   height: 100%;
   div {
     align-self: center;
-    height: 30px;
+    height: 1.875rem;
   }
 }
 
@@ -224,22 +224,22 @@ main {
   width: 100%;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 43.75rem) {
   main {
-    width: calc(80vw - 50px);
-    height: calc(40vh - 50px);
+    width: calc(80vw - 3.125rem);
+    height: calc(40vh - 3.125rem);
   }
 }
 
 .errors {
   position: absolute;
-  bottom: -5px;
-  border-radius: 4px;
-  padding: 8px 12px;
+  width: 9.375rem;
+  bottom: -0.3125rem;
   z-index: 100000;
+  min-height: 4.375rem;
+  padding: 0.5rem 0.75rem;
   font-weight: bold;
-  width: 150px;
-  min-height: 70px;
-  background: #6d1a39;
+  background: var(--color-strawberry);
+  border-radius: var(--border-radius-default);
 }
 </style>

@@ -30,9 +30,9 @@ export default {};
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
   display: table;
   transition: opacity 0.25s ease;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .modal-wrapper {
@@ -43,14 +43,14 @@ export default {};
 .modal-container {
   position: relative;
   width: 80vw;
-  max-width: 700px;
-  margin: 0px auto;
-  padding: 20px 50px 60px;
-  background-color: #192d38;
-  border-radius: 5px;
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
+  margin: 0 auto;
+  max-width: 43.75rem;
+  padding: 1.25rem 3.125rem 3.75rem;
   transition: all 0.3s ease;
-  border: 1px solid black;
+  background-color: var(--color-grey-medium);
+  border: 0.0625rem solid var(--color-black);
+  border-radius: var(--border-radius-default);
+  box-shadow: 0 0.125rem 1.25rem rgba(0, 0, 0, 0.8);
 }
 
 .modal-header {
@@ -59,12 +59,12 @@ export default {};
 }
 
 .modal-body {
-  margin: 20px 0;
+  margin: 1.25rem 0;
 }
 
 .modal-button {
-  margin: 40px auto 0;
   display: table;
+  margin: 2.5rem auto 0;
 }
 
 .modal-enter,

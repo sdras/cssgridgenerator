@@ -15,7 +15,7 @@
       <path
         d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
         fill="currentColor"
-        style="transform-origin: 130px 106px;"
+        style="transform-origin: 8.125rem 6.625rem;"
         class="octo-arm"
       ></path>
       <path
@@ -49,7 +49,7 @@ export default {};
     transform: rotate(10deg);
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 31.25rem) {
   .github-corner:hover .octo-arm {
     animation: none;
   }

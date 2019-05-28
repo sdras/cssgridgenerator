@@ -80,67 +80,68 @@ export default {
 <style lang="scss" scoped>
 .gridcode {
   position: relative;
-  background: #131321; /* Old browsers */
-  background: -moz-linear-gradient(
-    top,
-    #131321 0%,
-    #1f1c2c 100%
-  ); /* FF3.6-15 */
-  background: -webkit-linear-gradient(
-    top,
-    #131321 0%,
-    #1f1c2c 100%
-  ); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(
-    to bottom,
-    #131321 0%,
-    #1f1c2c 100%
-  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#131321', endColorstr='#1f1c2c',GradientType=0 ); /* IE6-9 */
-  box-shadow: 0 2px 20px 0 #000;
-  padding: 15px;
-  border-radius: 4px;
-  border: 1px solid #08ffbd;
-  font-size: 15px;
-  font-family: "Roboto Mono", Courier, monospace;
   max-height: 70vh;
   overflow-y: scroll;
+  padding: 0.9375rem;
+  font-size: 0.9375rem;
+  font-family: var(--font-code);
+  border: 0.0625rem solid var(--color-teal);
+  box-shadow: 0 0.125rem 1.25rem 0 var(--color-black);
+  border-radius: var(--border-radius-default);
+  background: var(--color-grey-darkest);
+  background: -moz-linear-gradient(
+    top,
+    var(--color-grey-darkest) 0%,
+    var(--color-grey-light) 100%
+  );
+  background: -webkit-linear-gradient(
+    top,
+    var(--color-grey-darkest) 0%,
+    var(--color-grey-light) 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    var(--color-grey-darkest) 0%,
+    var(--color-grey-light) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=var(--color-grey-darkest), endColorstr=var(--color-grey-light),GradientType=0 );
   p {
-    margin: 5px;
+    margin: 0.3125rem;
   }
 }
 
 .copycode {
-  position: absolute;
-  right: 0;
-  top: 0;
-  background: #0f8a8ab3;
-  padding: 8px 12px;
-  border-radius: 0 4px 0 4px;
-  font-family: "Mukta Mahee", Helvetica, Arial, sans-serif;
   cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5rem 0.75rem;
+  background: var(--color-blue);
+  font-family: var(--font-cursive);
+  border-radius: 0 var(--border-radius-default) 0 var(--border-radius-default);
 }
 
 .child {
-  padding-left: 40px;
+  padding-left: 2.5rem;
 }
 
 .codegroup {
-  margin-top: 30px;
+  margin-top: 1.875rem;
 }
 
 .sp {
-  padding-left: 20px;
+  padding-left: 1.25rem;
 }
 
 .ckey {
-  color: #6af2d7;
+  color: var(--color-teal-light);
 }
 
 .cprop {
-  color: #f8a384;
+  color: var(--color-orange-light);
 }
+
 .cname {
-  color: #ffea18;
+  color: var(--color-yellow-light);
 }
 </style>

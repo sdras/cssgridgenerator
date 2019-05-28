@@ -25,37 +25,37 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-.logo {
-  fill: $teal;
-}
-
 nav {
-  font-size: 40px;
-  font-weight: 700;
-  margin-bottom: 40px;
-  text-shadow: 0px 2px 5px #000;
+  font-size: 2.5rem;
+  font-weight: bold;
   text-align: center;
+  margin-bottom: 2.5rem;
+  text-shadow: 0 0.125rem 0.3125rem var(--color-black);
 }
 
 svg {
+  margin-top: -0.1875rem;
   vertical-align: middle;
-  margin-top: -3px;
-}
-
-.caveat {
-  font-family: "Caveat", cursive;
-  font-size: 25px;
-  margin-top: -10px;
-  padding-left: 22px;
-  color: #ffd908;
-  opacity: 0.9;
-  font-weight: normal;
 }
 
 a,
 a:visited,
 a:active {
-  color: #ffd908;
   text-decoration: none;
+  color: var(--color-yellow);
+}
+
+.logo {
+  fill: var(--color-teal);
+}
+
+.caveat {
+  opacity: 0.9;
+  margin-top: -0.625rem;
+  padding-left: 1.375rem;
+  font-size: 1.5625rem;
+  font-weight: normal;
+  color: var(--color-yellow);
+  font-family: var(--font-cursive);
 }
 </style>

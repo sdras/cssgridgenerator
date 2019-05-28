@@ -34,7 +34,7 @@ export default {
   display: flex;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 43.75rem) {
   .container {
     flex-direction: column;
   }

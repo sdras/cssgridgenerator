@@ -36,26 +36,26 @@ export default {};
 
 <style lang="scss" scoped>
 .cursive {
-  font-family: "Caveat", cursive;
-  font-size: 25px;
-  color: #ffd908;
   font-weight: normal;
+  font-size: 1.5625rem;
+  color: var(--color-yellow);
+  font-family: var(--font-cursive);
   a,
   a:visited,
   a:active {
-    color: #fb7826;
+    color: var(--color-orange);
     text-decoration: underline;
   }
 }
 
 strong {
-  color: #ffd908;
+  color: var(--color-yellow);
 }
 
 a,
 a:visited,
 a:active {
-  color: $teal;
   text-decoration: none;
+  color: var(--color-teal);
 }
 </style>

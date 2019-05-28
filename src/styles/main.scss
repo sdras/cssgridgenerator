@@ -1,80 +1,107 @@
-$teal: #08ffbd;
+:root {
+  --color-white: #fff;
+  --color-black: #000;
+  --color-teal: #08ffbd;
+  --color-teal-light: #6af2d7;
+  --color-yellow: #ffd908;
+  --color-yellow-light: #ffea18;
+  --color-orange: #fb7826;
+  --color-orange-light: #f8a384;
+  --color-strawberry: #6d1a39;
+  --color-blue-light: #a8c9cc;
+  --color-blue: #0f8ab3;
+  --color-silver: #666;
+  --color-silver-light: #ddd;
+  --color-grey-medium: #192d38;
+  --color-grey-light: #1f1c2c;
+  --color-grey-dark: #211f2f;
+  --color-grey-darkest: #131321;
+  --font-cursive: Caveat, cursive;
+  --font-code: Roboto Mono, Courier, monospace;
+  --font-stack: Mukta Mahee, Helvetica, Arial, sans-serif;
+  --border-radius-default: 0.25rem;
+  --border-radius-1000: 62.5rem;
+}
 
-* {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
+}
+
+html {
+  font-size: 1rem;
 }
 
 body {
   width: 100vw;
   height: 90vh;
-  padding: 0;
   margin: 0;
-  background: #192d38; /* Old browsers */
+  padding: 0;
+  color: var(--color-white);
+  font-family: var(--font-stack);
+  background: var(--color-grey-medium);
   background: -moz-radial-gradient(
     center,
     ellipse cover,
-    #192d38 0%,
-    #211f2f 100%
-  ); /* FF3.6-15 */
+    var(--color-grey-medium) 0%,
+    var(--color-grey-dark) 100%
+  );
   background: -webkit-radial-gradient(
     center,
     ellipse cover,
-    #192d38 0%,
-    #211f2f 100%
-  ); /* Chrome10-25,Safari5.1-6 */
+    var(--color-grey-medium) 0%,
+    var(--color-grey-dark) 100%
+  );
   background: radial-gradient(
     ellipse at center,
-    #192d38 0%,
-    #211f2f 100%
-  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#192d38', endColorstr='#211f2f',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-  font-family: "Mukta Mahee", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
+    var(--color-grey-medium) 0%,
+    var(--color-grey-dark) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=var(--color-grey-medium), endColorstr=var(--color-grey-dark),GradientType=1 );
   -moz-osx-font-smoothing: grayscale;
-  color: white;
-  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
 }
 
 input,
 label,
 button {
-  font-family: "Mukta Mahee", Helvetica, Arial, sans-serif;
+  font-family: var(--font-stack);
 }
 
 label {
-  padding-right: 18px;
   display: inline-block;
-  width: 150px;
+  width: 9.375rem;
+  padding-right: 1.125rem;
 }
 
 input {
-  font-size: 17px;
-  background: #211f2f;
-  color: white;
-  width: 50px;
-  padding: 5px;
-  border: 1px solid #666;
+  width: 3.125rem;
+  padding: 0.3125rem;
+  font-size: 1.0625rem;
+  color: var(--color-white);
+  background: var(--color-grey-dark);
+  border: 0.0625rem solid var(--color-silver);
 }
 
 fieldset {
-  margin-bottom: 20px;
   border: none;
   margin: 0;
-  padding: 5px 0;
+  padding: 0.3125rem 0;
 }
 
 button {
-  background: transparent;
-  color: $teal;
-  padding: 4px 30px 5px;
-  border-radius: 1000px;
-  border: 1px solid $teal;
-  font-size: 16px;
-  margin: 20px 0 0;
   cursor: pointer;
+  font-size: 1rem;
   transition: 0.35s all;
+  margin: 1.25rem 0 0;
+  padding: 0.25rem 1.875rem 0.3125rem;
+  color: var(--color-teal);
+  background: transparent;
+  border: 0.0625rem solid var(--color-teal);
+  border-radius: var(--border-radius-1000);
   &:hover {
-    background: $teal;
-    color: black;
+    color: var(--color-black);
+    background: var(--color-teal);
   }
 }

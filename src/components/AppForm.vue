@@ -110,25 +110,25 @@ export default {
 
 <style lang="scss" scoped>
 aside {
-  margin: 60px 60px;
-  font-size: 17px;
-  width: 300px;
+  width: 18.75rem;
+  margin: 3.75rem;
+  font-size: 1.0625rem;
 }
 
 .wat {
-  font-family: "Caveat", cursive;
-  font-size: 22px;
-  margin-top: 18px;
-  color: #a8c9cc;
+  margin-top: 1.125rem;
   opacity: 0.9;
-  font-weight: normal;
   cursor: pointer;
+  font-size: 1.375rem;
+  font-weight: normal;
+  color: var(--color-blue-light);
+  font-family: var(--font-cursive);
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 43.75rem) {
   aside {
     width: 80vw;
-    margin: 100px 50px;
+    margin: 6.25rem 3.125rem;
   }
 }
 </style>
