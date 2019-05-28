@@ -1,6 +1,7 @@
 <template>
   <section>
-    <p>It's probably better to explain what this project doesn't do 😅. This is not a comprehensive tour of CSS Grid capabilities. It is a way for you to use CSS Grid features quickly.</p>
+    <p>You can set the numbers, and units of your columns and rows, and I'll generate a CSS grid for you! Drag within the boxes to create divs placed within the grid.</p>
+    <p>Though this project can get a basic layout started for you, this project is not a comprehensive tour of CSS Grid capabilities. It is a way for you to use CSS Grid features quickly.</p>
     <p>I noticed a lot of people weren't using Grid because they felt it was too complicated and they couldn't understand it. Grid is capable of so much, and this small generator only touches on a fraction of the features. The purpose of this is so people get up and running quickly, and create more interesting layouts.</p>
     <p>
       Once you work with this a bit, I suggest checking out resources by
