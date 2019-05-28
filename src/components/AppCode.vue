@@ -2,7 +2,15 @@
   <div class="group codegroup">
     <h3>{{ $t("modal.copy.title") }}</h3>
     <div class="gridcode">
-      <button type="button" class="copycode" @click.stop.prevent="copy" autofocus>
+      <button
+        role="region"
+        id="codeCopyStatus"
+        aria-live="polite"
+        type="button"
+        class="copycode"
+        @click.stop.prevent="copy"
+        autofocus
+      >
         <template v-if="codeWasCopied">{{ $t("modal.copy.clipboardSuccess") }}</template>
         <template v-else>{{ $t("modal.copy.clipboard") }}</template>
       </button>
