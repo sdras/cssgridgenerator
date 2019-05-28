@@ -34,7 +34,7 @@ export default new Vuex.Store({
         oldVal = Number(payload.oldVal);
 
       if (newVal < oldVal) {
-        //state[payload.direction].length = newVal;
+        // you'd think that .length would be quicker here, but it doesn't trigger the getter/computed in colTemplate etc.
         let difference = oldVal - newVal;
         for (let i = 1; i <= difference; i++) {
           state[payload.direction].pop();

@@ -31,7 +31,7 @@
         <div v-if="childarea.length > 0" class="child">
           <div v-for="(child, i) in childarea" :key="child">
             <p>
-              <span class="cname">.section{{ i + 1 }}</span> {
+              <span class="cname">.div{{ i + 1 }}</span> {
               <span class="ckey">grid-area</span>:
               <span class="cprop">{{ child }}</span>; }
             </p>

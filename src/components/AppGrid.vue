@@ -33,7 +33,7 @@
       </section>
 
       <section
-        class="grid"
+        class="grid gridchild"
         :style="{ gridTemplateColumns: colTemplate, gridTemplateRows: rowTemplate , gridColumnGap: columngap + 'px', gridRowGap: rowgap + 'px' }"
       >
         <div
@@ -41,9 +41,7 @@
           :key="child"
           :class="'child' + i"
           :style="{ gridArea: child }"
-        >
-          <p>.section{{ i + 1 }}</p>
-        </div>
+        ></div>
       </section>
     </div>
     <!--gridcontainer-->
@@ -107,6 +105,22 @@ main {
     div[class*="child"]:nth-child(#{$i}) {
       background: hsla(($i - 15) * ($color * 1.5), 80%, 30%, 0.7);
       border: 1px solid #ddd;
+    }
+  }
+}
+
+.gridchild {
+  counter-reset: step;
+  div {
+    counter-increment: step;
+    position: relative;
+    &:before {
+      position: absolute;
+      content: ".div" counter(step);
+      display: block;
+      padding: 0 5px;
+      text-align: center;
+      color: white;
     }
   }
 }
