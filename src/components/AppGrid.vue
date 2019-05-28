@@ -19,7 +19,8 @@
       class="rowunits"
     >
       <div v-for="(row, i) in rowArr" :key="i">
-        <input v-model="row.unit">
+        <input v-model.lazy="row.unit" @change="validateunit($event, i, 'row')">
+        <div class="errors" v-if="errors.row.indexOf(i) !== -1">Must use real CSS units, goofball</div>
       </div>
     </section>
 
@@ -236,6 +237,8 @@ main {
   padding: 8px 12px;
   z-index: 100000;
   font-weight: bold;
+  width: 150px;
+  min-height: 70px;
   background: #6d1a39;
 }
 </style>
