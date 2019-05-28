@@ -2,7 +2,10 @@
   <div class="group codegroup">
     <h3>{{ $t("modal.copy.title") }}</h3>
     <div class="gridcode">
-      <div class="copycode" @click.stop.prevent="copy">{{ $t("modal.copy.clipboard") }}</div>
+      <button type="button" class="copycode" @click.stop.prevent="copy" autofocus>
+        <template v-if="codeWasCopied">{{ $t("modal.copy.clipboardSuccess") }}</template>
+        <template v-else>{{ $t("modal.copy.clipboard") }}</template>
+      </button>
 
       <div id="code" ref="code">
         <p>
@@ -48,6 +51,11 @@
 import { mapGetters, mapState } from "vuex";
 
 export default {
+  data() {
+    return {
+      codeWasCopied: false
+    };
+  },
   computed: {
     ...mapState(["columngap", "rowgap", "childarea"]),
     ...mapGetters(["rowTemplate", "colTemplate"])
@@ -70,8 +78,14 @@ export default {
         selection.addRange(range);
       }
 
-      document.execCommand("copy");
-      alert("copied!");
+      let copied = document.execCommand("copy");
+
+      if (copied) {
+        this.codeWasCopied = true;
+        setTimeout(() => {
+          this.codeWasCopied = false;
+        }, 2000);
+      }
     }
   }
 };

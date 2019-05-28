@@ -1,25 +1,49 @@
 <template>
   <transition name="modal">
     <div class="modal-mask">
-      <div class="modal-wrapper">
-        <section class="modal-container">
-          <h2 class="modal-header">
-            <slot name="header">default header</slot>
-          </h2>
+      <div class="modal-wrapper" @click.self="close">
+        <div
+          class="modal-container"
+          role="dialog"
+          aria-labelledby="modalTitle"
+          aria-describedby="modalDescription"
+        >
+          <header id="modalTitle">
+            <h2 class="modal-header">
+              <slot name="header">default header</slot>
+            </h2>
+          </header>
 
-          <div class="modal-body">
+          <section class="modal-body" id="modalDescription">
             <slot name="body">default body</slot>
-          </div>
+          </section>
 
-          <button class="modal-button" @click="$emit('close')">{{ $t("modal.button") }}</button>
-        </section>
+          <button
+            type="button"
+            aria-label="Close modal"
+            class="modal-button"
+            @click="close"
+          >{{ $t("modal.button") }}</button>
+        </div>
       </div>
     </div>
   </transition>
 </template>
 
 <script>
-export default {};
+export default {
+  mounted() {
+    document.addEventListener("keydown", this.close);
+  },
+  beforeDestroy() {
+    document.removeEventListener("keydown", this.close);
+  },
+  methods: {
+    close() {
+      this.$emit("close");
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>

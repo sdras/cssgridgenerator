@@ -1,6 +1,6 @@
 {
   "header": {
-    "builtby":"hecho con 🌮 por"
+    "builtby": "hecho con 🌮 por"
   },
   "form": {
     "columns": "Columnas",
@@ -18,7 +18,8 @@
     },
     "copy": {
       "title": "Copia el siguiente código:",
-      "clipboard": "Copiar en el portapapeles"
+      "clipboard": "Copiar en el portapapeles",
+      "clipboardSuccess": "C�digo copiado!"
     },
     "button": "Cerrar"
   },
