@@ -8,10 +8,8 @@
           aria-labelledby="modalTitle"
           aria-describedby="modalDescription"
         >
-          <header id="modalTitle">
-            <h2 class="modal-header">
-              <slot name="header">default header</slot>
-            </h2>
+          <header id="modalTitle" class="modal-header">
+            <slot name="header">default header</slot>
           </header>
 
           <section class="modal-body" id="modalDescription">
@@ -76,16 +74,23 @@ export default {
   max-height: 90vh;
   overflow-y: scroll;
   margin: 0px auto;
-  padding: 20px 50px 60px;
+  padding: 0px 50px 60px;
   background-color: #192d38;
   border-radius: 5px;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
   transition: all 0.3s ease;
   border: 1px solid black;
+  max-height: 100%;
+  overflow-y: scroll;
+
+  @media screen and (max-width: 700px) {
+    padding: 0px 20px 20px;
+    width: calc(100% - 40px);
+  }
 }
 
 .modal-header {
-  margin-top: 0;
+  font-size: 1.5em;
   text-align: center;
 }
 
@@ -96,6 +101,10 @@ export default {
 .modal-button {
   margin: 40px auto 0;
   display: table;
+
+  @media screen and (max-width: 700px) {
+    margin: 20px auto 0;
+  }
 }
 
 .modal-enter,
