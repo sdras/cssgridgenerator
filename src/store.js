@@ -46,6 +46,13 @@ export default new Vuex.Store({
         }
       }
     },
+	removeChildren(state, payload) {
+		let idx = state.childarea.indexOf(payload);
+		if (idx === -1) {
+			return;
+		}
+		state.childarea.splice(idx, 1);
+	},
     addChildren(state, payload) {
       state.childarea.push(payload);
     },

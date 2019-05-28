@@ -33,10 +33,10 @@
           v-for="(item, i) in divNum"
           :key="i"
           :class="'box' + i"
-          @mousedown="placeChild(item, 's')"
-          @mouseup="placeChild(item, 'e')"
-          @touchstart="placeChild(item, 's')"
-          @touchend="placeChild(item, 'e')"
+          @mousedown="placeChild($event, item, 's')"
+          @mouseup="placeChild($event, item, 'e')"
+          @touchstart="placeChild($event, item, 's')"
+          @touchend="placeChild($event, item, 'e')"
         ></div>
       </section>
 
@@ -101,7 +101,7 @@ export default {
         this.errors[direction].splice(this.errors[direction].indexOf(i), 1);
       }
     },
-    placeChild(item, startend) {
+    placeChild(event, item, startend) {
       //built an object first because I might use this for something else
       this.child[`${startend}row`] = Math.ceil(item / this.columns);
       this.child[`${startend}col`] =
@@ -112,7 +112,11 @@ export default {
         let childstring = `${this.child.srow} / ${this.child.scol} / ${this
           .child.erow + 1} / ${this.child.ecol + 1}`;
 
-        this.$store.commit("addChildren", childstring);
+		if (event.shiftKey) {
+			this.$store.commit("removeChildren", childstring);
+		} else {
+			this.$store.commit("addChildren", childstring);
+		}
       }
     }
   }
