@@ -1,6 +1,6 @@
 # CSS Grid Generator
 
-## Site deployed on Netlify: [https://cssgrid-generator.netlify.com/](https://cssgrid-generator.netlify.com/)
+### Site deployed on Netlify: [https://cssgrid-generator.netlify.com/](https://cssgrid-generator.netlify.com/)
 
 This project is a way for people to use CSS Grid features quickly to create dynamic layouts.
 
@@ -12,36 +12,36 @@ Once you work with this a bit, I suggest checking out resources by [Rachel Andre
 
 This project is open to contributions!
 
-## Project setup
+### Project setup
 
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+Compiles and hot-reloads for development
 
 ```
 yarn run serve
 ```
 
-### Compiles and minifies for production
+Compiles and minifies for production
 
 ```
 yarn run build
 ```
 
-### Run your tests
+Run your tests
 
 ```
 yarn run test
 ```
 
-### Lints and fixes files
+Lints and fixes files
 
 ```
 yarn run lint
 ```
 
-### Customize configuration
+Customize configuration
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
