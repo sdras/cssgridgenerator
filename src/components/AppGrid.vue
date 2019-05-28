@@ -35,6 +35,8 @@
           :class="'box' + i"
           @mousedown="placeChild(item, 's')"
           @mouseup="placeChild(item, 'e')"
+          @touchstart="placeChild(item, 's')"
+          @touchend="placeChild(item, 'e')"
         ></div>
       </section>
 
