@@ -158,6 +158,7 @@ main {
   border: 1px solid #08ffbd;
   width: 100%;
   height: 100%;
+  z-index: 0;
   position: relative;
   background: #131321; /* Old browsers */
   background: -moz-linear-gradient(
@@ -236,7 +237,7 @@ main {
   bottom: -5px;
   border-radius: 4px;
   padding: 8px 12px;
-  z-index: 100000;
+  z-index: 1;
   font-weight: bold;
   width: 150px;
   min-height: 70px;
