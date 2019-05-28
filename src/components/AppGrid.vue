@@ -5,7 +5,12 @@
       class="colunits"
     >
       <div v-for="(col, i) in colArr" :key="i">
-        <input v-model="col.unit" :class="[columns > 8 ? widthfull : '']">
+        <input
+          v-model.lazy="col.unit"
+          @change="validateunit($event, i, 'col')"
+          :class="[columns > 8 ? widthfull : '']"
+        >
+        <div class="errors" v-if="errors.col.indexOf(i) !== -1">Must use real CSS units, goofball</div>
       </div>
     </section>
 
@@ -55,7 +60,11 @@ export default {
   data() {
     return {
       child: {},
-      widthfull: "widthfull"
+      widthfull: "widthfull",
+      errors: {
+        col: [],
+        row: []
+      }
     };
   },
   computed: {
@@ -71,6 +80,24 @@ export default {
     ...mapGetters(["rowTemplate", "colTemplate", "divNum"])
   },
   methods: {
+    validateunit(e, i, direction) {
+      let unit = e.target.value;
+      let check =
+        /fr/.test(unit) ||
+        /px/.test(unit) ||
+        /%/.test(unit) ||
+        /em/.test(unit) ||
+        /rem/.test(unit) ||
+        /vw/.test(unit) ||
+        /vh/.test(unit) ||
+        /vmin/.test(unit);
+
+      if (!check) {
+        this.errors[direction].push(i);
+      } else {
+        this.errors[direction].splice(this.errors[direction].indexOf(i), 1);
+      }
+    },
     placeChild(item, startend) {
       //using an object here because I'm not sure yet how I want to use this
       this.child[`${startend}row`] = Math.ceil(item / this.columns);
@@ -177,6 +204,7 @@ main {
   display: grid;
   div {
     text-align: center;
+    position: relative;
   }
 }
 
@@ -199,5 +227,15 @@ main {
     width: calc(80vw - 50px);
     height: calc(40vh - 50px);
   }
+}
+
+.errors {
+  position: absolute;
+  bottom: -5px;
+  border-radius: 4px;
+  padding: 8px 12px;
+  z-index: 100000;
+  font-weight: bold;
+  background: #6d1a39;
 }
 </style>
