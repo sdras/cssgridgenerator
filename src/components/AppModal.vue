@@ -33,12 +33,17 @@
 <script>
 export default {
   mounted() {
-    document.addEventListener("keydown", this.close);
+    document.addEventListener("keydown", this.closeOnEsc);
   },
   beforeDestroy() {
-    document.removeEventListener("keydown", this.close);
+    document.removeEventListener("keydown", this.closeOnEsc);
   },
   methods: {
+    closeOnEsc(event) {
+      if (event.keyCode == 27) {
+        this.close();
+      }
+    },
     close() {
       this.$emit("close");
     }
