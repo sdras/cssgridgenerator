@@ -214,6 +214,9 @@ main {
 .rowunits,
 .colunits {
   display: grid;
+  transition: 0.5s grid-template-columns ease-in-out, 
+              0.5s grid-template-rows ease-in-out, 
+              0.5s gap ease-in-out;
   div {
     text-align: center;
     position: relative;
