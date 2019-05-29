@@ -35,6 +35,7 @@
           :class="'box' + i"
           @mousedown="placeChild(item, 's')"
           @mouseup="placeChild(item, 'e')"
+          @mouseover="placeChild(item, 'h')"
           @touchstart="placeChild(item, 's')"
           @touchend="placeChild(item, 'e')"
         ></div>
@@ -107,18 +108,37 @@ export default {
         this.errors[direction].splice(this.errors[direction].indexOf(i), 1);
       }
     },
-    placeChild(item, startend) {
+    placeChild(item, startendhover) {
+      //only update hover child preview when the child has been 'started'
+      if (startendhover === 'h' && Object.keys(this.child).length < 2) {
+        return;
+      }
+
       //built an object first because I might use this for something else
-      this.child[`${startend}row`] = Math.ceil(item / this.columns);
-      this.child[`${startend}col`] =
-        item - (this.child[`${startend}row`] - 1) * this.columns;
+      this.child[`${startendhover}row`] = Math.ceil(item / this.columns);
+      this.child[`${startendhover}col`] =
+        item - (this.child[`${startendhover}row`] - 1) * this.columns;
 
       //create the children css units as a string
-      if (startend === "e") {
+      if (startendhover === "e") {
         let childstring = `${this.child.srow} / ${this.child.scol} / ${this
           .child.erow + 1} / ${this.child.ecol + 1}`;
 
+        this.child = {};
+        this.$store.commit('updateChildPreview', null);
         this.$store.commit("addChildren", childstring);
+      }
+
+      //update the childPreview with the new mouse hover col and row
+      else if (startendhover === 'h') {
+        let childstring = `${this.child.srow} / ${this.child.scol} / ${this
+          .child.hrow + 1} / ${this.child.hcol + 1}`;
+        this.$store.commit('updateChildPreview', childstring);
+      }
+
+      //we're starting a child, so let's update the hover preview
+      else if (startendhover === 's') {
+        this.placeChild(item, 'h');
       }
     }
   }
