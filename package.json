@@ -5,7 +5,7 @@
   "scripts": {
     "build": "vue-cli-service build",
     "format": "yarn prettier --write",
-    "prettier": "prettier \"**/*.{json,md,css,vue}\"",
+    "prettier": "prettier \"**/*.{json,md,css,vue,js}\"",
     "serve": "vue-cli-service serve",
     "test": "yarn prettier --list-different"
   },

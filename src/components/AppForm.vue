@@ -9,7 +9,7 @@
         max="12"
         @input="$store.commit(`updateColumns`, $event.target.value)"
         :value="columns"
-      >
+      />
     </fieldset>
 
     <fieldset>
@@ -21,7 +21,7 @@
         max="12"
         @input="$store.commit(`updateRows`, $event.target.value)"
         :value="rows"
-      >
+      />
     </fieldset>
 
     <fieldset>
@@ -33,7 +33,7 @@
         max="50"
         @input="$store.commit(`updateColumnGap`, $event.target.value)"
         :value="columngap"
-      >
+      />
     </fieldset>
 
     <fieldset>
@@ -45,22 +45,24 @@
         max="50"
         @input="$store.commit(`updateRowGap`, $event.target.value)"
         :value="rowgap"
-      >
+      />
     </fieldset>
 
     <button @click="showCodeModal = true">Please may I have some code</button>
     <app-modal v-if="showCodeModal" @close="showCodeModal = false">
       <h3 slot="header">Your Grid Code</h3>
       <div slot="body">
-        <app-code/>
+        <app-code />
       </div>
     </app-modal>
 
-    <p class="wat" @click="showExplainModal = true">What does this project do?</p>
+    <p class="wat" @click="showExplainModal = true">
+      What does this project do?
+    </p>
     <app-modal v-if="showExplainModal" @close="showExplainModal = false">
       <h3 slot="header">Wat is this?</h3>
       <div slot="body">
-        <app-explain/>
+        <app-explain />
       </div>
     </app-modal>
   </aside>

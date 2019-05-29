@@ -5,20 +5,19 @@
       <div class="copycode" @click.stop.prevent="copy">Copy to clipboard!</div>
 
       <div id="code" ref="code">
-        <p>
-          <span class="cname">.parent</span> {
-        </p>
+        <p><span class="cname">.parent</span> {</p>
         <p class="sp">
-          <span class="ckey">display</span>:
-          <span class="cprop">grid</span>;
+          <span class="ckey">display</span>: <span class="cprop">grid</span>;
         </p>
         <p class="sp">
           <span class="ckey">grid-template-columns</span>:
-          <span class="cprop">{{ colTemplate }}</span>;
+          <span class="cprop">{{ colTemplate }}</span
+          >;
         </p>
         <p class="sp">
           <span class="ckey">grid-template-rows</span>:
-          <span class="cprop">{{ rowTemplate }}</span>;
+          <span class="cprop">{{ rowTemplate }}</span
+          >;
         </p>
         <p class="sp">
           <span class="ckey">grid-column-gap</span>:
@@ -33,7 +32,8 @@
             <p>
               <span class="cname">.div{{ i + 1 }}</span> {
               <span class="ckey">grid-area</span>:
-              <span class="cprop">{{ child }}</span>; }
+              <span class="cprop">{{ child }}</span
+              >; }
             </p>
           </div>
         </div>

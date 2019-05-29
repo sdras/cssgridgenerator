@@ -1,8 +1,15 @@
 <template>
   <nav>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="50" height="50">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 100 100"
+      width="50"
+      height="50"
+    >
       <g class="logo" fill-rule="nonzero">
-        <path d="M23 23v65h65V23H23zm-1-1h67v67H22V22zM10 10v8h8v-8h-8zM9 9h10v10H9V9z"></path>
+        <path
+          d="M23 23v65h65V23H23zm-1-1h67v67H22V22zM10 10v8h8v-8h-8zM9 9h10v10H9V9z"
+        ></path>
         <path
           d="M9.146 9.854a.5.5 0 1 1 .708-.708l9 9a.5.5 0 0 1-.708.708l-9-9zM33 22h1v66.168h-1zM66 22h1v66.168h-1zM44 22h1v66.168h-1zM77 22h1v66.168h-1zM55 22h1v66.168h-1z"
         ></path>

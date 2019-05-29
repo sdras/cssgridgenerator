@@ -1,7 +1,12 @@
 <template>
   <main>
     <section
-      :style="{ gridTemplateColumns: colTemplate, gridTemplateRows: '50px', gridColumnGap: columngap + 'px', gridRowGap: rowgap + 'px' }"
+      :style="{
+        gridTemplateColumns: colTemplate,
+        gridTemplateRows: '50px',
+        gridColumnGap: columngap + 'px',
+        gridRowGap: rowgap + 'px'
+      }"
       class="colunits"
     >
       <div v-for="(col, i) in colArr" :key="i">
@@ -9,25 +14,42 @@
           v-model.lazy="col.unit"
           @change="validateunit($event, i, 'col')"
           :class="[columns > 8 ? widthfull : '']"
-        >
-        <div class="errors" v-if="errors.col.indexOf(i) !== -1">Must use real CSS units, goofball</div>
+        />
+        <div class="errors" v-if="errors.col.indexOf(i) !== -1">
+          Must use real CSS units, goofball
+        </div>
       </div>
     </section>
 
     <section
-      :style="{ gridTemplateColumns: '50px', gridTemplateRows: rowTemplate, gridColumnGap: columngap + 'px', gridRowGap: rowgap + 'px' }"
+      :style="{
+        gridTemplateColumns: '50px',
+        gridTemplateRows: rowTemplate,
+        gridColumnGap: columngap + 'px',
+        gridRowGap: rowgap + 'px'
+      }"
       class="rowunits"
     >
       <div v-for="(row, i) in rowArr" :key="i">
-        <input v-model.lazy="row.unit" @change="validateunit($event, i, 'row')">
-        <div class="errors" v-if="errors.row.indexOf(i) !== -1">Must use real CSS units, goofball</div>
+        <input
+          v-model.lazy="row.unit"
+          @change="validateunit($event, i, 'row')"
+        />
+        <div class="errors" v-if="errors.row.indexOf(i) !== -1">
+          Must use real CSS units, goofball
+        </div>
       </div>
     </section>
 
     <div id="gridcontainer">
       <section
         class="grid"
-        :style="{ gridTemplateColumns: colTemplate, gridTemplateRows: rowTemplate , gridColumnGap: columngap + 'px', gridRowGap: rowgap + 'px' }"
+        :style="{
+          gridTemplateColumns: colTemplate,
+          gridTemplateRows: rowTemplate,
+          gridColumnGap: columngap + 'px',
+          gridRowGap: rowgap + 'px'
+        }"
       >
         <div
           v-for="(item, i) in divNum"
@@ -42,7 +64,12 @@
 
       <section
         class="grid gridchild"
-        :style="{ gridTemplateColumns: colTemplate, gridTemplateRows: rowTemplate , gridColumnGap: columngap + 'px', gridRowGap: rowgap + 'px' }"
+        :style="{
+          gridTemplateColumns: colTemplate,
+          gridTemplateRows: rowTemplate,
+          gridColumnGap: columngap + 'px',
+          gridRowGap: rowgap + 'px'
+        }"
       >
         <div
           v-for="(child, i) in childarea"

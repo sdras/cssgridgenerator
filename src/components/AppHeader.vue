@@ -1,7 +1,7 @@
 <template>
   <header>
-    <app-github-corner/>
-    <app-logo/>
+    <app-github-corner />
+    <app-logo />
   </header>
 </template>
 
@@ -17,5 +17,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
