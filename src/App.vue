@@ -12,6 +12,7 @@
 import AppHeader from "./components/AppHeader.vue";
 import AppGrid from "./components/AppGrid.vue";
 import AppForm from "./components/AppForm.vue";
+import undoRedoHistory from "./helpers/undoRedoHistory";
 
 export default {
   components: {
@@ -21,6 +22,14 @@ export default {
   },
   created() {
     this.$store.commit("initialArrIndex");
+    document.onkeydown = evt => {
+      evt = evt || window.event;
+      if (evt.keyCode === 90 && evt.ctrlKey && evt.shiftKey) {
+        undoRedoHistory.redo();
+      } else if (evt.keyCode === 90 && evt.ctrlKey) {
+        undoRedoHistory.undo();
+      }
+    };
   }
 };
 </script>

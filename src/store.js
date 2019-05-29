@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import undoRedoPlugin from "./plugins/undoRedoPlugin";
 
 Vue.use(Vuex);
 
@@ -61,7 +62,8 @@ export default new Vuex.Store({
     updateRowGap(state, payload) {
       state.rowgap = payload;
     }
-  }
+  },
+  plugins: [undoRedoPlugin]
 });
 
 //we start off with just a few rows and columns filled with 1fr units
