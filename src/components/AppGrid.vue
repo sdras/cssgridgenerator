@@ -86,6 +86,14 @@ export default {
     validateunit(e, i, direction) {
       let unit = e.target.value;
       let check =
+        /q/.test(unit) ||
+        /mm/.test(unit) ||
+        /cm/.test(unit) ||
+        /in/.test(unit) ||
+        /pt/.test(unit) ||
+        /pc/.test(unit) ||
+        /ex/.test(unit) ||
+        /ch/.test(unit) ||
         /fr/.test(unit) ||
         /px/.test(unit) ||
         /%/.test(unit) ||
