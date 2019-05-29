@@ -50,6 +50,11 @@
           :class="'child' + i"
           :style="{ gridArea: child }"
         ></div>
+        <div
+          v-if="!!previewarea"
+          :class="'child' + (childarea.length) + ' preview'"
+          :style="{ gridArea: previewarea }"
+        ></div>
       </section>
     </div>
     <!--gridcontainer-->
@@ -135,6 +140,10 @@ main {
     div[class*="child"]:nth-child(#{$i}) {
       background: hsla(($i - 15) * ($color * 1.5), 80%, 30%, 0.7);
       border: 1px solid #ddd;
+
+      &.preview {
+        background: hsla(($i - 15) * ($color * 1.5), 80%, 30%, 0.3);
+      }
     }
   }
 }
