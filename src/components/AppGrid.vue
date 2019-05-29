@@ -10,7 +10,7 @@
           @change="validateunit($event, i, 'col')"
           :class="[columns > 8 ? widthfull : '']"
         >
-        <div class="errors" v-if="errors.col.indexOf(i) !== -1">Must use real CSS units, goofball</div>
+        <div class="errors" v-if="errors.col.indexOf(i) !== -1">{{ $t("grid.realcssunit") }}</div>
       </div>
     </section>
 
@@ -20,7 +20,7 @@
     >
       <div v-for="(row, i) in rowArr" :key="i">
         <input v-model.lazy="row.unit" @change="validateunit($event, i, 'row')">
-        <div class="errors" v-if="errors.row.indexOf(i) !== -1">Must use real CSS units, goofball</div>
+        <div class="errors" v-if="errors.row.indexOf(i) !== -1">{{ $t("grid.realcssunit") }}</div>
       </div>
     </section>
 

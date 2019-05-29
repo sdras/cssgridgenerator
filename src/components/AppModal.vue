@@ -11,7 +11,7 @@
             <slot name="body">default body</slot>
           </div>
 
-          <button class="modal-button" @click="$emit('close')">Done</button>
+          <button class="modal-button" @click="$emit('close')">{{ $t("modal.button") }}</button>
         </section>
       </div>
     </div>
