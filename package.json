@@ -5,9 +5,20 @@
   "scripts": {
     "build": "vue-cli-service build",
     "format": "yarn prettier --write",
-    "prettier": "prettier \"**/*.{json,md,css,vue,js}\"",
+    "prettier": "prettier \"**/*.{css,js,json,md,vue}\"",
     "serve": "vue-cli-service serve",
     "test": "yarn prettier --list-different"
+  },
+  "lint-staged": {
+    "*.{css,js,json,md,vue}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "dependencies": {
     "core-js": "^2.6.5",
@@ -17,6 +28,8 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.8.0",
     "@vue/cli-service": "^3.8.0",
+    "husky": "^2.3.0",
+    "lint-staged": "^8.1.7",
     "prettier": "^1.17.1",
     "sass": "^1.18.0",
     "sass-loader": "^7.1.0",
