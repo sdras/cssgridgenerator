@@ -11,7 +11,7 @@ export default new Vuex.Store({
     rowgap: 0,
     colArr: [],
     rowArr: [],
-    childarea: []
+    childarea: [],
   },
   getters: {
     colTemplate(state) {
@@ -42,12 +42,17 @@ export default new Vuex.Store({
       } else {
         let difference = newVal - oldVal;
         for (let i = 1; i <= difference; i++) {
-          state[payload.direction].push({ unit: "1fr" });
+          state[payload.direction].push({
+            unit: "1fr"
+          });
         }
       }
     },
     addChildren(state, payload) {
       state.childarea.push(payload);
+    },
+    removeChildren(state, payload) {
+      state.childarea.splice(payload, 1);
     },
     updateColumns(state, payload) {
       state.columns = payload;
@@ -60,6 +65,9 @@ export default new Vuex.Store({
     },
     updateRowGap(state, payload) {
       state.rowgap = payload;
+    },
+    resetGrid(state, payload) {
+      state.childarea = [];
     }
   }
 });
@@ -67,6 +75,8 @@ export default new Vuex.Store({
 //we start off with just a few rows and columns filled with 1fr units
 const createArr = (direction, arr) => {
   for (let i = 1; i <= direction; i++) {
-    arr.push({ unit: "1fr" });
+    arr.push({
+      unit: "1fr"
+    });
   }
 };
