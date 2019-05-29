@@ -86,14 +86,14 @@ export default {
     validateunit(e, i, direction) {
       let unit = e.target.value;
       let check =
-        /fr/.test(unit) ||
-        /px/.test(unit) ||
-        /%/.test(unit) ||
-        /em/.test(unit) ||
-        /rem/.test(unit) ||
-        /vw/.test(unit) ||
-        /vh/.test(unit) ||
-        /vmin/.test(unit);
+        /fr$/.test(unit) ||
+        /px$/.test(unit) ||
+        /%$/.test(unit) ||
+        /em$/.test(unit) ||
+        /rem$/.test(unit) ||
+        /vw$/.test(unit) ||
+        /vh$/.test(unit) ||
+        /vmin$/.test(unit);
 
       if (!check) {
         this.errors[direction].push(i);
