@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "build": "vue-cli-service build",
+    "format": "yarn prettier --write",
+    "prettier": "prettier \"**/*.{json,md,css,vue}\"",
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "test": "yarn prettier --list-different"
   },
   "dependencies": {
     "core-js": "^2.6.5",
@@ -14,6 +17,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.8.0",
     "@vue/cli-service": "^3.8.0",
+    "prettier": "^1.17.1",
     "sass": "^1.18.0",
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.6.10"
