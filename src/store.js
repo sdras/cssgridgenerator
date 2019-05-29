@@ -11,7 +11,8 @@ export default new Vuex.Store({
     rowgap: 0,
     colArr: [],
     rowArr: [],
-    childarea: []
+    childarea: [],
+    previewarea: null
   },
   getters: {
     colTemplate(state) {
@@ -48,6 +49,9 @@ export default new Vuex.Store({
     },
     addChildren(state, payload) {
       state.childarea.push(payload);
+    },
+    updateChildPreview(state, payload) {
+      state.previewarea = payload;
     },
     updateColumns(state, payload) {
       state.columns = payload;

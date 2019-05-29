@@ -78,7 +78,8 @@ export default {
       "rowArr",
       "columns",
       "rows",
-      "childarea"
+      "childarea",
+      "previewarea"
     ]),
     ...mapGetters(["rowTemplate", "colTemplate", "divNum"])
   },
