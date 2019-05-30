@@ -50,7 +50,7 @@
           :class="'child' + i"
           :style="{ gridArea: child }"
         >
-          <button @click="removeChild(i)">(x)</button>
+          <button @click="removeChild(i)">&times;</button>
         </div>
       </section>
     </div>
@@ -118,7 +118,6 @@ export default {
       }
     },
     removeChild(index) {
-      console.log(index);
       this.$store.commit("removeChildren", index);
     }
   }
