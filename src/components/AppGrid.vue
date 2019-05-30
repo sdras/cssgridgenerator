@@ -120,7 +120,7 @@ export default {
         item - (this.child[`${startendhover}row`] - 1) * this.columns;
 
       //create the children css units as a string
-      if (startend === "e") {
+      if (startendhover === "e") {
         // flip starts and ends if dragged in the opposite direction
         let [startRow, endRow] =
           this.child.srow <= this.child.erow
