@@ -110,7 +110,7 @@ export default {
     },
     placeChild(item, startendhover) {
       //only update hover child preview when the child has been 'started'
-      if (startendhover === 'h' && Object.keys(this.child).length < 2) {
+      if (startendhover === "h" && Object.keys(this.child).length < 2) {
         return;
       }
 
@@ -135,7 +135,7 @@ export default {
           1} / ${endCol + 1}`;
 
         this.child = {};
-        this.$store.commit('updateChildPreview', null);
+        this.$store.commit("updateChildPreview", null);
         this.$store.commit("addChildren", childstring);
       }
 
@@ -155,8 +155,8 @@ export default {
       }
 
       //we're starting a child, so let's update the hover preview
-      else if (startendhover === 's') {
-        this.placeChild(item, 'h');
+      else if (startendhover === "s") {
+        this.placeChild(item, "h");
       }
     }
   }
