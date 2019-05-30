@@ -120,9 +120,19 @@ export default {
         item - (this.child[`${startendhover}row`] - 1) * this.columns;
 
       //create the children css units as a string
-      if (startendhover === "e") {
-        let childstring = `${this.child.srow} / ${this.child.scol} / ${this
-          .child.erow + 1} / ${this.child.ecol + 1}`;
+      if (startend === "e") {
+        // flip starts and ends if dragged in the opposite direction
+        let [startRow, endRow] =
+          this.child.srow <= this.child.erow
+            ? [this.child.srow, this.child.erow]
+            : [this.child.erow, this.child.srow];
+        let [startCol, endCol] =
+          this.child.scol <= this.child.ecol
+            ? [this.child.scol, this.child.ecol]
+            : [this.child.ecol, this.child.scol];
+
+        let childstring = `${startRow} / ${startCol} / ${endRow +
+          1} / ${endCol + 1}`;
 
         this.child = {};
         this.$store.commit('updateChildPreview', null);
@@ -246,7 +256,6 @@ main {
   height: 100%;
   div {
     align-self: center;
-    height: 30px;
   }
 }
 
