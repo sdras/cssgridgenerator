@@ -122,18 +122,7 @@ export default {
       //create the children css units as a string
       if (startendhover === "e") {
         // flip starts and ends if dragged in the opposite direction
-        let [startRow, endRow] =
-          this.child.srow <= this.child.erow
-            ? [this.child.srow, this.child.erow]
-            : [this.child.erow, this.child.srow];
-        let [startCol, endCol] =
-          this.child.scol <= this.child.ecol
-            ? [this.child.scol, this.child.ecol]
-            : [this.child.ecol, this.child.scol];
-
-        let childstring = `${startRow} / ${startCol} / ${endRow +
-          1} / ${endCol + 1}`;
-
+        let childstring = makechildstring(this.child, "e");
         this.child = {};
         this.$store.commit("updateChildPreview", null);
         this.$store.commit("addChildren", childstring);
@@ -141,16 +130,7 @@ export default {
 
       //update the childPreview with the new mouse hover col and row
       else if (startendhover === "h") {
-        let [startRow, endRow] =
-          this.child.srow <= this.child.hrow
-            ? [this.child.srow, this.child.hrow]
-            : [this.child.hrow, this.child.srow];
-        let [startCol, endCol] =
-          this.child.scol <= this.child.hcol
-            ? [this.child.scol, this.child.hcol]
-            : [this.child.hcol, this.child.scol];
-        let childstring = `${startRow} / ${startCol} / ${endRow +
-          1} / ${endCol + 1}`;
+        let childstring = makechildstring(this.child, "h");
         this.$store.commit("updateChildPreview", childstring);
       }
 
@@ -161,6 +141,20 @@ export default {
     }
   }
 };
+
+function makechildstring(child, endhover) {
+  //endhover is 'e' or 'h'
+  let [startRow, endRow] =
+    child.srow <= child[`${endhover}row`]
+      ? [child.srow, child[`${endhover}row`]]
+      : [child[`${endhover}row`], child.srow];
+  let [startCol, endCol] =
+    child.scol <= child[`${endhover}col`]
+      ? [child.scol, child[`${endhover}col`]]
+      : [child[`${endhover}col`], child.scol];
+  let childstring = `${startRow} / ${startCol} / ${endRow + 1} / ${endCol + 1}`;
+  return childstring;
+}
 </script>
 
 <style lang="scss" scoped>
