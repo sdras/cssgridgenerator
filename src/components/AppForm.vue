@@ -25,7 +25,7 @@
     </fieldset>
 
     <fieldset>
-      <label for="columngap">{{ $t("form.columngap") }}</label>
+      <label for="columngap">{{ $t("form.columngap") }} (in px)</label>
       <input
         id="columngap"
         type="number"
@@ -37,7 +37,7 @@
     </fieldset>
 
     <fieldset>
-      <label for="rowgap">{{ $t("form.rowgap") }}</label>
+      <label for="rowgap">{{ $t("form.rowgap") }} (in px)</label>
       <input
         id="rowgap"
         type="number"
