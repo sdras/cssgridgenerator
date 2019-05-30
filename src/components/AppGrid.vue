@@ -140,10 +140,18 @@ export default {
       }
 
       //update the childPreview with the new mouse hover col and row
-      else if (startendhover === 'h') {
-        let childstring = `${this.child.srow} / ${this.child.scol} / ${this
-          .child.hrow + 1} / ${this.child.hcol + 1}`;
-        this.$store.commit('updateChildPreview', childstring);
+      else if (startendhover === "h") {
+        let [startRow, endRow] =
+          this.child.srow <= this.child.hrow
+            ? [this.child.srow, this.child.hrow]
+            : [this.child.hrow, this.child.srow];
+        let [startCol, endCol] =
+          this.child.scol <= this.child.hcol
+            ? [this.child.scol, this.child.hcol]
+            : [this.child.hcol, this.child.scol];
+        let childstring = `${startRow} / ${startCol} / ${endRow +
+          1} / ${endCol + 1}`;
+        this.$store.commit("updateChildPreview", childstring);
       }
 
       //we're starting a child, so let's update the hover preview
