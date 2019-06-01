@@ -44,7 +44,7 @@ export default {};
   position: relative;
   width: 80vw;
   max-width: 700px;
-  max-height: 100vh;
+  max-height: 90vh;
   overflow-y: scroll;
   margin: 0px auto;
   padding: 20px 50px 60px;
