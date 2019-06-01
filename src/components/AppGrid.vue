@@ -33,11 +33,14 @@
       <section
         class="grid"
         :style="{ gridTemplateColumns: colTemplate, gridTemplateRows: rowTemplate , gridColumnGap: columngap + 'px', gridRowGap: rowgap + 'px' }"
+        @touchstart.prevent="delegatedTouchPlaceChild"
+        @touchend.prevent="delegatedTouchPlaceChild"
       >
         <div
           v-for="(item, i) in divNum"
           :key="i"
           :class="'box' + i"
+          :data-id="item"
           @mousedown="placeChild(item, 's')"
           @mouseup="placeChild(item, 'e')"
           @touchstart="placeChild(item, 's')"
@@ -106,6 +109,12 @@ export default {
       } else {
         this.errors[direction].splice(this.errors[direction].indexOf(i), 1);
       }
+    },
+
+    delegatedTouchPlaceChild(ev) {
+      const target = document.elementFromPoint(ev.changedTouches[0].clientX, ev.changedTouches[0].clientY);
+      const startend = ev.type === 'touchstart' ? 's' : 'e';
+      this.placeChild(target.dataset.id, startend)
     },
     placeChild(item, startend) {
       //built an object first because I might use this for something else
