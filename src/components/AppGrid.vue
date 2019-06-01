@@ -98,7 +98,8 @@ export default {
         /rem/.test(unit) ||
         /vw/.test(unit) ||
         /vh/.test(unit) ||
-        /vmin/.test(unit);
+        /vmin/.test(unit) ||
+        parseInt(unit, 10) === 0; // allow 0 as a valid value without a unit
 
       if (!check) {
         this.errors[direction].push(i);
