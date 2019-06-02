@@ -17,7 +17,7 @@
       >{{ $t('explain.cssguide') }}</a>, {{ $t('explain.paragraph6') }}
       <a href="https://cssgridgarden.com/" target="_blank">Grid Garden</a> {{ $t('explain.paragraph7') }}
     </p>
-    <p>Please note: Screenreaders will read the divs in the order you add the divs in, please keep this in mind while you're building a grid.</p>
+    <p>{{ $t('explain.note') }}</p>
     <p class="cursive">
       {{ $t('explain.contributions') }}
       <a

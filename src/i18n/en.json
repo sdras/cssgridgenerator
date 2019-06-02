@@ -35,7 +35,8 @@
     "paragraph6": "and a fun little game called",
     "paragraph7": "to help you learn more!",
     "contributions": "This project is open to contributions!",
-    "fork": "Fork it here."
+    "fork": "Fork it here.",
+    "note": "Please note: Screenreaders will read the divs in the order you add the divs in, please keep this in mind while you're building a grid"
   },
   "utils": {
     "and": "and"

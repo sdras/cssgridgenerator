@@ -35,7 +35,8 @@
     "paragraph6": "y un divertido juego llamado",
     "paragraph7": "para ayudarte a aprender más.",
     "contributions": "¡Este proyecto está abierto a contribuciones!",
-    "fork": "Comprueba su código aquí"
+    "fork": "Comprueba su código aquí",
+    "note": "Nota: Los lectores de pantalla leen los divs en el orden en el que son añadidos, ten ésto en cuenta al construir tu cuadrícula"
   },
   "utils": {
     "and": "y"
