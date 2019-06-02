@@ -4,6 +4,12 @@ $teal: #08ffbd;
   box-sizing: border-box;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 body {
   width: 100vw;
   height: 90vh;
@@ -52,7 +58,8 @@ input {
   background: #211f2f;
   color: white;
   width: 50px;
-  padding: 5px;
+  padding: 0.3ch 5px;
+  max-height: 40px;
   border: 1px solid #666;
 }
 

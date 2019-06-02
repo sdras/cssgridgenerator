@@ -9,6 +9,7 @@
           v-model.lazy="col.unit"
           @change="validateunit($event, i, 'col')"
           :class="[columns > 8 ? widthfull : '']"
+          aria-label="Grid Template Column Measurements"
         >
         <div class="errors" v-if="errors.col.indexOf(i) !== -1">Must use real CSS units, goofball</div>
       </div>
@@ -19,7 +20,11 @@
       class="rowunits"
     >
       <div v-for="(row, i) in rowArr" :key="i">
-        <input v-model.lazy="row.unit" @change="validateunit($event, i, 'row')">
+        <input
+          v-model.lazy="row.unit"
+          @change="validateunit($event, i, 'row')"
+          aria-label="Grid Template Row Measurements"
+        >
         <div class="errors" v-if="errors.row.indexOf(i) !== -1">Must use real CSS units, goofball</div>
       </div>
     </section>
@@ -28,11 +33,14 @@
       <section
         class="grid"
         :style="{ gridTemplateColumns: colTemplate, gridTemplateRows: rowTemplate , gridColumnGap: columngap + 'px', gridRowGap: rowgap + 'px' }"
+        @touchstart.prevent="delegatedTouchPlaceChild"
+        @touchend.prevent="delegatedTouchPlaceChild"
       >
         <div
           v-for="(item, i) in divNum"
           :key="i"
           :class="'box' + i"
+          :data-id="item"
           @mousedown="placeChild(item, 's')"
           @mouseup="placeChild(item, 'e')"
           @touchstart="placeChild(item, 's')"
@@ -93,13 +101,21 @@ export default {
         /rem$/.test(unit) ||
         /vw$/.test(unit) ||
         /vh$/.test(unit) ||
-        /vmin$/.test(unit);
+        /vmin$/.test(unit) ||
+        /minmax/.test(unit) ||
+        parseInt(unit, 10) === 0; // allow 0 as a valid value without a unit     
 
       if (!check) {
         this.errors[direction].push(i);
       } else {
         this.errors[direction].splice(this.errors[direction].indexOf(i), 1);
       }
+    },
+
+    delegatedTouchPlaceChild(ev) {
+      const target = document.elementFromPoint(ev.changedTouches[0].clientX, ev.changedTouches[0].clientY);
+      const startend = ev.type === 'touchstart' ? 's' : 'e';
+      this.placeChild(target.dataset.id, startend)
     },
     placeChild(item, startend) {
       //built an object first because I might use this for something else
@@ -109,8 +125,18 @@ export default {
 
       //create the children css units as a string
       if (startend === "e") {
-        let childstring = `${this.child.srow} / ${this.child.scol} / ${this
-          .child.erow + 1} / ${this.child.ecol + 1}`;
+        // flip starts and ends if dragged in the opposite direction
+        let [startRow, endRow] =
+          this.child.srow <= this.child.erow
+            ? [this.child.srow, this.child.erow]
+            : [this.child.erow, this.child.srow];
+        let [startCol, endCol] =
+          this.child.scol <= this.child.ecol
+            ? [this.child.scol, this.child.ecol]
+            : [this.child.ecol, this.child.scol];
+
+        let childstring = `${startRow} / ${startCol} / ${endRow +
+          1} / ${endCol + 1}`;
 
         this.$store.commit("addChildren", childstring);
       }
@@ -158,6 +184,7 @@ main {
   border: 1px solid #08ffbd;
   width: 100%;
   height: 100%;
+  z-index: 0;
   position: relative;
   background: #131321; /* Old browsers */
   background: -moz-linear-gradient(
@@ -216,7 +243,6 @@ main {
   height: 100%;
   div {
     align-self: center;
-    height: 30px;
   }
 }
 
@@ -236,7 +262,7 @@ main {
   bottom: -5px;
   border-radius: 4px;
   padding: 8px 12px;
-  z-index: 100000;
+  z-index: 1;
   font-weight: bold;
   width: 150px;
   min-height: 70px;
