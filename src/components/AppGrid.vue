@@ -43,8 +43,6 @@
           :data-id="item"
           @mousedown="placeChild(item, 's')"
           @mouseup="placeChild(item, 'e')"
-          @touchstart="placeChild(item, 's')"
-          @touchend="placeChild(item, 'e')"
         ></div>
       </section>
 
@@ -122,9 +120,12 @@ export default {
       }
     },
     delegatedTouchPlaceChild(ev) {
-      const target = document.elementFromPoint(ev.changedTouches[0].clientX, ev.changedTouches[0].clientY);
-      const startend = ev.type === 'touchstart' ? 's' : 'e';
-      this.placeChild(target.dataset.id, startend)
+      const target = document.elementFromPoint(
+        ev.changedTouches[0].clientX,
+        ev.changedTouches[0].clientY
+      );
+      const startend = ev.type === "touchstart" ? "s" : "e";
+      this.placeChild(target.dataset.id, startend);
     },
     placeChild(item, startend) {
       //built an object first because I might use this for something else
