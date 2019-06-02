@@ -104,8 +104,16 @@ export default {
         /vw$/.test(unit) ||
         /vh$/.test(unit) ||
         /vmin$/.test(unit) ||
+        /q$/.test(unit) ||
+        /mm$/.test(unit) ||
+        /cm$/.test(unit) ||
+        /in$/.test(unit) ||
+        /pt$/.test(unit) ||
+        /pc$/.test(unit) ||
+        /ex$/.test(unit) ||
+        /ch$/.test(unit) ||
         /minmax/.test(unit) ||
-        parseInt(unit, 10) === 0; // allow 0 as a valid value without a unit     
+        parseInt(unit, 10) === 0; // allow 0 as a valid value without a unit
 
       if (!check) {
         this.errors[direction].push(i);
