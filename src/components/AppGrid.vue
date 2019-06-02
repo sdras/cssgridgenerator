@@ -121,7 +121,6 @@ export default {
         this.errors[direction].splice(this.errors[direction].indexOf(i), 1);
       }
     },
-
     delegatedTouchPlaceChild(ev) {
       const target = document.elementFromPoint(ev.changedTouches[0].clientX, ev.changedTouches[0].clientY);
       const startend = ev.type === 'touchstart' ? 's' : 'e';
@@ -288,7 +287,7 @@ main {
   z-index: 1;
   font-weight: bold;
   width: 150px;
-  min-height: 70px;
+  min-height: 50px;
   background: #6d1a39;
 }
 </style>
