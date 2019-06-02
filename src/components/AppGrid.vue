@@ -94,15 +94,16 @@ export default {
     validateunit(e, i, direction) {
       let unit = e.target.value;
       let check =
-        /fr/.test(unit) ||
-        /px/.test(unit) ||
-        /%/.test(unit) ||
-        /em/.test(unit) ||
-        /rem/.test(unit) ||
-        /vw/.test(unit) ||
-        /vh/.test(unit) ||
-        /vmin/.test(unit) ||
-        parseInt(unit, 10) === 0; // allow 0 as a valid value without a unit
+        /fr$/.test(unit) ||
+        /px$/.test(unit) ||
+        /%$/.test(unit) ||
+        /em$/.test(unit) ||
+        /rem$/.test(unit) ||
+        /vw$/.test(unit) ||
+        /vh$/.test(unit) ||
+        /vmin$/.test(unit) ||
+        /minmax/.test(unit) ||
+        parseInt(unit, 10) === 0; // allow 0 as a valid value without a unit     
 
       if (!check) {
         this.errors[direction].push(i);
