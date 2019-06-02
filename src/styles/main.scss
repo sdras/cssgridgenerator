@@ -1,4 +1,5 @@
 $teal: #08ffbd;
+$grey : #aaaaaa;
 
 * {
   box-sizing: border-box;
@@ -80,8 +81,19 @@ button {
   margin: 20px 0 0;
   cursor: pointer;
   transition: 0.35s all;
+
   &:hover {
     background: $teal;
+    color: black;
+  }
+}
+
+[type="reset"] {
+  color: $grey;
+  border: 1px solid $grey;
+
+  &:hover {
+    background: $grey;
     color: black;
   }
 }

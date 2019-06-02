@@ -57,7 +57,9 @@
           :key="child"
           :class="'child' + i"
           :style="{ gridArea: child }"
-        ></div>
+        >
+          <button @click="removeChild(i)">&times;</button>
+        </div>
       </section>
     </div>
     <!--gridcontainer-->
@@ -140,6 +142,9 @@ export default {
 
         this.$store.commit("addChildren", childstring);
       }
+    },
+    removeChild(index) {
+      this.$store.commit("removeChildren", index);
     }
   }
 };
@@ -176,6 +181,16 @@ main {
       padding: 0 5px;
       text-align: center;
       color: white;
+    }
+    button {
+      position: absolute;
+      right: 0;
+      padding: 0 5px;
+      margin: 0;
+      color: white;
+      background-color: transparent;
+      border: none;
+      z-index: 99999;
     }
   }
 }
