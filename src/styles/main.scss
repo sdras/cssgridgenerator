@@ -1,7 +1,14 @@
 $teal: #08ffbd;
+$grey : #aaaaaa;
 
 * {
   box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 body {
@@ -52,7 +59,8 @@ input {
   background: #211f2f;
   color: white;
   width: 50px;
-  padding: 5px;
+  padding: 0.3ch 5px;
+  max-height: 40px;
   border: 1px solid #666;
 }
 
@@ -73,8 +81,19 @@ button {
   margin: 20px 0 0;
   cursor: pointer;
   transition: 0.35s all;
+
   &:hover {
     background: $teal;
+    color: black;
+  }
+}
+
+[type="reset"] {
+  color: $grey;
+  border: 1px solid $grey;
+
+  &:hover {
+    background: $grey;
     color: black;
   }
 }

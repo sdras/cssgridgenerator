@@ -49,6 +49,7 @@
     </fieldset>
 
     <button @click="showCodeModal = true">Please may I have some code</button>
+    <button type="reset" @click="$store.commit(`resetGrid`)">Reset grid</button>
     <app-modal v-if="showCodeModal" @close="showCodeModal = false">
       <h3 slot="header">Your Grid Code</h3>
       <div slot="body">

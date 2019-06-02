@@ -103,7 +103,7 @@ export default {
   border: 1px solid #08ffbd;
   font-size: 15px;
   font-family: "Roboto Mono", Courier, monospace;
-  max-height: 70vh;
+  max-height: 50vh;
   overflow-y: scroll;
   p {
     margin: 5px;
