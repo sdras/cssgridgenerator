@@ -1,0 +1,44 @@
+{
+  "header": {
+    "builtby":"hecho con 🌮 por"
+  },
+  "form": {
+    "columns": "Columnas",
+    "rows": "Filas",
+    "columngap": "Margen entre Columnas",
+    "rowgap": "Margen entre Filas",
+    "codebutton": "Mostrar Código",
+    "project": "¿Qué hace este proyecto?",
+    "reset": "Reiniciar cuadrícula"
+  },
+  "modal": {
+    "header": {
+      "yourcode": "Tu código",
+      "what": "¿Qué es ésto?"
+    },
+    "copy": {
+      "title": "Copia el siguiente código:",
+      "clipboard": "Copiar en el portapapeles"
+    },
+    "button": "Cerrar"
+  },
+  "grid": {
+    "realcssunit": "Debes usar unidades reales de CSS"
+  },
+  "explain": {
+    "paragraph1": "Puedes introducir el número y unidades de tus columnas y filas, y yo generaré el código de CSS Grid para ti! <strong>Arrastra dentro de las cajas</strong> para generar divs dentro de la cuadrícula.",
+    "paragraph2": "Aunque este proyecto puede generar un diseño básico por ti, no es un tour completo de las caracteríticas de CSS Grid sino una forma rápida de probar rápidamente sus capacidades.",
+    "paragraph3": "Me he dado cuenta de que mucha gente no está usando CSS Grid porque parece muy complicado y no consiguen entenderlo. CSS Grid puede hacer mucho más, y este generador de código sólo muestra una pequeña porción de sus posibilidades. La razón de ser de este proyecto es ayudar a la gente a empezar rápido y crear layouts más interesantes.",
+    "paragraph4": "Cuando hayas probado el proyecto, recomiendo leer algunos recursos de ",
+    "cssguide": "Guía de CSS Grid en CSS-Tricks",
+    "paragraph5": "para profundizar más. También existe una ",
+    "paragraph6": "y un divertido juego llamado",
+    "paragraph7": "para ayudarte a aprender más.",
+    "contributions": "¡Este proyecto está abierto a contribuciones!",
+    "fork": "Comprueba su código aquí",
+    "note": "Nota: Los lectores de pantalla leen los divs en el orden en el que son añadidos, ten ésto en cuenta al construir tu cuadrícula"
+  },
+  "utils": {
+    "and": "y"
+  }
+}

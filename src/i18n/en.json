@@ -1,0 +1,44 @@
+{
+  "header": {
+    "builtby":"built with 🌮 by"
+  },
+  "form": {
+    "columns": "Columns",
+    "rows": "Rows",
+    "columngap": "Column Gap",
+    "rowgap": "Row Gap",
+    "codebutton": "Please may I have some code",
+    "project": "What does this project do?",
+    "reset": "Reset grid"
+  },
+  "modal": {
+    "header": {
+      "yourcode": "Your Grid Code",
+      "what": "What is this?"
+    },
+    "copy": {
+      "title": "Copy the code below:",
+      "clipboard": "Copy to clipboard!"
+    },
+    "button": "Done"
+  },
+  "grid": {
+    "realcssunit": "Must use real CSS units, goofball"
+  },
+  "explain": {
+    "paragraph1": "You can set the numbers, and units of your columns and rows, and I'll generate a CSS grid for you! <strong>Drag within the boxes</strong> to create divs placed within the grid.",
+    "paragraph2": "Though this project can get a basic layout started for you, this project is not a comprehensive tour of CSS Grid capabilities. It is a way for you to use CSS Grid features quickly.",
+    "paragraph3": "I noticed a lot of people weren't using Grid because they felt it was too complicated and they couldn't understand it. Grid is capable of so much, and this small generator only touches on a fraction of the features. The purpose of this is so people get up and running quickly, and create more interesting layouts.",
+    "paragraph4": "Once you work with this a bit, I suggest checking out resources by",
+    "cssguide": "CSS Grid Guide on CSS-Tricks",
+    "paragraph5": "to dive deeper. There is also a",
+    "paragraph6": "and a fun little game called",
+    "paragraph7": "to help you learn more!",
+    "contributions": "This project is open to contributions!",
+    "fork": "Fork it here.",
+    "note": "Please note: Screenreaders will read the divs in the order you add the divs in, please keep this in mind while you're building a grid"
+  },
+  "utils": {
+    "and": "and"
+  }
+}

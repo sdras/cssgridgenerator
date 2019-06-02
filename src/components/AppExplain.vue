@@ -1,32 +1,29 @@
 <template>
   <section>
+    <p v-html="$t('explain.paragraph1')"></p>
+    <p v-html="$t('explain.paragraph2')"></p>
+    <p v-html="$t('explain.paragraph3')"></p>
     <p>
-      You can set the numbers, and units of your columns and rows, and I'll generate a CSS grid for you!
-      <strong>Drag within the boxes</strong> to create divs placed within the grid.
-    </p>
-    <p>Though this project can get a basic layout started for you, this project is not a comprehensive tour of CSS Grid capabilities. It is a way for you to use CSS Grid features quickly.</p>
-    <p>I noticed a lot of people weren't using Grid because they felt it was too complicated and they couldn't understand it. Grid is capable of so much, and this small generator only touches on a fraction of the features. The purpose of this is so people get up and running quickly, and create more interesting layouts.</p>
-    <p>
-      Once you work with this a bit, I suggest checking out resources by
+      {{ $t('explain.paragraph4') }}
       <a
         href="https://twitter.com/rachelandrew"
         target="_blank"
       >Rachel Andrew</a>,
-      <a href="https://twitter.com/jensimmons" target="_blank">Jen Simmons</a>, and
-      <a href="https://twitter.com/geddski" target="_blank">Dave Geddes</a> to dive deeper. There is also a
+      <a href="https://twitter.com/jensimmons" target="_blank">Jen Simmons</a>, {{ $t('utils.and') }}
+      <a href="https://twitter.com/geddski" target="_blank">Dave Geddes</a> {{ $t('explain.paragraph5') }}
       <a
         href="https://css-tricks.com/snippets/css/complete-guide-grid/"
         target="_blank"
-      >CSS Grid Guide on CSS-Tricks</a>, and a fun little game called
-      <a href="https://cssgridgarden.com/" target="_blank">Grid Garden</a> to help you learn more!
+      >{{ $t('explain.cssguide') }}</a>, {{ $t('explain.paragraph6') }}
+      <a href="https://cssgridgarden.com/" target="_blank">Grid Garden</a> {{ $t('explain.paragraph7') }}
     </p>
-    <p>Please note: Screenreaders will read the divs in the order you add the divs in, please keep this in mind while you're building a grid.</p>
+    <p>{{ $t('explain.note') }}</p>
     <p class="cursive">
-      This project is open to contributions!
+      {{ $t('explain.contributions') }}
       <a
         href="https://github.com/sdras/cssgridgenerator"
         target="_blank"
-      >Fork it here.</a>
+      >{{ $t('explain.fork') }}</a>
     </p>
   </section>
 </template>

@@ -1,8 +1,8 @@
 <template>
   <div class="group codegroup">
-    <h3>Copy the code below:</h3>
+    <h3>{{ $t("modal.copy.title") }}</h3>
     <div class="gridcode">
-      <div class="copycode" @click.stop.prevent="copy">Copy to clipboard!</div>
+      <div class="copycode" @click.stop.prevent="copy">{{ $t("modal.copy.clipboard") }}</div>
 
       <div id="code" ref="code">
         <p>

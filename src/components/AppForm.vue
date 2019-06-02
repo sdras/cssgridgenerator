@@ -1,7 +1,7 @@
 <template>
   <aside>
     <fieldset>
-      <label for="columns">Columns</label>
+      <label for="columns">{{ $t("form.columns") }}</label>
       <input
         id="columns"
         type="number"
@@ -13,7 +13,7 @@
     </fieldset>
 
     <fieldset>
-      <label for="rows">Rows</label>
+      <label for="rows">{{ $t("form.rows") }}</label>
       <input
         id="rows"
         type="number"
@@ -25,7 +25,7 @@
     </fieldset>
 
     <fieldset>
-      <label for="columngap">Column Gap</label>
+      <label for="columngap">{{ $t("form.columngap") }}</label>
       <input
         id="columngap"
         type="number"
@@ -37,7 +37,7 @@
     </fieldset>
 
     <fieldset>
-      <label for="rowgap">Row Gap</label>
+      <label for="rowgap">{{ $t("form.rowgap") }}</label>
       <input
         id="rowgap"
         type="number"
@@ -48,18 +48,18 @@
       >
     </fieldset>
 
-    <button @click="showCodeModal = true">Please may I have some code</button>
-    <button type="reset" @click="$store.commit(`resetGrid`)">Reset grid</button>
+    <button @click="showCodeModal = true">{{ $t("form.codebutton") }}</button>
+    <button type="reset" @click="$store.commit(`resetGrid`)">{{ $t("form.reset") }}</button>
     <app-modal v-if="showCodeModal" @close="showCodeModal = false">
-      <h3 slot="header">Your Grid Code</h3>
+      <h3 slot="header">{{ $t("modal.header.yourcode") }}</h3>
       <div slot="body">
         <app-code/>
       </div>
     </app-modal>
 
-    <p class="wat" @click="showExplainModal = true">What does this project do?</p>
+    <p class="wat" @click="showExplainModal = true">{{ $t("form.project") }}</p>
     <app-modal v-if="showExplainModal" @close="showExplainModal = false">
-      <h3 slot="header">Wat is this?</h3>
+      <h3 slot="header">{{ $t("modal.header.what") }}</h3>
       <div slot="body">
         <app-explain/>
       </div>
