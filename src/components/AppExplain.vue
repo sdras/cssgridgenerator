@@ -20,6 +20,7 @@
       >CSS Grid Guide on CSS-Tricks</a>, and a fun little game called
       <a href="https://cssgridgarden.com/" target="_blank">Grid Garden</a> to help you learn more!
     </p>
+    <p>Please note: Screenreaders will read the divs in the order you add the divs in, please keep this in mind while you're building a grid.</p>
     <p class="cursive">
       This project is open to contributions!
       <a
