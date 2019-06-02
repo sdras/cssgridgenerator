@@ -49,6 +49,7 @@
     </fieldset>
 
     <button @click="showCodeModal = true">{{ $t("form.codebutton") }}</button>
+    <button type="reset" @click="$store.commit(`resetGrid`)">{{ $t("form.reset") }}</button>
     <app-modal v-if="showCodeModal" @close="showCodeModal = false">
       <h3 slot="header">{{ $t("modal.header.yourcode") }}</h3>
       <div slot="body">

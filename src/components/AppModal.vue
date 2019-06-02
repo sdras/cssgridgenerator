@@ -25,7 +25,7 @@ export default {};
 <style lang="scss" scoped>
 .modal-mask {
   position: fixed;
-  z-index: 9999;
+  z-index: 100;
   top: 0;
   left: 0;
   width: 100%;
@@ -44,6 +44,8 @@ export default {};
   position: relative;
   width: 80vw;
   max-width: 700px;
+  max-height: 90vh;
+  overflow-y: scroll;
   margin: 0px auto;
   padding: 20px 50px 60px;
   background-color: #192d38;

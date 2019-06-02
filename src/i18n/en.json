@@ -8,7 +8,8 @@
     "columngap": "Column Gap",
     "rowgap": "Row Gap",
     "codebutton": "Please may I have some code",
-    "project": "What does this project do?"
+    "project": "What does this project do?",
+    "reset": "Reset grid"
   },
   "modal": {
     "header": {

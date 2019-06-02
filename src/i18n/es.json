@@ -8,7 +8,8 @@
     "columngap": "Margen entre Columnas",
     "rowgap": "Margen entre Filas",
     "codebutton": "Mostrar Código",
-    "project": "¿Qué hace este proyecto?"
+    "project": "¿Qué hace este proyecto?",
+    "reset": "Reiniciar cuadrícula"
   },
   "modal": {
     "header": {
