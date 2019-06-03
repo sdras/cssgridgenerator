@@ -29,11 +29,22 @@
 </template>
 
 <script>
+import createFocusTrap from "focus-trap";
+
 export default {
+  data() {
+    return {
+      focusTrap: null
+    };
+  },
   mounted() {
     document.addEventListener("keydown", this.closeOnEsc);
+
+    this.focusTrap = createFocusTrap(this.$el);
+    this.focusTrap.activate();
   },
   beforeDestroy() {
+    this.focusTrap.deactivate();
     document.removeEventListener("keydown", this.closeOnEsc);
   },
   methods: {

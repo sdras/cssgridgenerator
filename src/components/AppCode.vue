@@ -9,7 +9,6 @@
         type="button"
         class="copycode"
         @click.stop.prevent="copy"
-        autofocus
       >
         <template v-if="codeWasCopied">{{ $t("modal.copy.clipboardSuccess") }}</template>
         <template v-else>{{ $t("modal.copy.clipboard") }}</template>
