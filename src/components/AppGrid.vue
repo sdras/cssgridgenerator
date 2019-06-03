@@ -235,10 +235,10 @@ main {
   position: absolute;
   display: grid;
   grid-auto-flow: row dense;
-  transition: 0.5s grid-template-columns ease-in-out, 
-            0.5s grid-template-rows ease-in-out, 
-            0.5s gap ease-in-out;  
-              
+  transition: 0.3s grid-template-columns ease-in-out, 
+            0.3s grid-template-rows ease-in-out, 
+            0.3s gap ease-in-out;  
+
   @include colors(20, 100);
   p {
     padding: 0 10px;
