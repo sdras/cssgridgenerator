@@ -44,8 +44,9 @@ export default {
     this.focusTrap.activate();
   },
   beforeDestroy() {
-    this.focusTrap.deactivate();
     document.removeEventListener("keydown", this.closeOnEsc);
+
+    this.focusTrap.deactivate();
   },
   methods: {
     closeOnEsc(event) {
