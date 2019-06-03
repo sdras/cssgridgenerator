@@ -3,16 +3,16 @@ import Vuex from "vuex";
 
 Vue.use(Vuex);
 const groupRepeatedUnits = (templateArray = ['1fr']) => {
-  const groups = [[templateArray.shift()]]
+  const groups = [[templateArray.shift()]];
   for (const templateUnit of templateArray) {
     const lastGroup = groups[groups.length - 1]
     if (lastGroup.indexOf(templateUnit) !== -1) {
-      lastGroup.push(templateUnit)
-      continue
+      lastGroup.push(templateUnit);
+      continue;
     }
-    groups.push([templateUnit])
+    groups.push([templateUnit]);
   }
-  return groups
+  return groups;
 }
 
 const createRepetition = (groups, maxRepetition = 1) => {
@@ -22,7 +22,7 @@ const createRepetition = (groups, maxRepetition = 1) => {
     group.length === maxRepetition
       ? group.join(' ')
       : `repeat(${group.length}, ${group[0]})`
-  ).join(' ')
+  ).join(' ');
 }
 
 export default new Vuex.Store({
