@@ -1,0 +1,44 @@
+{
+  "header": {
+    "builtby":"gebaut mit 🌮 von"
+  },
+  "form": {
+    "columns": "Spalten",
+    "rows": "Reihen",
+    "columngap": "Spalten Abstand",
+    "rowgap": "Reihen Abstand",
+    "codebutton": "Bitte Code generieren",
+    "project": "Was dieses Projekt macht?",
+    "reset": "Grid zurücksetzen"
+  },
+  "modal": {
+    "header": {
+      "yourcode": "Dein Grid Code",
+      "what": "Was ist das?"
+    },
+    "copy": {
+      "title": "kopiere den folgenden Code:",
+      "clipboard": "In Zwischenablage speichern!"
+    },
+    "button": "Fertig"
+  },
+  "grid": {
+    "realcssunit": "Du musst echtes CSS Grid verwenden, Dummkopf!"
+  },
+  "explain": {
+    "paragraph1": "Gib eine Anzahl für Spalten und Reihen an und ich generiere ein Grid für dich <strong>Ziehe/klicke innerhalb der Boxen</strong> um divs in dem Grid zu plazieren.",
+    "paragraph2": "Dieses Projekt kann ein Basis Layout für dich sein, dieses Projekt ist keine umfassende Tour durch alle CSS Grid Funktionen. Es ist ein Weg um CSS Grid features schnell zu nutzen.",
+    "paragraph3": "Mir ist aufgefallen, dass viele Leute Grid nicht benutzten, weil sie das Gefühl hatten, dass es zu kompliziert war und sie es nicht verstehen konnten. Das Netz ist zu so viel fähig, und dieser kleine Generator berührt nur einen Bruchteil der Merkmale. Der Zweck ist, dass die Leute schnell einsatzbereit sind und interessantere Layouts erstellen.",
+    "paragraph4": "Sobald du damit ein wenig arbeitest, schlage ich vor, Ressourcen anzuschauen von ",
+    "cssguide": "CSS Grid Guide von CSS-Tricks",
+    "paragraph5": "um mehr Wissen aufzubauen gibt es auch",
+    "paragraph6": "und ein witziges Spiel namens",
+    "paragraph7": "das hilft um mehr zu lernen!",
+    "contributions": "Dieses Projekt ist offen für Beiträge und Mithilfe!",
+    "fork": "Hier Forken.",
+    "note": "Bitte beachten: Screenreader lesen die Divs in der Reihenfolge, in der du die Divs hinzufügst, bitte beachte dies, während du ein Grid erstellst."
+  },
+  "utils": {
+    "and": "und"
+  }
+}
