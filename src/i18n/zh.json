@@ -1,0 +1,44 @@
+{
+  "header": {
+    "builtby": "built with 🌮 by"
+  },
+  "form": {
+    "columns": "列",
+    "rows": "行",
+    "columngap": "列间距",
+    "rowgap": "行间距",
+    "codebutton": "请给我示例中的代码",
+    "project": "这个项目可以做什么？",
+    "reset": "重置布局"
+  },
+  "modal": {
+    "header": {
+      "yourcode": "您的 Grid 代码",
+      "what": "这是什么？"
+    },
+    "copy": {
+      "title": "复制以下代码：",
+      "clipboard": "复制"
+    },
+    "button": "完成"
+  },
+  "grid": {
+    "realcssunit": "必须使用正确的 CSS 单位"
+  },
+  "explain": {
+    "paragraph1": "您可以设置行和列的数字还有单位，我将为您生成一个 CSS Grid 网格布局！<strong>在方框中拖动</strong>来创建 div 放置在网格内。",
+    "paragraph2": "虽然这个项目可以为您提供一个基本的布局, 但是本项目不是对 CSS 网格功能的全面介绍。这只是一种快速使用 CSS Grid 网格布局功能的方法。",
+    "paragraph3": "我注意到很多人没有使用 Grid，因为他们觉得这个太复杂了，难以理解。 Grid 可以做很多事情，而这个小的生成器只涉及到了一小部分功能。 这样做的目的是让人们能够快速上手并创建更多有趣的布局。",
+    "paragraph4": "一旦你对此有所了解，我建议您可以通过以下资源，",
+    "cssguide": "CSS Grid Guide on CSS-Tricks",
+    "paragraph5": "进行更深入的了解。 还有一个",
+    "paragraph6": "和一个有趣的小游戏叫",
+    "paragraph7": "可以帮助您了解更多！",
+    "contributions": "这个项目是开放的!",
+    "fork": "请在这里 Fork",
+    "note": "请注意：读屏器将按照添加 div 的顺序读取 div，请在构建 Grid 网格布局时牢记这一点"
+  },
+  "utils": {
+    "and": "和"
+  }
+}
