@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueI18n from 'vue-i18n'
 import en from './en.json'
 import es from './es.json'
+import zh from './zh.json'
 
 Vue.use(VueI18n)
 
@@ -13,7 +14,8 @@ export function createI18n () {
     fallbackLocale: 'en',
     messages: {
       'en': en,
-      'es': es
+      'es': es,
+      'zh': zh
     }
   })
 };
