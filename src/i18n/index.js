@@ -6,12 +6,12 @@ import de from './de.json'
 
 Vue.use(VueI18n)
 
-const locale = window.navigator.language ? window.navigator.language.substring(0, 2) : "de";
+const locale = window.navigator.language ? window.navigator.language.substring(0, 2) : "en";
 
 export function createI18n () {
   return new VueI18n({
     locale: locale,
-    fallbackLocale: 'de',
+    fallbackLocale: 'en',
     messages: {
       'en': en,
       'es': es,
