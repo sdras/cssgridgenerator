@@ -131,5 +131,8 @@ aside {
     width: 80vw;
     margin: 100px 50px;
   }
+  button[type=reset]{
+    margin-left: 20px;
+  }
 }
 </style>

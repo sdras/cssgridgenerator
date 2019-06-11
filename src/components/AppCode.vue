@@ -54,7 +54,7 @@ export default {
   },
   methods: {
     copy() {
-      var text = this.$refs.code,
+      let text = this.$refs.code,
         range,
         selection;
 
