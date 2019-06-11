@@ -52,6 +52,10 @@ label {
   padding-right: 18px;
   display: inline-block;
   width: 150px;
+
+  .label-extra-info {
+    opacity: .9;
+  }
 }
 
 input {
