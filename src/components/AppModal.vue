@@ -65,7 +65,7 @@ export default {};
 }
 
 .modal-button {
-  margin: 40px auto 0;
+  margin: 40px auto;
   display: table;
 }
 
