@@ -18,12 +18,13 @@
     },
     "copy": {
       "title": "复制以下代码：",
-      "clipboard": "复制"
+      "clipboard": "复制",
+      "clipboardSuccess": "复制成功！"
     },
     "button": "完成"
   },
   "grid": {
-    "realcssunit": "必须使用正确的 CSS 单位"
+    "realcssunit": "请使用正确的 CSS 单位"
   },
   "explain": {
     "paragraph1": "您可以设置行和列的数字还有单位，我将为您生成一个 CSS Grid 网格布局！<strong>在方框中拖动</strong>来创建 div 放置在网格内。",
