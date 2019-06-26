@@ -111,7 +111,7 @@ export default {
 }
 
 .modal-button {
-  margin: 40px auto 0;
+  margin: 40px auto;
   display: table;
 
   @media screen and (max-width: 700px) {
