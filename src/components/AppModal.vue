@@ -1,25 +1,64 @@
 <template>
   <transition name="modal">
     <div class="modal-mask">
-      <div class="modal-wrapper">
-        <section class="modal-container">
-          <h2 class="modal-header">
+      <div class="modal-wrapper" @click.self="close">
+        <div
+          class="modal-container"
+          role="dialog"
+          aria-labelledby="modalTitle"
+          aria-describedby="modalDescription"
+        >
+          <header id="modalTitle" class="modal-header">
             <slot name="header">default header</slot>
-          </h2>
+          </header>
 
-          <div class="modal-body">
+          <section class="modal-body" id="modalDescription">
             <slot name="body">default body</slot>
-          </div>
+          </section>
 
-          <button class="modal-button" @click="$emit('close')">{{ $t("modal.button") }}</button>
-        </section>
+          <button
+            type="button"
+            aria-label="Close modal"
+            class="modal-button"
+            @click="close"
+          >{{ $t("modal.button") }}</button>
+        </div>
       </div>
     </div>
   </transition>
 </template>
 
 <script>
-export default {};
+import createFocusTrap from "focus-trap";
+
+export default {
+  data() {
+    return {
+      focusTrap: null
+    };
+  },
+  mounted() {
+    document.addEventListener("keydown", this.closeOnEsc);
+
+    this.focusTrap = createFocusTrap(this.$el);
+    this.focusTrap.activate();
+  },
+  beforeDestroy() {
+    document.removeEventListener("keydown", this.closeOnEsc);
+
+    this.focusTrap.deactivate();
+  },
+  methods: {
+    closeOnEsc(event) {
+      if (event.keyCode == 27) {
+        this.close();
+      }
+    },
+    close() {
+      this.$emit("close");
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -47,16 +86,23 @@ export default {};
   max-height: 90vh;
   overflow-y: scroll;
   margin: 0px auto;
-  padding: 20px 50px 60px;
+  padding: 0px 50px 60px;
   background-color: #192d38;
   border-radius: 5px;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
   transition: all 0.3s ease;
   border: 1px solid black;
+  max-height: 100%;
+  overflow-y: scroll;
+
+  @media screen and (max-width: 700px) {
+    padding: 0px 20px 20px;
+    width: calc(100% - 40px);
+  }
 }
 
 .modal-header {
-  margin-top: 0;
+  font-size: 1.5em;
   text-align: center;
 }
 
@@ -67,6 +113,10 @@ export default {};
 .modal-button {
   margin: 40px auto 0;
   display: table;
+
+  @media screen and (max-width: 700px) {
+    margin: 20px auto 0;
+  }
 }
 
 .modal-enter,

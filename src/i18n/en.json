@@ -1,6 +1,6 @@
 {
   "header": {
-    "builtby":"built with 🌮 by"
+    "builtby": "built with 🌮 by"
   },
   "form": {
     "columns": "Columns",
@@ -18,7 +18,8 @@
     },
     "copy": {
       "title": "Copy the code below:",
-      "clipboard": "Copy to clipboard!"
+      "clipboard": "Copy to clipboard!",
+      "clipboardSuccess": "Code copied!"
     },
     "button": "Done"
   },

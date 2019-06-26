@@ -1,0 +1,44 @@
+{
+  "header": {
+    "builtby":"Conçu avec 🌮 par"
+  },
+  "form": {
+    "columns": "Colonnes",
+    "rows": "Rangées",
+    "columngap": "Marge entre Colonnes",
+    "rowgap": "Marge entre Rangées",
+    "codebutton": "Puis-je voir le code ?",
+    "project": "Que fait ce projet ?",
+    "reset": "Réinitialiser la grille"
+  },
+  "modal": {
+    "header": {
+      "yourcode": "Votre code",
+      "what": "Qu'est-ce que c'est ?"
+    },
+    "copy": {
+      "title": "Copier le code ci-dessous :",
+      "clipboard": "Copier dans le presse-papier !"
+    },
+    "button": "Terminé"
+  },
+  "grid": {
+    "realcssunit": "Utilisez de vraies unités CSS !"
+  },
+  "explain": {
+    "paragraph1": "Vous pouvez définir les nombres et unités de vos colonnes et rangées, et je générerai une grille CSS pour vous ! <strong>Déplacez le curseur dans les cases</strong> pour créer des divs à l'intérieur de la grille.",
+    "paragraph2": "Bien que ce projet puisse générer une mise en page de base pour vous, il ne constitue pas une visite complète des fonctionnalités de CSS Grid. C'est un moyen pour vous d'utiliser les fonctionnalités de CSS Grid rapidement.",
+    "paragraph3": "J'ai remarqué que beaucoup de gens n'utilisaient pas CSS Grid parce qu'ils trouvaient que c'était trop complexe à assimiler. CSS Grid a tellement de possibilités, et ce petit générateur n'en reproduit qu'une fraction. Le but de ce projet est de permettre aux gens d'être rapidement opérationnel et de créer des mises en pages plus intéressantes. ",
+    "paragraph4": "Une fois que vous aurez utilisé un peu ce générateur, je vous recommande de suivre le travail de",
+    "cssguide": "un guide CSS Grid sur CSS-Tricks",
+    "paragraph5": "pour approfondir vos connaissances sur le sujet. Il existe aussi",
+    "paragraph6": "et un petit jeu amusant appelé",
+    "paragraph7": "pour vous aider à en apprendre davantage !",
+    "contributions": "Ce projet est ouvert aux contributions !",
+    "fork": "Forkez le ici.",
+    "note": "À noter : les lecteurs d'écrans liront les divs dans l'ordre dans lequel vous les ajoutez. Gardez cela à l'esprit lorsque vous construisez une grille."
+  },
+  "utils": {
+    "and": "et"
+  }
+}
