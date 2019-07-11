@@ -4,6 +4,17 @@
     <div class="gridcode">
       <button
         role="region"
+        id="toggleShowHtml"
+        aria-live="polite"
+        type="button"
+        class="toggleHtml"
+        @click.stop.prevent="toggleHtml"
+      >
+        <template v-if="showHtml">{{ $t("modal.copy.css") }}</template>
+        <template v-else>{{ $t("modal.copy.html") }}</template>
+      </button>
+      <button
+        role="region"
         id="codeCopyStatus"
         aria-live="polite"
         type="button"
@@ -67,7 +78,8 @@ import { mapGetters, mapState } from "vuex";
 export default {
   data() {
     return {
-      codeWasCopied: false
+      codeWasCopied: false,
+      showHtml: false
     };
   },
   computed: {
