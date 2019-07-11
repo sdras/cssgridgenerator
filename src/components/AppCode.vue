@@ -7,7 +7,7 @@
         id="toggleShowHtml"
         aria-live="polite"
         type="button"
-        class="toggleHtml"
+        class="togglehtml"
         @click.stop.prevent="toggleHtml"
       >
         <template v-if="showHtml">{{ $t("modal.copy.css") }}</template>
@@ -158,6 +158,14 @@ export default {
   background: #0f8a8ab3;
   padding: 8px 12px;
   border-radius: 0 4px 0 4px;
+  font-family: "Mukta Mahee", Helvetica, Arial, sans-serif;
+  cursor: pointer;
+}
+
+.togglehtml{
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
   font-family: "Mukta Mahee", Helvetica, Arial, sans-serif;
   cursor: pointer;
 }

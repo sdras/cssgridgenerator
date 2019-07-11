@@ -20,8 +20,8 @@
       "title": "Copy the code below:",
       "clipboard": "Copy to clipboard!",
       "clipboardSuccess": "Code copied!",
-      "html": "HTML",
-      "css": "CSS"
+      "html": "Show HTML",
+      "css": "Show CSS"
     },
     "button": "Done"
   },
