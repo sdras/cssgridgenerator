@@ -1,3 +1,7 @@
+<a href="https://www.netlify.com">
+  <img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg"/>
+</a>
+
 # CSS Grid Generator
 
 ### Site deployed on Netlify: [https://cssgrid-generator.netlify.com/](https://cssgrid-generator.netlify.com/)
