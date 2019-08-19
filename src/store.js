@@ -2,28 +2,30 @@ import Vue from "vue";
 import Vuex from "vuex";
 
 Vue.use(Vuex);
-const groupRepeatedUnits = (templateArray = ['1fr']) => {
+const groupRepeatedUnits = (templateArray = ["1fr"]) => {
   const groups = [[templateArray.shift()]];
   for (const templateUnit of templateArray) {
-    const lastGroup = groups[groups.length - 1]
+    const lastGroup = groups[groups.length - 1];
     if (lastGroup.indexOf(templateUnit) !== -1) {
       lastGroup.push(templateUnit);
-      continue;
+    } else {
+      groups.push([templateUnit]);
     }
-    groups.push([templateUnit]);
   }
   return groups;
-}
+};
 
 const createRepetition = (groups, maxRepetition = 1) => {
-  return groups.map(group =>
-    // If you want to add repetition only when a measure is repeated more than 1 time,
-    // change maxRepetition value
-    group.length === maxRepetition
-      ? group.join(' ')
-      : `repeat(${group.length}, ${group[0]})`
-  ).join(' ');
-}
+  return groups
+    .map(group =>
+      // If you want to add repetition only when a measure is repeated more than 1 time,
+      // change maxRepetition value
+      group.length === maxRepetition
+        ? group.join(" ")
+        : `repeat(${group.length}, ${group[0]})`
+    )
+    .join(" ");
+};
 
 export default new Vuex.Store({
   state: {
@@ -33,7 +35,7 @@ export default new Vuex.Store({
     rowgap: 0,
     colArr: [],
     rowArr: [],
-    childarea: [],
+    childarea: []
   },
   getters: {
     colTemplate(state) {
@@ -70,7 +72,7 @@ export default new Vuex.Store({
       } else {
         let difference = newVal - oldVal;
         for (let i = 1; i <= difference; i++) {
-          state[payload.direction].push({unit: "1fr"});
+          state[payload.direction].push({ unit: "1fr" });
         }
       }
     },
@@ -101,6 +103,6 @@ export default new Vuex.Store({
 //we start off with just a few rows and columns filled with 1fr units
 const createArr = (direction, arr) => {
   for (let i = 1; i <= direction; i++) {
-    arr.push({unit: "1fr"});
+    arr.push({ unit: "1fr" });
   }
 };
