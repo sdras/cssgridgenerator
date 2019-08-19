@@ -15,8 +15,8 @@ export const groupRepeatedUnits = (templateUnitArray = [{ unit: "1fr" }]) => {
 export const createRepetition = (groups, maxRepetition = 1) => {
   return groups
     .map(group =>
-      // If you want to add repetition only when a measure is repeated more than once,
-      // change maxRepetition value
+      // If you want to add repetition only when a measure is repeated more than x times,
+      // change maxRepetition value to x
       group.length === maxRepetition
         ? group.join(" ")
         : `repeat(${group.length}, ${group[0]})`
