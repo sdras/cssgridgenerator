@@ -1,0 +1,44 @@
+{
+    "header": {
+      "builtby":"construído com 🌮 por"
+    },
+    "form": {
+      "columns": "Colunas",
+      "rows": "Linhas",
+      "columngap": "Espaçamento entre Colunas",
+      "rowgap": "Espaçamento entre Linhas",
+      "codebutton": "Poderia me ver um código?",
+      "project": "O que esse projeto faz?",
+      "reset": "Reiniciar grid"
+    },
+    "modal": {
+      "header": {
+        "yourcode": "Seu código grid",
+        "what": "O que é isso?"
+      },
+      "copy": {
+        "title": "Copie o código abaixo:",
+        "clipboard": "Copie para a área de transferência!"
+      },
+      "button": "Concluído"
+    },
+    "grid": {
+      "realcssunit": "Use unidades CSS reais, seu bobo"
+    },
+    "explain": {
+      "paragraph1": "Você pode selecionar o número de linhas e colunas e eu vou gerar uma grid CSS pra você! <strong>Clique e arraste dentro das caixas</strong> para criar divs dentro da grid.",
+      "paragraph2": "Apesar desse projeto poder criar um layout básico pra você, ele não é um tour completo das capacidades da CSS Grid. Ele é uma forma de você utilizar as funcionalidades da CSS Grid rapidamente.",
+      "paragraph3": "Eu percebi que várias pessoas não estavam usando a Grid porque sentiam que era complicado demais e não conseguiam entendê-la. A Grid é capaz de muitas coisas, e esse pequeno gerador só toca em uma fração das suas funcionalidades. O propósito dele é que as pessoas criem rapidamente layouts mais interessantes.",
+      "paragraph4": "Assim que você tiver utilizado um pouco o projeto, sugiro que vá conferir os recursos de ",
+      "cssguide": "Guia da CSS Grid no CSS-Tricks",
+      "paragraph5": "para entender mais profundamente. Também há um",
+      "paragraph6": "e um joguinho divertido chamado",
+      "paragraph7": "para ajudar você a aprender mais!",
+      "contributions": "Este projeto está aberto a contribuições!",
+      "fork": "Faça um fork aqui.",
+      "note": "Por favor note: Leitores de tela lerão as divs na ordem que você adicioná-las, por favor mantenha isso em mente enquanto você está construindo uma grid"
+    },
+    "utils": {
+      "and": "e"
+    }
+  }

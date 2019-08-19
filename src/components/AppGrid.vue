@@ -11,7 +11,7 @@
           :class="[columns > 8 ? widthfull : '']"
           aria-label="Grid Template Column Measurements"
         >
-        <div class="errors" v-if="errors.col.indexOf(i) !== -1">Must use real CSS units, goofball</div>
+        <div class="errors" v-if="errors.col.indexOf(i) !== -1">{{ $t("grid.realcssunit") }}</div>
       </div>
     </section>
 
@@ -25,7 +25,7 @@
           @change="validateunit($event, i, 'row')"
           aria-label="Grid Template Row Measurements"
         >
-        <div class="errors" v-if="errors.row.indexOf(i) !== -1">Must use real CSS units, goofball</div>
+        <div class="errors" v-if="errors.row.indexOf(i) !== -1">{{ $t("grid.realcssunit") }}</div>
       </div>
     </section>
 
