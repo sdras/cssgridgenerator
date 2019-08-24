@@ -4,6 +4,17 @@
     <div class="gridcode">
       <button
         role="region"
+        id="toggleShowHtml"
+        aria-live="polite"
+        type="button"
+        class="togglehtml"
+        @click.stop.prevent="toggleHtml"
+      >
+        <template v-if="showHtml">{{ $t("modal.copy.css") }}</template>
+        <template v-else>{{ $t("modal.copy.html") }}</template>
+      </button>
+      <button
+        role="region"
         id="codeCopyStatus"
         aria-live="polite"
         type="button"
@@ -15,46 +26,69 @@
       </button>
 
       <div id="code" ref="code">
-        <p>
-          <span class="cname">.parent</span> {
-          <br>
-          <span class="sp">
-            <span class="ckey">display</span>:
-            <span class="cprop">grid</span>;
-          </span>
-          <br>
-          <span class="sp">
-            <span class="ckey">grid-template-columns</span>:
-            <span class="cprop">{{ colTemplate }}</span>;
-          </span>
-          <br>
-          <span class="sp">
-            <span class="ckey">grid-template-rows</span>:
-            <span class="cprop">{{ rowTemplate }}</span>;
-          </span>
-          <br>
-          <span class="sp">
-            <span class="ckey">grid-column-gap</span>:
-            <span class="cprop">{{ columngap }}px;</span>
-          </span>
-          <br>
-          <span class="sp">
-            <span class="ckey">grid-row-gap</span>:
-            <span class="cprop">{{ rowgap }}px</span>;
-          </span>
-          <br>
-          <span v-if="childarea.length > 0" class="child">
-            <span v-for="(child, i) in childarea" :key="child">
-              <span>
-                <span class="cname">.div{{ i + 1 }}</span> {
-                <span class="ckey">grid-area</span>:
-                <span class="cprop">{{ child }}</span>; }
+        <div v-if="showHtml">
+          <p>
+            <<span class="cname">div </span>
+            <span class="cprop">class="parent"</span>>
+            <br>
+            <span v-if="childarea.length > 0">
+              <span v-for="(child, i) in childarea" :key="child">
+                <span class="sp">
+                  <<span class="cname">div </span>
+                  <span class="cprop">class="div{{ i + 1 }}"</span>>
+                  </<span class="cname">div</span>>
+                </span>
+                <br>
               </span>
+            </span>
+            <span v-else>
               <br>
             </span>
-          </span>
-          }
-        </p>
+            </<span class="cname">div</span>>
+          </p>
+        </div>
+        <div v-else>
+          <p>
+            <span class="cname">.parent</span> {
+            <br>
+            <span class="sp">
+              <span class="ckey">display</span>:
+              <span class="cprop">grid</span>;
+            </span>
+            <br>
+            <span class="sp">
+              <span class="ckey">grid-template-columns</span>:
+              <span class="cprop">{{ colTemplate }}</span>;
+            </span>
+            <br>
+            <span class="sp">
+              <span class="ckey">grid-template-rows</span>:
+              <span class="cprop">{{ rowTemplate }}</span>;
+            </span>
+            <br>
+            <span class="sp">
+              <span class="ckey">grid-column-gap</span>:
+              <span class="cprop">{{ columngap }}px;</span>
+            </span>
+            <br>
+            <span class="sp">
+              <span class="ckey">grid-row-gap</span>:
+              <span class="cprop">{{ rowgap }}px</span>;
+            </span>
+            <br>
+            <span v-if="childarea.length > 0" class="child">
+              <span v-for="(child, i) in childarea" :key="child">
+                <span>
+                  <span class="cname">.div{{ i + 1 }}</span> {
+                  <span class="ckey">grid-area</span>:
+                  <span class="cprop">{{ child }}</span>; }
+                </span>
+                <br>
+              </span>
+            </span>
+            }
+          </p>
+        </div>
       </div>
       <!--code-->
     </div>
@@ -67,7 +101,8 @@ import { mapGetters, mapState } from "vuex";
 export default {
   data() {
     return {
-      codeWasCopied: false
+      codeWasCopied: false,
+      showHtml: false
     };
   },
   computed: {
@@ -100,6 +135,9 @@ export default {
           this.codeWasCopied = false;
         }, 2000);
       }
+    },
+    toggleHtml() {
+      this.showHtml = !this.showHtml
     }
   }
 };
@@ -146,6 +184,14 @@ export default {
   background: #0f8a8ab3;
   padding: 8px 12px;
   border-radius: 0 4px 0 4px;
+  font-family: "Mukta Mahee", Helvetica, Arial, sans-serif;
+  cursor: pointer;
+}
+
+.togglehtml{
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
   font-family: "Mukta Mahee", Helvetica, Arial, sans-serif;
   cursor: pointer;
 }

@@ -20,7 +20,9 @@
     "copy": {
       "title": "Copy the code below:",
       "clipboard": "Copy to clipboard!",
-      "clipboardSuccess": "Code copied!"
+      "clipboardSuccess": "Code copied!",
+      "html": "Show HTML",
+      "css": "Show CSS"
     },
     "button": "Done"
   },
