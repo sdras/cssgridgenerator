@@ -30,6 +30,10 @@ Compiles and hot-reloads for development
 yarn run serve
 ```
 
+Alternatively You can also use Gitpod ( a free online IDE that will automate your dev setup ) with a single click. It will launch a ready to code workspace with the dependencies pre-installed and the web server running.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/sdras/cssgridgenerator)
+
 Compiles and minifies for production
 
 ```

@@ -1,0 +1,6 @@
+tasks:
+    - init: npm install
+      command: npm run serve
+ports:
+    - port: 8080
+      onOpen: open-preview
