@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import { groupRepeatedUnits, createRepetition } from "./utils/repetition";
 
 Vue.use(Vuex);
 
@@ -11,14 +12,16 @@ export default new Vuex.Store({
     rowgap: 0,
     colArr: [],
     rowArr: [],
-    childarea: [],
+    childarea: []
   },
   getters: {
     colTemplate(state) {
-      return state.colArr.map(i => i["unit"]).join(" ");
+      const unitGroups = groupRepeatedUnits(state.colArr);
+      return createRepetition(unitGroups);
     },
     rowTemplate(state) {
-      return state.rowArr.map(i => i["unit"]).join(" ");
+      const unitGroups = groupRepeatedUnits(state.rowArr);
+      return createRepetition(unitGroups);
     },
     divNum(state) {
       return state.columns * state.rows;
@@ -42,7 +45,7 @@ export default new Vuex.Store({
       } else {
         let difference = newVal - oldVal;
         for (let i = 1; i <= difference; i++) {
-          state[payload.direction].push({unit: "1fr"});
+          state[payload.direction].push({ unit: "1fr" });
         }
       }
     },
@@ -73,6 +76,6 @@ export default new Vuex.Store({
 //we start off with just a few rows and columns filled with 1fr units
 const createArr = (direction, arr) => {
   for (let i = 1; i <= direction; i++) {
-    arr.push({unit: "1fr"});
+    arr.push({ unit: "1fr" });
   }
 };
