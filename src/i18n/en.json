@@ -9,7 +9,8 @@
     "rowgap": "Row Gap",
     "codebutton": "Please may I have some code",
     "project": "What does this project do?",
-    "reset": "Reset grid"
+    "reset": "Reset grid",
+    "units": "(in px)"
   },
   "modal": {
     "header": {
