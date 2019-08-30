@@ -189,16 +189,21 @@ main {
       padding: 0 5px;
       text-align: center;
       color: white;
+      font-weight: 600;
     }
     button {
       position: absolute;
-      right: 0;
-      padding: 0 5px;
+      top: 0px;
+      right: 5px;
+      padding: 0;
       margin: 0;
       color: white;
       background-color: transparent;
       border: none;
       z-index: 99999;
+      font-size: 27px;
+      font-weight: 600;
+      line-height: 1;
     }
   }
 }
