@@ -30,7 +30,7 @@
           <p>
             &lt;<span class="cname">div</span>
             <span class="cprop">class="parent"</span>&gt;
-            <br />
+            <br>
             <span v-if="childarea.length > 0">
               <span v-for="(child, i) in childarea" :key="child">
                 <span class="sp">
@@ -38,11 +38,11 @@
                   <span class="cprop">&nbsp;class="div{{ i + 1 }}"</span>&gt;
                   &lt;/<span class="cname">div</span>&gt;
                 </span>
-                <br />
+                <br>
               </span>
             </span>
             <span v-else>
-              <br />
+              <br>
             </span>
             &lt;/<span class="cname">div</span>&gt;
           </p>
@@ -50,32 +50,32 @@
         <div v-else>
           <p>
             <span class="cname">.parent</span> {
-            <br />
+            <br>
             <span class="sp">
               <span class="ckey">display</span>:
               <span class="cprop">grid</span>;
             </span>
-            <br />
+            <br>
             <span class="sp">
               <span class="ckey">grid-template-columns</span>:
               <span class="cprop">{{ colTemplate }}</span>;
             </span>
-            <br />
+            <br>
             <span class="sp">
               <span class="ckey">grid-template-rows</span>:
               <span class="cprop">{{ rowTemplate }}</span>;
             </span>
-            <br />
+            <br>
             <span class="sp">
               <span class="ckey">grid-column-gap</span>:
               <span class="cprop">{{ columngap }}px;</span>
             </span>
-            <br />
+            <br>
             <span class="sp">
               <span class="ckey">grid-row-gap</span>:
               <span class="cprop">{{ rowgap }}px</span>;
             </span> 
-            <br />}
+            <br>}
           </p>
           <p>
             <span v-if="childarea.length > 0">
@@ -85,7 +85,7 @@
                   <span class="ckey">grid-area</span>:
                   <span class="cprop">{{ child }}</span>; }
                 </span>
-                <br />
+                <br>
               </span>
             </span>
           </p>
