@@ -24,6 +24,11 @@
         <template v-if="codeWasCopied">{{ $t("modal.copy.clipboardSuccess") }}</template>
         <template v-else>{{ $t("modal.copy.clipboard") }}</template>
       </button>
+       <select v-if="!showHtml" id="csstype" v-model="cssType" class="cssselect">
+          <option value="css" selected="selected">CSS</option>
+          <option value="scss">SCSS</option>
+          <option value="iec">IE Compatible</option>
+        </select>
 
       <div id="code" ref="code">
         <div v-if="showHtml">
@@ -75,7 +80,8 @@
               <span class="ckey">grid-row-gap</span>:
               <span class="cprop">{{ rowgap }}px</span>;
             </span> 
-            <br>}
+            <br>
+            <span>}</span>
           </p>
           <p>
             <span v-if="childarea.length > 0">
@@ -103,7 +109,8 @@ export default {
   data() {
     return {
       codeWasCopied: false,
-      showHtml: false
+      showHtml: false,
+      cssType: "css"
     };
   },
   computed: {
@@ -187,6 +194,14 @@ export default {
   border-radius: 0 4px 0 4px;
   font-family: "Mukta Mahee", Helvetica, Arial, sans-serif;
   cursor: pointer;
+}
+
+.cssselect {
+  border-radius: 4px 4px 4px 4px;
+  font-family: "Mukta Mahee", Helvetica, Arial, sans-serif;
+  border-color:#08ffbd;
+  background-color:#131321;
+  color:#08ffbd;
 }
 
 .togglehtml {
