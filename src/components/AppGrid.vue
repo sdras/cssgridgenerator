@@ -10,7 +10,7 @@
           @change="validateunit($event, i, 'col')"
           :class="[columns > 8 ? widthfull : '']"
           aria-label="Grid Template Column Measurements"
-        >
+        />
         <div class="errors" v-if="errors.col.indexOf(i) !== -1">{{ $t("grid.realcssunit") }}</div>
       </div>
     </section>
@@ -24,7 +24,7 @@
           v-model.lazy="row.unit"
           @change="validateunit($event, i, 'row')"
           aria-label="Grid Template Row Measurements"
-        >
+        />
         <div class="errors" v-if="errors.row.indexOf(i) !== -1">{{ $t("grid.realcssunit") }}</div>
       </div>
     </section>
@@ -236,7 +236,7 @@ main {
   position: absolute;
   display: grid;
   grid-auto-flow: row dense;
-  @include colors(20, 100);
+  @include colors(50, 100);
   p {
     padding: 0 10px;
   }
