@@ -28,15 +28,15 @@
       <div id="code" ref="code">
         <div v-if="showHtml">
           <p>
-            <<span class="cname">div </span>
-            <span class="cprop">class="parent"</span>>
+            &lt;<span class="cname">div</span>
+            <span class="cprop">class="parent"</span>&gt;
             <br>
             <span v-if="childarea.length > 0">
               <span v-for="(child, i) in childarea" :key="child">
                 <span class="sp">
-                  <<span class="cname">div </span>
-                  <span class="cprop">class="div{{ i + 1 }}"</span>>
-                  </<span class="cname">div</span>>
+                  &lt;<span class="cname">div</span>
+                  <span class="cprop">&nbsp;class="div{{ i + 1 }}"</span>&gt;
+                  &lt;/<span class="cname">div</span>&gt;
                 </span>
                 <br>
               </span>
@@ -44,7 +44,7 @@
             <span v-else>
               <br>
             </span>
-            </<span class="cname">div</span>>
+            &lt;/<span class="cname">div</span>&gt;
           </p>
         </div>
         <div v-else>
@@ -74,9 +74,11 @@
             <span class="sp">
               <span class="ckey">grid-row-gap</span>:
               <span class="cprop">{{ rowgap }}px</span>;
-            </span>
-            <br>
-            <span v-if="childarea.length > 0" class="child">
+            </span> 
+            <br>}
+          </p>
+          <p>
+            <span v-if="childarea.length > 0">
               <span v-for="(child, i) in childarea" :key="child">
                 <span>
                   <span class="cname">.div{{ i + 1 }}</span> {
@@ -86,7 +88,6 @@
                 <br>
               </span>
             </span>
-            }
           </p>
         </div>
       </div>
@@ -137,7 +138,7 @@ export default {
       }
     },
     toggleHtml() {
-      this.showHtml = !this.showHtml
+      this.showHtml = !this.showHtml;
     }
   }
 };
@@ -188,7 +189,7 @@ export default {
   cursor: pointer;
 }
 
-.togglehtml{
+.togglehtml {
   position: absolute;
   right: 5px;
   bottom: 5px;
