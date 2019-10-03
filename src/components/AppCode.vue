@@ -28,7 +28,7 @@
       <div id="code" ref="code">
         <div v-if="showHtml">
           <p>
-            &lt;<span class="cname">div</span>
+            &lt;<span class="cname">div </span>
             <span class="cprop">class="parent"</span>&gt;
             <br>
             <span v-if="childarea.length > 0">
