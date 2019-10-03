@@ -111,6 +111,7 @@ export default {
         /ex$/.test(unit) ||
         /ch$/.test(unit) ||
         /minmax/.test(unit) ||
+        ["auto", "min-content", "max-content"].includes(unit) ||
         parseInt(unit, 10) === 0; // allow 0 as a valid value without a unit
 
       if (!check) {
