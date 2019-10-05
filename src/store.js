@@ -12,16 +12,25 @@ export default new Vuex.Store({
     rowgap: 0,
     colArr: [],
     rowArr: [],
-    childarea: []
+    childarea: [],
+    mschildarea:[]
   },
   getters: {
     colTemplate(state) {
       const unitGroups = groupRepeatedUnits(state.colArr);
       return createRepetition(unitGroups);
     },
+    msColTemplate(state){
+      let colUnits = state.colArr.map(col=>col.unit);
+        return colUnits.join(" ");
+    },
     rowTemplate(state) {
       const unitGroups = groupRepeatedUnits(state.rowArr);
       return createRepetition(unitGroups);
+    },
+    msRowTemplate(state){
+      let rowUnits = state.rowArr.map(row=>row.unit);
+        return rowUnits.join(" ");
     },
     divNum(state) {
       return state.columns * state.rows;
@@ -35,7 +44,6 @@ export default new Vuex.Store({
     adjustArr(state, payload) {
       let newVal = Number(payload.newVal),
         oldVal = Number(payload.oldVal);
-
       if (newVal < oldVal) {
         // you'd think that .length would be quicker here, but it doesn't trigger the getter/computed in colTemplate etc.
         let difference = oldVal - newVal;
@@ -50,10 +58,13 @@ export default new Vuex.Store({
       }
     },
     addChildren(state, payload) {
-      state.childarea.push(payload);
+      let childstring = `${payload.startRow} / ${payload.startCol} / ${payload.endRow } / ${payload.endCol}`;
+      state.childarea.push(childstring);
+      state.mschildarea.push(payload);
     },
     removeChildren(state, payload) {
       state.childarea.splice(payload, 1);
+      state.mschildarea.splice(payload, 1);
     },
     updateColumns(state, payload) {
       state.columns = payload;
@@ -69,6 +80,7 @@ export default new Vuex.Store({
     },
     resetGrid(state, payload) {
       state.childarea = [];
+      state.mschildarea=[];
     }
   }
 });
