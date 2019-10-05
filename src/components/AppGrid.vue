@@ -148,8 +148,9 @@ export default {
 
         let childstring = `${startRow} / ${startCol} / ${endRow +
           1} / ${endCol + 1}`;
+        let childobject = {startRow, startCol, endRow: endRow + 1, endCol: endCol + 1, cString: childstring};
 
-        this.$store.commit("addChildren", childstring);
+        this.$store.commit("addChildren", childobject);
       }
     },
     removeChild(index) {
