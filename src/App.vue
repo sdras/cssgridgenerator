@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <app-header/>
+    <app-header />
     <section class="container">
-      <app-grid/>
-      <app-form/>
+      <app-grid />
+      <app-sidebar />
     </section>
   </div>
 </template>
@@ -11,13 +11,13 @@
 <script>
 import AppHeader from "./components/AppHeader.vue";
 import AppGrid from "./components/AppGrid.vue";
-import AppForm from "./components/AppForm.vue";
+import AppSidebar from "./components/AppSidebar.vue";
 
 export default {
   components: {
     AppHeader,
     AppGrid,
-    AppForm
+    AppSidebar
   },
   created() {
     this.$store.commit("initialArrIndex");
