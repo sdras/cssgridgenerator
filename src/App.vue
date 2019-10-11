@@ -20,7 +20,7 @@ export default {
     AppForm
   },
   created() {
-    this.$store.commit("initialArrIndex");
+    this.$store.commit("initialArrIndex", window.location.search);
   }
 };
 </script>
