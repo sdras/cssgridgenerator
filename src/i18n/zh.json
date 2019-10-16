@@ -9,7 +9,8 @@
     "rowgap": "行间距",
     "codebutton": "请给我示例中的代码",
     "project": "这个项目可以做什么？",
-    "reset": "重置布局"
+    "reset": "重置布局",
+    "units": "(单位 px)"
   },
   "modal": {
     "header": {
@@ -19,7 +20,9 @@
     "copy": {
       "title": "复制以下代码：",
       "clipboard": "复制",
-      "clipboardSuccess": "复制成功！"
+      "clipboardSuccess": "复制成功！",
+      "html": "展示 HTML",
+      "css": "展示 CSS"
     },
     "button": "完成"
   },
@@ -35,7 +38,7 @@
     "paragraph5": "进行更深入的了解。 还有一个",
     "paragraph6": "和一个有趣的小游戏叫",
     "paragraph7": "可以帮助您了解更多！",
-    "contributions": "这个项目是开放的!",
+    "contributions": "这个项目是开源的!",
     "fork": "请在这里 Fork",
     "note": "请注意：读屏器将按照添加 div 的顺序读取 div，请在构建 Grid 网格布局时牢记这一点"
   },
