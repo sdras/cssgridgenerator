@@ -24,7 +24,7 @@ export default new Vuex.Store({
       return createRepetition(unitGroups);
     },
     divNum(state) {
-      return state.columns * state.rows;
+      return Math.max(state.columns, 0) * Math.max(state.rows, 0);
     }
   },
   mutations: {
@@ -33,8 +33,8 @@ export default new Vuex.Store({
       createArr(state.rows, state.rowArr);
     },
     adjustArr(state, payload) {
-      let newVal = Number(payload.newVal),
-        oldVal = Number(payload.oldVal);
+      let newVal = Math.max(Number(payload.newVal), 0),
+        oldVal = Math.max(Number(payload.oldVal), 0);
 
       if (newVal < oldVal) {
         // you'd think that .length would be quicker here, but it doesn't trigger the getter/computed in colTemplate etc.
