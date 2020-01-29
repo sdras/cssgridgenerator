@@ -9,7 +9,8 @@
     "rowgap": "Margen entre Filas",
     "codebutton": "Mostrar Código",
     "project": "¿Qué hace este proyecto?",
-    "reset": "Reiniciar cuadrícula"
+    "reset": "Reiniciar cuadrícula",
+    "units": "(en px)"
   },
   "modal": {
     "header": {
@@ -19,7 +20,9 @@
     "copy": {
       "title": "Copia el siguiente código:",
       "clipboard": "Copiar en el portapapeles",
-      "clipboardSuccess": "C�digo copiado!"
+      "clipboardSuccess": "Código copiado!",
+      "html": "Ver HTML",
+      "css": "Ver CSS"
     },
     "button": "Cerrar"
   },
