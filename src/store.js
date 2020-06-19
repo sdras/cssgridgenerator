@@ -28,9 +28,25 @@ export default new Vuex.Store({
     }
   },
   mutations: {
-    initialArrIndex(state) {
-      createArr(state.columns, state.colArr);
-      createArr(state.rows, state.rowArr);
+    initialArrIndex(state, payload) {
+      if(payload !== '') {
+        const queryParams = new URLSearchParams(payload)
+
+        for (const stateKey in state) {
+          const paramIsValid = queryParams.has(stateKey)
+          const paramType = typeof(state[stateKey])
+
+          if(paramIsValid && paramType === 'number') {
+            state[stateKey] = queryParams.get(stateKey);
+          }
+          else if (paramIsValid && paramType === 'object') {
+            state[stateKey] = JSON.parse(queryParams.get(stateKey))
+          }
+        }
+      } else {
+          createArr(state.columns, state.colArr);
+          createArr(state.rows, state.rowArr);
+      }
     },
     adjustArr(state, payload) {
       let newVal = Math.max(Number(payload.newVal), 0),
