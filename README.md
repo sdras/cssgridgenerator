@@ -2,8 +2,7 @@
   <img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg"/>
 </a>
 
-# CSS Grid Generator
-
+###<h1>CSS Grid Generator</h1>
 ### Site: [https://cssgrid-generator.netlify.com/](https://cssgrid-generator.netlify.com/)
 
 ![CSS Grid Generator](https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/og-cssgrid.jpg)
@@ -18,36 +17,34 @@ Once you work with this a bit, I suggest checking out resources by [Rachel Andre
 
 This project is open to contributions!
 
-### Project setup
+### <h2>Project setup</h2>
 
 ```
 yarn install
 ```
-
-Compiles and hot-reloads for development
+<strong>Compiles and hot-reloads for development</strong>
 
 ```
 yarn run serve
 ```
 
-Compiles and minifies for production
-
+<strong>Compiles and minifies for production</strong>
 ```
 yarn run build
 ```
 
-Run your tests
+<strong>Run your tests</strong>
 
 ```
 yarn run test
 ```
 
-Lints and fixes files
+<strong>Lints and fixes files</strong>
 
 ```
 yarn run lint
 ```
 
-Customize configuration
+<strong>Customize configuration</strong>
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
