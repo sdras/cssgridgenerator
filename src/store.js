@@ -24,17 +24,33 @@ export default new Vuex.Store({
       return createRepetition(unitGroups);
     },
     divNum(state) {
-      return state.columns * state.rows;
+      return Math.max(state.columns, 0) * Math.max(state.rows, 0);
     }
   },
   mutations: {
-    initialArrIndex(state) {
-      createArr(state.columns, state.colArr);
-      createArr(state.rows, state.rowArr);
+    initialArrIndex(state, payload) {
+      if(payload !== '') {
+        const queryParams = new URLSearchParams(payload)
+
+        for (const stateKey in state) {
+          const paramIsValid = queryParams.has(stateKey)
+          const paramType = typeof(state[stateKey])
+
+          if(paramIsValid && paramType === 'number') {
+            state[stateKey] = queryParams.get(stateKey);
+          }
+          else if (paramIsValid && paramType === 'object') {
+            state[stateKey] = JSON.parse(queryParams.get(stateKey))
+          }
+        }
+      } else {
+          createArr(state.columns, state.colArr);
+          createArr(state.rows, state.rowArr);
+      }
     },
     adjustArr(state, payload) {
-      let newVal = Number(payload.newVal),
-        oldVal = Number(payload.oldVal);
+      let newVal = Math.max(Number(payload.newVal), 0),
+        oldVal = Math.max(Number(payload.oldVal), 0);
 
       if (newVal < oldVal) {
         // you'd think that .length would be quicker here, but it doesn't trigger the getter/computed in colTemplate etc.
