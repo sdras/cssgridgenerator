@@ -27,7 +27,7 @@ export default {
 
 <style lang="scss">
 #app {
-  margin: 5vmin 5vmin 0;
+  margin: 4vmin 5vmin 0;
 }
 
 .container {
