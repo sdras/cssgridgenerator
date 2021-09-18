@@ -9,7 +9,8 @@
     "rowgap": "Espaçamento entre Linhas",
     "codebutton": "Poderia me ver um código?",
     "project": "O que esse projeto faz?",
-    "reset": "Reiniciar grid"
+    "reset": "Reiniciar grid",
+    "units": "(em px)"
   },
   "modal": {
     "header": {
@@ -19,7 +20,9 @@
     "copy": {
       "title": "Copie o código abaixo:",
       "clipboard": "Copie para a área de transferência!",
-      "clipboardSuccess": "Código copiado!"
+      "clipboardSuccess": "Código copiado!",
+      "html": "Visualizar HTML",
+      "css": "Visualizar CSS"
     },
     "button": "Concluído"
   },
