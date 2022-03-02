@@ -16,30 +16,6 @@ I noticed a lot of people weren't using Grid because they felt it was too compli
 
 Once you work with this a bit, I suggest checking out resources by [Rachel Andrew](https://twitter.com/rachelandrew), [Jen Simmons](https://twitter.com/jensimmons), and [Dave Geddes](https://twitter.com/geddski) to dive deeper. There is also a [CSS Grid Guide](https://css-tricks.com/snippets/css/complete-guide-grid/) on CSS-Tricks, and a fun little game called [Grid Garden](https://cssgridgarden.com/) to help you learn more!
 
-This project is open to contributions!
-
-### Project setup
-
-```
-yarn install
-```
-
-Compiles and hot-reloads for development
-
-```
-yarn run serve
-```
-
-Compiles and minifies for production
-
-```
-yarn run build
-```
-
-Run your tests
-
-```
-yarn run test
 ```
 
 Lints and fixes files
@@ -51,3 +27,4 @@ yarn run lint
 Customize configuration
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
