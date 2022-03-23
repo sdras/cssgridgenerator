@@ -89,14 +89,13 @@ export default {
     ...mapState(["columngap", "rowgap", "columns", "rows"])
   },
   methods: {
-	  correctValue(value, min, max) {
-		console.log(value);
-		if (value > max)
-			return (value = max);
-		if (value < min)
-			return (value = min);
-		return (value);
-	  }
+	correctValue(value, min, max) {
+	  if (value > max)
+	    return (value = max);
+	  if (value < min)
+	    return (value = min);
+	  return (value);
+	}
   },
   watch: {
     columns(newVal, oldVal) {
