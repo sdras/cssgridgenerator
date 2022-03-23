@@ -8,6 +8,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@babel/helper-regex": "^7.10.5",
     "core-js": "^2.6.5",
     "focus-trap": "^5.0.1",
     "vue": "^2.6.10",
