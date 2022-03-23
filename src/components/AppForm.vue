@@ -7,7 +7,7 @@
         type="number"
         min="0"
         max="12"
-        @input="$store.commit(`updateColumns`, $event.target.value)"
+        @input="$store.commit(`updateColumns`, correctValue($event.target.value, 0, 12))"
         :value="columns"
       >
     </fieldset>
@@ -19,7 +19,7 @@
         type="number"
         min="0"
         max="12"
-        @input="$store.commit(`updateRows`, $event.target.value)"
+        @input="$store.commit(`updateRows`, correctValue($event.target.value, 0, 12))"
         :value="rows"
       >
     </fieldset>
@@ -31,7 +31,7 @@
         type="number"
         min="0"
         max="50"
-        @input="$store.commit(`updateColumnGap`, $event.target.value)"
+        @input="$store.commit(`updateColumnGap`, correctValue($event.target.value, 0, 50))"
         :value="columngap"
       >
     </fieldset>
@@ -43,7 +43,7 @@
         type="number"
         min="0"
         max="50"
-        @input="$store.commit(`updateRowGap`, $event.target.value)"
+        @input="$store.commit(`updateRowGap`, correctValue($event.target.value, 0, 50))"
         :value="rowgap"
       >
     </fieldset>
@@ -87,6 +87,16 @@ export default {
   },
   computed: {
     ...mapState(["columngap", "rowgap", "columns", "rows"])
+  },
+  methods: {
+	  correctValue(value, min, max) {
+		console.log(value);
+		if (value > max)
+			return (value = max);
+		if (value < min)
+			return (value = min);
+		return (value);
+	  }
   },
   watch: {
     columns(newVal, oldVal) {
