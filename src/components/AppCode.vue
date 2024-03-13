@@ -67,12 +67,12 @@
             </span>
             <br>
             <span class="sp">
-              <span class="ckey">grid-column-gap</span>:
+              <span class="ckey">column-gap</span>:
               <span class="cprop">{{ columngap }}px;</span>
             </span>
             <br>
             <span class="sp">
-              <span class="ckey">grid-row-gap</span>:
+              <span class="ckey">row-gap</span>:
               <span class="cprop">{{ rowgap }}px</span>;
             </span> 
             <br>}
