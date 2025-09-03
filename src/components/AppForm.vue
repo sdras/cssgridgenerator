@@ -134,5 +134,7 @@ aside {
   button[type=reset]{
     margin-left: 20px;
   }
+
+  /*code is alright just accept this PR to resolve netlify server issue #148*/
 }
 </style>
