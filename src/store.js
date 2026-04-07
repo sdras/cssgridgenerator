@@ -83,8 +83,17 @@ export default new Vuex.Store({
     updateRowGap(state, payload) {
       state.rowgap = payload;
     },
-    resetGrid(state, payload) {
-      state.childarea = [];
+    resetGrid(state, payload) {      
+      Object.assign(state, {
+        columns: 5,
+        rows: 5,
+        columngap: 0,
+        rowgap: 0,
+        childarea: [],
+      });
+
+      resetDirectionUnit(state, 'colArr')
+      resetDirectionUnit(state, 'rowArr')
     }
   }
 });
@@ -95,3 +104,11 @@ const createArr = (direction, arr) => {
     arr.push({ unit: "1fr" });
   }
 };
+
+const resetDirectionUnit = (state, direction) => {
+  state[direction].forEach(col => {
+    if(col.unit !== "1fr") {
+      col.unit = '1fr'      
+    }
+  })
+}
