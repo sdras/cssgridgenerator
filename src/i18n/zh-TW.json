@@ -1,0 +1,48 @@
+{
+    "header": {
+      "builtby": "built with 🌮 by"
+    },
+    "form": {
+      "columns": "直行",
+      "rows": "橫列",
+      "columngap": "直行間距",
+      "rowgap": "橫列間距",
+      "codebutton": "請給我範例中的程式碼",
+      "project": "這個專案在做什麼？",
+      "reset": "重設布局",
+      "units": "(px)"
+    },
+    "modal": {
+      "header": {
+        "yourcode": "您的 Grid 程式碼",
+        "what": "這是什麼？"
+      },
+      "copy": {
+        "title": "複製以下程式碼：",
+        "clipboard": "複製",
+        "clipboardSuccess": "複製成功！",
+        "html": "展示 HTML",
+        "css": "展示 CSS"
+      },
+      "button": "完成"
+    },
+    "grid": {
+      "realcssunit": "請使用正確的 CSS 單位"
+    },
+    "explain": {
+      "paragraph1": "您可以設定行列的數量和單位，我將會為你生成該 CSS Grid 網格布局！<strong>拖曳方框</strong>可在網格內建立 div。",
+      "paragraph2": "雖然本專案可以為您提供一個基本的布局，但不是對 CSS Grid 功能的全面介紹。這只是一種快速生成 CSS Grid 網格布局的方法。",
+      "paragraph3": "我注意到很多人沒有使用網格布局，因為他們覺得太複雜了，難以理解。CSS Grid 可以做很多事情，而這個小生成器只涉及到了一小部分功能。 目的是讓大家能夠快速上手並建立更多有趣的布局。",
+      "paragraph4": "一旦你對此有所了解，建議您可以通過以下資源：",
+      "cssguide": "CSS Grid Guide on CSS-Tricks",
+      "paragraph5": "進行更深入的了解。 還有一個",
+      "paragraph6": "和一個有趣的小遊戲叫",
+      "paragraph7": "可以幫助您了解更多！",
+      "contributions": "這個項目是開源的！",
+      "fork": "請在這裡 Fork",
+      "note": "請注意：螢幕閱讀器將按照添加 div 的順序讀取 div，請在構建 Grid 網格布局時牢記這一點"
+    },
+    "utils": {
+      "and": "和"
+    }
+  }
