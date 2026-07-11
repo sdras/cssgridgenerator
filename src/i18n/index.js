@@ -5,6 +5,7 @@ import es from './es.json'
 import zh from './zh.json'
 import pt from './pt.json'
 import fr from './fr.json'
+import ko from './ko.json'
 
 Vue.use(VueI18n)
 
@@ -19,7 +20,8 @@ export function createI18n () {
       'es': es,
       'zh': zh,
       'pt': pt,
-      'fr': fr
+      'fr': fr,
+      'ko': ko
     }
   })
 };
